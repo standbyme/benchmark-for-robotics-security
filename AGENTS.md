@@ -1,5 +1,7 @@
 I am Hongyu Cai, here is the task I received from my boss. I need to update this project's code.
 
+Message:
+
 Hongyu will look at our external datasets (robo2vlm, droid etc.) to see how many of them already have sequential frames and how to best bring them into our dataset (is our dataset always the start of a sequential frame already or...?)
 Hongyu + Jeffery will go over the design document for how a user can use RoboBench downstream to evaluate, to give feedback and criticism
 
