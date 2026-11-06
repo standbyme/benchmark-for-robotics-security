@@ -11,5 +11,4 @@ Shawshank needs to be applied to all the other datasets.
 we have a new expanded RJB-Instructions dataset, covering 50 per category. This may be a bit too much and we can potentially subsample 20 per category, up to you. All attacks need to be generated for this new RJB-Instructions
 We need to bring in sequential frames from at least one or two dataset and generate attacks on them and run experiments on them.
 
-OPENAI_API_KEY and GOOGLE_AI_STUDIO_KEY are set in the .env file.
-ANTHROPIC_BASE_URL and ANTHROPIC_AUTH_TOKEN are set in the .env file.
+OPENAI_API_KEY ANTHROPIC_API_KEY and GOOGLE_AI_STUDIO_KEY are set in the .env file.
