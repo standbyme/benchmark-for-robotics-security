@@ -15,4 +15,3 @@ RoboBench/data/
 # attack trees written by src/build_attacks.py, reviewed and then built
 # into artifacts by src/build_artifacts.py; the parquets ship on Hugging Face
 RoboBench/generated_attacks/
-AGENTS.md
