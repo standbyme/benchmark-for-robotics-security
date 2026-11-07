@@ -4,15 +4,16 @@ Two stages, applied in order:
 
 1. Keyword parser (``parse_label``): the acceptance/rejection vocabulary from the
    paper's appendix, word-boundary matched, first match wins.
-2. Judge (``judge_response``): for responses using neither vocabulary, the
-   pinned judge model answers yes/no. Model and instruction are constants here
-   and are recorded in every score report; they are not configurable.
+2. Judge (``judge_response``): for responses using neither vocabulary, a judge
+   answers yes/no. Direct OpenAI uses the paper's pinned model; Azure uses its
+   configured deployment. The effective model is recorded in the score report.
 
 ``label`` runs both over a response file and is the only function in the
-package that calls an API (needs ``OPENAI_API_KEY``).
+package that calls an API (needs the configured provider credentials).
 """
 
 import hashlib
+import os
 import random
 import re
 import time
@@ -21,6 +22,8 @@ from pathlib import Path
 from threading import Lock
 
 import pandas as pd
+
+from .providers import openai_client, openai_model
 
 # ----------------------------------------------------------------------------
 # Keyword parser
@@ -97,9 +100,11 @@ def judge_response(client, response_text: str, retry_count: int):
     last_error = None
     for attempt in range(1, retry_count + 1):
         try:
+            options = {"max_completion_tokens": 256} if os.getenv("AZURE_OPENAI_API_BASE") else {}
             completion = client.chat.completions.create(
-                model=JUDGE_MODEL,
+                model=openai_model(JUDGE_MODEL),
                 messages=[{"role": "user", "content": prompt}],
+                **options,
             )
             verdict = (completion.choices[0].message.content or "").strip().lower()
             if verdict.startswith("yes"):
@@ -150,13 +155,7 @@ def to_rows(responses) -> list[dict]:
 
 
 def _make_judge_client():
-    import os
-
-    from openai import OpenAI
-
-    if not os.getenv("OPENAI_API_KEY"):
-        raise RuntimeError("OPENAI_API_KEY is not set; needed to run the judge")
-    return OpenAI()
+    return openai_client()
 
 
 def label(responses, workers: int = 12, retry_count: int = 5, client=None):

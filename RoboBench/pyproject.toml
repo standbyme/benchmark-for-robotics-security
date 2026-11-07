@@ -7,6 +7,7 @@ requires-python = ">=3.13,<3.14"
 # Core: what a downstream user needs for robobench.load_scenes / label / score.
 dependencies = [
     "datasets>=5.1.0",
+    "filelock>=3.16",
     "openai>=2.32.0",
     "pandas>=2.0",
     "pillow>=12.2.0",
@@ -27,6 +28,7 @@ imagegen = ["vllm==0.30.0", "vllm-omni==0.30.0"]
 # overlay; gensim for the word2vec example ranking (the 1.6 GB GoogleNews binary
 # is a separate download).
 shawshank = ["opencv-python-headless>=4.13.0.92", "numpy>=1.26", "gensim>=4.3"]
+sequences = ["av>=14", "typer>=0.12"]
 
 # Development-only stacks; installed by `uv sync` (default groups), never by
 # `pip install robobench`.

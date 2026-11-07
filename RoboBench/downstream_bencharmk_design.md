@@ -1,5 +1,10 @@
 # RoboBench downstream evaluation API (design)
 
+Implementation note: with `AZURE_OPENAI_API_BASE` configured, judging uses the
+`gpt-5.4-mini-1` deployment rather than the historical pinned judge described
+below. The effective model is recorded in reports; results from the two judges
+are separate experimental conditions.
+
 Scope: a user has a model and wants a RoboBench score. We hand out the
 artifacts from our paper, they hand back responses, we label and score. How
 the model is called is their business.

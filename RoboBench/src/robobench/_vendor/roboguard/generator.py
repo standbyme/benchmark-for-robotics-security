@@ -2,7 +2,7 @@ import json
 from typing import Dict, List, Optional
 
 import tiktoken
-from openai import OpenAI
+from robobench.providers import openai_client, openai_model
 
 from roboguard.prompts.ablations.base_no_cot import get_system_prompt_no_cot
 from roboguard.prompts.ablations.examples_no_cot import get_examples_no_cot
@@ -31,8 +31,8 @@ class ContextualGrounding:
         model : str, optional
             OpenAI model for the root-of-trust LLM, by default "gpt-5.4-nano"
         """
-        self.gpt_client = OpenAI()
-        self.model = model
+        self.gpt_client = openai_client()
+        self.model = openai_model(model)
 
         self.token_encoding = tiktoken.get_encoding("cl100k_base")
         self.token_history = []

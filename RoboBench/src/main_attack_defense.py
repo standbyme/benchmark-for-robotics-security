@@ -32,7 +32,6 @@ Usage:
 """
 
 import argparse
-import os
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from threading import Lock
@@ -45,6 +44,7 @@ from tqdm import tqdm
 from robobench.defenses import DEFENSES
 from robobench.labeling import parse_label
 from robobench.models import make_model
+from robobench.providers import effective_model, is_content_filtered
 from robobench.scenes import Scenes, load_scenes
 
 datasets.disable_progress_bars()
@@ -65,8 +65,6 @@ ARTIFACTS = "mdctleo/RoboJailBench"
 
 def make_defense(name: str, model: str, retry_count: int, scene_graphs: str):
     if name in MODEL_FREE_DEFENSES:
-        if not os.getenv("OPENAI_API_KEY"):
-            raise SystemExit("OPENAI_API_KEY is not set")
         from robobench.defenses.roboguard import RoboGuard
         return RoboGuard(graph_dir=scene_graphs)
     return DEFENSES[name](make_model(model, retry_count=retry_count))
@@ -102,15 +100,22 @@ def scene_frame(artifact: str, kind: str, artifacts: str) -> tuple[pd.DataFrame,
     _, base = split_artifact(artifact)
     table = scenes.dataset.remove_columns("images").to_pandas()
     rows = []
+    missing = 0
     for row in table.itertuples(index=False):
+        text = getattr(row, kind)
+        if not isinstance(text, str) or not text.strip():
+            missing += 1
+            continue
         rows.append({
             "id": row.id,
             "source": row.category if isinstance(row.category, str) else base,
             "basename": scenes.image_bytes(row.id)[0]["path"],
             "type": kind,
-            "text": getattr(row, kind),
+            "text": text,
         })
-    return pd.DataFrame(rows), scenes
+    if missing:
+        print(f"{artifact}/{kind}: skipped {missing} rows without an instruction")
+    return pd.DataFrame(rows, columns=["id", "source", "basename", "type", "text"]), scenes
 
 
 def load_benign_frame(dataset: str, artifacts: str) -> tuple[pd.DataFrame, Scenes]:
@@ -146,6 +151,7 @@ def resume_cell(frame: pd.DataFrame, output_path: Path,
     frame["raw_response"] = pd.NA
     frame["is_accepted"] = None
     frame["judge_resolved"] = False
+    frame["provider_filtered"] = False
 
     if output_path.exists():
         existing = pd.read_pickle(output_path)
@@ -158,6 +164,8 @@ def resume_cell(frame: pd.DataFrame, output_path: Path,
                 frame.loc[hit, "is_accepted"] = matched["is_accepted"].values
             if "judge_resolved" in matched.columns:
                 frame.loc[hit, "judge_resolved"] = matched["judge_resolved"].values
+            if "provider_filtered" in matched.columns:
+                frame.loc[hit, "provider_filtered"] = matched["provider_filtered"].fillna(False).values
     return frame
 
 
@@ -165,27 +173,54 @@ def run_cell(defense, frame: pd.DataFrame, scenes: Scenes, output_path: Path,
              workers: int, label: str, model_free: bool = False) -> pd.DataFrame:
     frame = resume_cell(frame, output_path, model_free)
 
+    def checkpoint():
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = output_path.with_suffix(output_path.suffix + ".tmp")
+        frame.to_pickle(temporary)
+        temporary.replace(output_path)
+
     if model_free:
         todo = [index for index in frame.index if not frame.at[index, "decided"]]
     else:
         todo = [
             index
             for index in frame.index
-            if pd.isna(frame.at[index, "raw_response"])
+            if pd.isna(frame.at[index, "raw_response"]) and not frame.at[index, "provider_filtered"]
         ]
     if not todo:
-        return frame  # nothing to run; leave the file as it is
+        # Remove stale rows if the current artifact has lost instructions.
+        if output_path.exists():
+            existing = pd.read_pickle(output_path)
+            if "id" not in existing or existing["id"].tolist() != frame["id"].tolist():
+                checkpoint()
+        return frame
 
     progress = tqdm(total=len(todo), desc=label, leave=False)
     lock = Lock()
+    completed = 0
+
+    def mark_completed():
+        nonlocal completed
+        completed += 1
+        progress.update(1)
+        if completed % 10 == 0:
+            checkpoint()
 
     def work(index: int):
         row_id = frame.at[index, "id"]
-        outcome = defense.respond(
-            text=frame.at[index, "text"],
-            images=[image["bytes"] for image in scenes.image_bytes(row_id)],
-            key=f"{frame.at[index, 'source']}/{frame.at[index, 'basename']}",
-        )
+        try:
+            outcome = defense.respond(
+                text=frame.at[index, "text"],
+                images=[image["bytes"] for image in scenes.image_bytes(row_id)],
+                key=f"{frame.at[index, 'source']}/{frame.at[index, 'basename']}",
+            )
+        except Exception as error:
+            if model_free or not is_content_filtered(error):
+                raise
+            with lock:
+                frame.at[index, "provider_filtered"] = True
+                mark_completed()
+            return
         with lock:
             if model_free:
                 frame.at[index, "is_accepted"] = outcome.accepted
@@ -194,14 +229,14 @@ def run_cell(defense, frame: pd.DataFrame, scenes: Scenes, output_path: Path,
                 frame.at[index, "raw_response"] = outcome.response
                 frame.at[index, "is_accepted"] = parse_label(outcome.response)
                 frame.at[index, "judge_resolved"] = False
-            progress.update(1)
+            mark_completed()
 
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        list(pool.map(work, todo))
-    progress.close()
-
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    frame.to_pickle(output_path)
+    try:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            list(pool.map(work, todo))
+    finally:
+        progress.close()
+        checkpoint()
     return frame
 
 
@@ -209,6 +244,8 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default="gpt-5.4-mini-2026-03-17")
     parser.add_argument("--output-dir", default="workdir/attack_defense")
+    parser.add_argument("--artifacts", default=ARTIFACTS,
+                        help="Hugging Face dataset or local artifact directory")
     parser.add_argument("--scene-graphs", default="scene_graphs",
                         help="scene-graph directory for RoboGuard")
     parser.add_argument("--dataset", action="append", dest="datasets")
@@ -223,6 +260,7 @@ def parse_args():
 def main():
     load_dotenv()
     args = parse_args()
+    args.model = effective_model(args.model)
 
     bases = args.datasets or BASES
     defenses = {
@@ -230,10 +268,10 @@ def main():
         for name in (args.defenses or DEFAULT_DEFENSES)
     }
     output_dir = Path(args.output_dir)
-    available = available_artifacts(ARTIFACTS)
+    available = available_artifacts(args.artifacts)
 
     for dataset in bases:
-        benign_frame, benign_scenes = load_benign_frame(dataset, ARTIFACTS)
+        benign_frame, benign_scenes = load_benign_frame(dataset, args.artifacts)
         if args.limit is not None:
             benign_frame = benign_frame.head(args.limit)
 
@@ -253,7 +291,7 @@ def main():
                 print(f"no artifact {attack}_{dataset}; skipped")
                 continue
             malicious_frame, malicious_scenes = load_malicious_frame(
-                dataset, attack, ARTIFACTS
+                dataset, attack, args.artifacts
             )
             if args.limit is not None:
                 malicious_frame = malicious_frame.head(args.limit)

@@ -8,10 +8,10 @@ in the RoboBench experiments; ``make_model`` picks one from a model name.
     model = make_model("gpt-5.4-mini-2026-03-17")
     reply = model([frame_bytes], "Describe the scene.")
 
-Clients are created on the first call, so constructing a model needs no API
-key. The key is read from ``OPENAI_API_KEY``, from ``CLAUDE_API_KEY`` /
-``ANTHROPIC_API_KEY`` for Claude models, or from ``GOOGLE_API_KEY`` for Gemini
-models (``pip install robobench[gemini]``).
+Clients are created on the first call. Azure bases use ``AZURE_API_KEY`` and
+their configured deployments; without them, direct OpenAI and Anthropic calls
+use ``OPENAI_API_KEY`` and ``ANTHROPIC_API_KEY`` respectively. Gemini uses
+``GOOGLE_API_KEY`` or ``GOOGLE_AI_STUDIO_KEY``.
 """
 
 import base64
@@ -20,6 +20,9 @@ import random
 import time
 from threading import Lock
 from typing import Protocol
+
+from .providers import (ProviderContentFiltered, anthropic_client, anthropic_model,
+                        is_content_filtered, openai_client, openai_model)
 
 
 class Model(Protocol):
@@ -85,6 +88,12 @@ class _ApiModel:
                 return self._query(client, images, prompt)
             except Exception as error:  # noqa: BLE001 - provider errors vary
                 last_error = error
+                if is_content_filtered(error):
+                    raise
+                if getattr(error, "code", None) in {"insufficient_quota", "project_spend_limit_exceeded"}:
+                    raise RuntimeError(f"model={self.name}: provider quota or spend limit exhausted") from error
+                if getattr(error, "status_code", None) in {400, 401, 403, 404}:
+                    raise RuntimeError(f"model={self.name}: provider rejected the request") from error
                 if attempt < self.retry_count:
                     time.sleep(min(2 ** attempt, 30) + random.random())
         raise RuntimeError(f"failed model={self.name}") from last_error
@@ -93,11 +102,11 @@ class _ApiModel:
 class OpenAIModel(_ApiModel):
     """OpenAI chat completion: the prompt text, then each image as a data URL."""
 
+    def __init__(self, name: str, retry_count: int = 5, client=None):
+        super().__init__(openai_model(name), retry_count=retry_count, client=client)
+
     def _make_client(self):
-        if not os.getenv("OPENAI_API_KEY"):
-            raise RuntimeError("OPENAI_API_KEY is not set")
-        from openai import OpenAI
-        return OpenAI()
+        return openai_client()
 
     def _query(self, client, images: list[bytes], prompt: str) -> str:
         content = [{"type": "text", "text": prompt}]
@@ -110,23 +119,23 @@ class OpenAIModel(_ApiModel):
         response = client.chat.completions.create(
             model=self.name,
             messages=[{"role": "user", "content": content}],
-            max_completion_tokens=20000,
+            max_completion_tokens=1024 if os.getenv("AZURE_OPENAI_API_BASE") else 20000,
             temperature=0.3,
         )
-        return response.choices[0].message.content
+        choice = response.choices[0]
+        if getattr(choice, "finish_reason", None) == "content_filter":
+            raise ProviderContentFiltered("Azure OpenAI filtered the response")
+        return choice.message.content
 
 
 class AnthropicModel(_ApiModel):
     """Anthropic message: each image as a base64 block, then the prompt text."""
 
+    def __init__(self, name: str, retry_count: int = 5, client=None):
+        super().__init__(anthropic_model(name), retry_count=retry_count, client=client)
+
     def _make_client(self):
-        # The project's .env stores the Anthropic key as CLAUDE_API_KEY, which is
-        # not the variable the SDK reads by default.
-        api_key = os.getenv("CLAUDE_API_KEY") or os.getenv("ANTHROPIC_API_KEY")
-        if not api_key:
-            raise RuntimeError("CLAUDE_API_KEY is not set")
-        import anthropic
-        return anthropic.Anthropic(api_key=api_key)
+        return anthropic_client()
 
     def _query(self, client, images: list[bytes], prompt: str) -> str:
         content = []
@@ -141,11 +150,12 @@ class AnthropicModel(_ApiModel):
                 },
             })
         content.append({"type": "text", "text": prompt})
+        options = {} if self.name == "claude-opus-5-5" else {"temperature": 0.3}
         message = client.messages.create(
             model=self.name,
             max_tokens=1024,
-            temperature=0.3,
             messages=[{"role": "user", "content": content}],
+            **options,
         )
         return "".join(
             block.text for block in message.content
@@ -157,9 +167,9 @@ class GeminiModel(_ApiModel):
     """Gemini generate_content: each image as a bytes part, then the prompt."""
 
     def _make_client(self):
-        api_key = os.getenv("GOOGLE_API_KEY")
+        api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GOOGLE_AI_STUDIO_KEY")
         if not api_key:
-            raise RuntimeError("GOOGLE_API_KEY is not set")
+            raise RuntimeError("GOOGLE_API_KEY or GOOGLE_AI_STUDIO_KEY is not set")
         from google import genai
         return genai.Client(api_key=api_key)
 

@@ -12,20 +12,19 @@ distinguishable.
 """
 
 import argparse
-import os
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from threading import Lock
 
 import pandas as pd
 from dotenv import load_dotenv
-from openai import OpenAI
 from tqdm import tqdm
 
 from robobench.labeling import judge_response, parse_label
+from robobench.providers import openai_client
 
 
-def resolve_file(client: OpenAI, path: Path, workers: int,
+def resolve_file(client, path: Path, workers: int,
                  retry_count: int) -> tuple[int, int]:
     frame = pd.read_pickle(path)
     if "raw_response" not in frame.columns:
@@ -83,10 +82,7 @@ def main():
     load_dotenv()
     args = parse_args()
 
-    if not os.getenv("OPENAI_API_KEY"):
-        raise SystemExit("OPENAI_API_KEY is not set")
-
-    client = OpenAI()
+    client = openai_client()
 
     for model in args.models:
         model_dir = Path(args.input_dir) / model.replace("/", "_")

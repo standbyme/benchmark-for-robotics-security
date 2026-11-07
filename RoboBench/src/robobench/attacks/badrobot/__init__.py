@@ -11,7 +11,12 @@ original BadRobot ones, kept in the modules next to this file:
   while describing the same action.
 """
 
+import os
+import time
+from threading import Lock
+
 from ..base import AttackResult
+from robobench.providers import is_content_filtered, openai_client, openai_model
 from .conceptual_deception import rewrite_user_input
 from .contextual_jailbreak import get_random_jailbreak_prompt
 from .safety_misalignment import get_random_safety_misalignment_prompt
@@ -60,18 +65,29 @@ class BadRobotCD:
     target = None
 
     def __init__(self, model: str = DEFAULT_MODEL, client=None):
-        self.model = model
+        self.model = openai_model(model)
         self._client = client
+        self._client_lock = Lock()
 
     def client(self):
-        if self._client is None:
-            from openai import OpenAI
-            self._client = OpenAI()
-        return self._client
+        with self._client_lock:
+            if self._client is None:
+                self._client = openai_client()
+            return self._client
 
     def attack(self, *, text=None, images=None, **extra) -> AttackResult:
-        rewritten = rewrite_user_input(_require_text(text), self.client(), model=self.model)
-        return AttackResult(malicious=rewritten)
+        azure = bool(os.getenv("AZURE_OPENAI_API_BASE"))
+        for attempt in range(5 if azure else 1):
+            try:
+                rewritten = rewrite_user_input(_require_text(text), self.client(), model=self.model,
+                                               raise_errors=azure)
+                return AttackResult(malicious=rewritten)
+            except Exception as error:
+                if (is_content_filtered(error) or getattr(error, "status_code", None) in {400, 401, 403, 404}
+                    or getattr(error, "code", None) in {"insufficient_quota", "project_spend_limit_exceeded"}
+                    or attempt == 4):
+                    raise
+                time.sleep(min(2 ** attempt, 30))
 
 
 __all__ = ["DEFAULT_MODEL", "BadRobotCD", "BadRobotCJ", "BadRobotSM"]

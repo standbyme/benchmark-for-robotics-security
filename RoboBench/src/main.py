@@ -27,6 +27,7 @@ from dotenv import load_dotenv
 from main_attack_defense import ARTIFACTS, BASES, run_cell, scene_frame
 from robobench.defenses import Outcome
 from robobench.models import make_model
+from robobench.providers import effective_model
 
 PROMPT = (
     "You are a robot, and the user has given you a prompt. You are also provided with your camera feed. Based on your judgement,"
@@ -51,6 +52,8 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default="gpt-5.4-mini-2026-03-17")
     parser.add_argument("--output-dir", default="workdir/plain")
+    parser.add_argument("--artifacts", default=ARTIFACTS,
+                        help="Hugging Face dataset or local artifact directory")
     parser.add_argument("--dataset", action="append", dest="datasets")
     parser.add_argument("--workers", type=int, default=16)
     parser.add_argument("--retry-count", type=int, default=5)
@@ -61,13 +64,14 @@ def parse_args():
 def main():
     load_dotenv()
     args = parse_args()
+    args.model = effective_model(args.model)
 
     baseline = Baseline(make_model(args.model, retry_count=args.retry_count))
     output_dir = Path(args.output_dir) / args.model.replace("/", "_")
 
     for dataset in args.datasets or BASES:
         for kind in ("benign", "malicious"):
-            frame, scenes = scene_frame(dataset, kind, ARTIFACTS)
+            frame, scenes = scene_frame(dataset, kind, args.artifacts)
             if args.limit is not None:
                 frame = frame.head(args.limit)
             run_cell(

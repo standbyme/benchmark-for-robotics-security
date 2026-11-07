@@ -143,6 +143,21 @@ def test_retry_then_raise(monkeypatch):
     assert len(client.calls) == 2
 
 
+def test_spend_limit_is_not_retried():
+    class SpendLimitError(Exception):
+        code = "project_spend_limit_exceeded"
+
+    class Failing(FakeOpenAI):
+        def _create(self, **kwargs):
+            self.calls.append(kwargs)
+            raise SpendLimitError("exhausted")
+
+    client = Failing()
+    with pytest.raises(RuntimeError, match="spend limit exhausted"):
+        OpenAIModel("gpt-x", retry_count=5, client=client)([PNG], "hello")
+    assert len(client.calls) == 1
+
+
 def test_make_model_dispatch():
     assert isinstance(make_model("claude-haiku-4-5"), AnthropicModel)
     assert isinstance(make_model("gpt-5.4-mini-2026-03-17"), OpenAIModel)

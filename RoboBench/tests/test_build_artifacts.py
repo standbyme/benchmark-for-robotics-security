@@ -68,6 +68,18 @@ def test_attack_artifact_from_tree(tmp_path, out):
     assert entry["target"] == ATTACKS["badrobot_cj"].target
 
 
+def test_robopair_records_the_search_models(tmp_path, out):
+    out_dir, index_path = out
+    tree = tmp_path / "robopair_DROID"
+    write_source(tree, "DROID", ["attacked"])
+    config = {"target_model": "test-target", "attack_model": "test-attacker"}
+    (tree / "generation_config.json").write_text(json.dumps(config))
+    index = build(tree, None, out_dir, index_path)
+    assert read_parquet(out_dir, "robopair_DROID")["target"].tolist() == ["test-target"]
+    assert index[0]["target"] == "test-target"
+    assert json.loads((out_dir / "data/robopair_DROID/generation_config.json").read_text()) == config
+
+
 def test_categorized_artifact(tmp_path, out):
     out_dir, index_path = out
     root = tmp_path / "RJB-X"

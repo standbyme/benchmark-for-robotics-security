@@ -23,6 +23,7 @@ import math
 
 from . import __version__
 from .labeling import JUDGE_MODEL, judge_instruction_sha256, label, to_rows
+from .providers import openai_model
 
 Z95 = 1.96
 
@@ -222,7 +223,7 @@ def score(responses, index=None, **label_kwargs) -> dict:
 
     return {
         "meta": {
-            "judge_model": JUDGE_MODEL,
+            "judge_model": openai_model(JUDGE_MODEL),
             "judge_instruction": judge_instruction_sha256(),
             "robobench_version": __version__,
         },

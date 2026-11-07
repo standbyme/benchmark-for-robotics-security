@@ -187,6 +187,8 @@ def responses_from_workdir(model_dir: Path, defense: str, index) -> list[dict]:
     rows = []
 
     def emit(id_, kind, record):
+        if getattr(record, "provider_filtered", False):
+            return
         label = _label_of(record.is_accepted)
         source = None
         if label is not None:

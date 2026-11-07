@@ -32,6 +32,7 @@ from types import SimpleNamespace
 
 from ..base import Outcome
 from .scene_graph import generate_scene_graph
+from robobench.providers import openai_model
 
 _VENDOR_DIR = Path(__file__).resolve().parents[2] / "_vendor"
 
@@ -80,7 +81,7 @@ class RoboGuard:
                  model: str = DEFAULT_MODEL):
         self._backends = _import_backends()
         self.graph_dir = Path(graph_dir) if graph_dir is not None else None
-        self.model = model
+        self.model = openai_model(model)
         self._grounding = None
         self._grounding_lock = Lock()
         self._spec_cache: dict[str, object] = {}

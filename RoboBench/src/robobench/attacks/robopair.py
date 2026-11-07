@@ -20,7 +20,10 @@ The search itself is upstream RoboPAIR, vendored under ``robobench/_vendor``.
 
 import sys
 from pathlib import Path
+from threading import Lock
 from types import SimpleNamespace
+
+from robobench.providers import openai_client, openai_model
 
 from .base import AttackResult
 
@@ -53,12 +56,13 @@ class RoboPAIR:
                  robot: str = DEFAULT_ROBOT,
                  n_iterations: int = DEFAULT_ITERATIONS,
                  client=None):
-        self.attack_model = attack_model
-        self.target_model = target_model
-        self.judge_model = judge_model
+        self.attack_model = openai_model(attack_model)
+        self.target_model = openai_model(target_model)
+        self.judge_model = openai_model(judge_model)
         self.robot = robot
         self.n_iterations = n_iterations
         self.client = client
+        self._client_lock = Lock()
 
     def search_args(self, text: str) -> SimpleNamespace:
         """The upstream ``main(args)`` namespace for one instruction."""
@@ -73,7 +77,7 @@ class RoboPAIR:
             attack_max_n_tokens=500,
             max_n_attack_attempts=5,
             target_max_n_tokens=500,
-            judge_max_n_tokens=10,
+            judge_max_n_tokens=128 if self.judge_model == "gpt-5.4-mini-1" else 10,
             judge_temperature=0,
             separate_devices=False,
             n_streams=1,
@@ -89,5 +93,8 @@ class RoboPAIR:
                images: list[bytes] | None = None, **extra) -> AttackResult:
         if text is None:
             raise ValueError("RoboPAIR needs an instruction to attack")
+        with self._client_lock:
+            if self.client is None:
+                self.client = openai_client()
         search = _import_search()
         return AttackResult(malicious=search(self.search_args(text)))

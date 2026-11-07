@@ -1,7 +1,7 @@
 import json
 from typing import Dict, List, Optional, Tuple
 
-from openai import OpenAI
+from robobench.providers import openai_client, openai_model
 
 BASE_SYSTEM_INSTRUCTIONS = """"Agent Role: You must configure the vision system for excellent graph planner. The plan must fulfill a given task provided by the user given an incomplete graph representation of an environment. You will configure the computer vision system used by this planner.
 
@@ -166,7 +166,7 @@ class ClassLLM:
         return filtered_class_list
 
     def __init__(self, n_attempts: Optional[int] = 3) -> None:
-        self.client = OpenAI()
+        self.client = openai_client()
         self.n_attempts = n_attempts
 
     def scene_description_from_nodes(self, nodes: List[str]) -> str:
@@ -176,7 +176,7 @@ class ClassLLM:
     def try_query(self, task: str, location_description: str):
         try:
             response = self.client.chat.completions.create(
-                model="gpt-5.4-nano",
+                model=openai_model("gpt-5.4-nano"),
                 messages=create_prompt(
                     task=task, location_description=location_description
                 ),

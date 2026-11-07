@@ -5,7 +5,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Tuple
 
 import numpy as np
-from openai import OpenAI
+from robobench.providers import openai_client, openai_model
 
 from spine.llm_logging import get_logger
 from spine.mapping.graph_util import GraphHandler
@@ -35,8 +35,8 @@ EXPLORE_ACTIONS = set(["explore_region"])
 class SPINE:
     def __init__(self, graph: GraphHandler) -> None:
         self.graph = graph
-        self.client = OpenAI()
-        self.model = "gpt-5.4-nano"
+        self.client = openai_client()
+        self.model = openai_model("gpt-5.4-nano")
         self.n_attempts = 3
         self.base_request = ""
 

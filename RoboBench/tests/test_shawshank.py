@@ -126,6 +126,23 @@ def test_keeps_instruction_and_overlays_the_frame():
     assert result.images[0] != frame
 
 
+def test_sequence_preserves_later_frames():
+    attack, _ = make_attack()
+    frames = [jpeg_bytes(), png_bytes(color=(30, 20, 10))]
+    result = attack.attack(text="x", images=frames)
+    assert len(result.images) == 2
+    assert result.images[0] != frames[0]
+    assert result.images[1] == frames[1]
+
+
+def test_missing_sign_is_recorded_as_a_missing_attack(monkeypatch):
+    attack, _ = make_attack()
+    monkeypatch.setattr(attack, "_generate", lambda *args: None)
+    result = attack.attack(text="x", images=[jpeg_bytes()])
+    assert result.malicious is None
+    assert result.images is None
+
+
 # --- the two generation paths ----------------------------------------------
 
 def test_is_vlm_false_calls_the_describer():

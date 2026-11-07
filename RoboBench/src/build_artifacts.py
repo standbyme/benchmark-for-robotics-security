@@ -8,8 +8,9 @@ are read, chosen by what is in the directory:
     <dir>/<source>/<source>_instr.json + <dir>/<source>/dataset/  one source per subfolder;
                                                                    ``source`` fills ``category``
 
-An instruction file maps a frame path (relative to the repo root) to
-``[malicious, benign]``; ``generate_prompt_from_img.py`` writes it for raw data
+An instruction file maps a frame path (relative to the project directory) to
+``[malicious, benign]`` or ``[malicious, benign, [additional frame paths]]``;
+``generate_prompt_from_img.py`` writes it for raw data
 and ``build_attacks.py`` for attacks. Every frame listed becomes one row. An
 empty malicious text is kept as null and reported, so an attack artifact has
 one row per frame of its base. The ``target`` column of an attack artifact
@@ -91,7 +92,11 @@ def load_frames(directory: Path, name: str, limit) -> list[dict]:
         if limit is not None:
             items = items[:limit]
         for filename, pair in items:
-            raw = (ROOT / filename).read_bytes()
+            extra_paths = pair[2] if len(pair) > 2 else []
+            if not isinstance(extra_paths, list) or not all(isinstance(p, str) for p in extra_paths):
+                raise ValueError(f"{instr_path}: additional frames must be a list of paths")
+            images = [{"bytes": (ROOT / path).read_bytes(), "path": Path(path).name}
+                      for path in [filename, *extra_paths]]
             frame_name = Path(filename).name
             malicious = pair[0]
             if malicious is None or not str(malicious).strip():
@@ -102,7 +107,7 @@ def load_frames(directory: Path, name: str, limit) -> list[dict]:
                 "category": source if categorized else None,
                 "malicious": malicious,
                 "benign": pair[1],
-                "image": {"bytes": raw, "path": frame_name},
+                "images": images,
             })
 
     keys = [frame["key"] for frame in frames]
@@ -116,10 +121,10 @@ def load_frames(directory: Path, name: str, limit) -> list[dict]:
     return frames
 
 
-def write_artifact(name: str, frames: list[dict], out_dir: Path) -> list[dict]:
+def write_artifact(name: str, frames: list[dict], out_dir: Path, target_override=None) -> list[dict]:
     """Write ``data/<name>/train.parquet`` from scratch; return the index entries."""
     attack, base = split_artifact(name)
-    target = ATTACKS[attack].target if attack is not None else None
+    target = target_override or (ATTACKS[attack].target if attack is not None else None)
     rows = []
     entries = []
     for frame in frames:
@@ -128,7 +133,7 @@ def write_artifact(name: str, frames: list[dict], out_dir: Path) -> list[dict]:
             "id": id_,
             "dataset": name,
             "category": frame["category"],
-            "images": [frame["image"]],
+            "images": frame["images"],
             "benign": frame["benign"],
             "malicious": frame["malicious"],
             "target": target,
@@ -186,7 +191,10 @@ def write_readme(names: list[str], out_dir: Path) -> None:
         "`images`, `benign`, `malicious`, `target`.",
         "",
     ]
-    (out_dir / "README.md").write_text("\n".join(lines), encoding="utf-8")
+    card = out_dir / "README.md"
+    temporary = card.with_suffix(".md.tmp")
+    temporary.write_text("\n".join(lines), encoding="utf-8")
+    temporary.replace(card)
 
 
 def build(directory: Path, limit, out_dir: Path, index_path: Path) -> list[dict]:
@@ -194,13 +202,28 @@ def build(directory: Path, limit, out_dir: Path, index_path: Path) -> list[dict]
     name = directory.resolve().name
     print(name)
     frames = load_frames(directory, name, limit)
-    entries = write_artifact(name, frames, out_dir)
+    config_path = directory / "generation_config.json"
+    config = json.loads(config_path.read_text()) if config_path.exists() else {}
+    attack, _ = split_artifact(name)
+    target = config.get("target_model") if attack == "robopair" else None
+    entries = write_artifact(name, frames, out_dir, target_override=target)
+    if config:
+        shutil.copyfile(config_path, out_dir / "data" / name / "generation_config.json")
+    failures = directory / "generation_failures.json"
+    if failures.exists():
+        shutil.copyfile(failures, out_dir / "data" / name / "generation_failures.json")
     index = merge_index(entries, name, index_path)
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "index.json").write_text(json.dumps(index, indent=1), encoding="utf-8")
+    artifact_index = out_dir / "index.json"
+    temporary = artifact_index.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(index, indent=1), encoding="utf-8")
+    temporary.replace(artifact_index)
     index_path.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(out_dir / "index.json", index_path)
+    if artifact_index.resolve() != index_path.resolve():
+        temporary = index_path.with_suffix(index_path.suffix + ".tmp")
+        shutil.copyfile(artifact_index, temporary)
+        temporary.replace(index_path)
     write_readme(sorted({entry["dataset"] for entry in index}), out_dir)
     return index
 
@@ -211,12 +234,15 @@ def main():
                         help="dataset directory in the raw layout; its name is the artifact name")
     parser.add_argument("--limit", type=int, default=None,
                         help="frames per source folder (smoke test)")
+    parser.add_argument("--output-dir", type=Path, default=OUT_DIR)
+    parser.add_argument("--index-path", type=Path, default=PACKAGE_INDEX,
+                        help="index to update; use a separate path for experiments")
     args = parser.parse_args()
 
-    index = build(args.directory, args.limit, OUT_DIR, PACKAGE_INDEX)
+    index = build(args.directory, args.limit, args.output_dir, args.index_path)
     names = {entry["dataset"] for entry in index}
-    print(f"{len(names)} artifacts, {len(index)} index rows -> {OUT_DIR.relative_to(ROOT)}; "
-          f"index copied to {PACKAGE_INDEX.relative_to(ROOT)}")
+    print(f"{len(names)} artifacts, {len(index)} index rows -> {args.output_dir}; "
+          f"index copied to {args.index_path}")
 
 
 if __name__ == "__main__":

@@ -1,14 +1,19 @@
 import io
 import json
 import sys
+import threading
+import time
 from pathlib import Path
 
+import pandas as pd
+import pytest
 from datasets import Dataset, Features, Image, List, Value
 from PIL import Image as PILImage
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from build_attacks import build_tree  # noqa: E402
+from build_attacks import build_tree, record_generation_config  # noqa: E402
+from build_artifacts import build  # noqa: E402
 from robobench.attacks import AttackResult  # noqa: E402
 from robobench.index import Index  # noqa: E402
 from robobench.scenes import Scenes  # noqa: E402
@@ -99,3 +104,85 @@ def test_rerun_skips_done_frames_and_limit(tmp_path):
     tree = build_tree(second, "DROID", scenes, index, tmp_path)
     assert second.calls == 1                           # only the frame the limit left out
     assert len(json.loads((tree / "DROID_instr.json").read_text())) == 3
+
+
+def test_parallel_builder_checkpoints_all_rows_and_resumes(tmp_path):
+    scenes, index = make_base("DROID", ["DROID"] * 8)
+    tree = build_tree(FakeAttack(), "DROID", scenes, index, tmp_path, workers=4)
+    entries = json.loads((tree / "DROID_instr.json").read_text())
+    assert len(entries) == 8
+    assert all(Path(path).exists() for path in entries)
+    attack = FakeAttack()
+    build_tree(attack, "DROID", scenes, index, tmp_path, workers=4)
+    assert attack.calls == 0
+
+
+def test_parallel_failure_checkpoints_other_inflight_results(tmp_path):
+    scenes, index = make_base("DROID", ["DROID"] * 3)
+    barrier = threading.Barrier(3)
+
+    class PartlyFailing(FakeAttack):
+        def attack(self, *, text=None, images=None, **extra):
+            barrier.wait(timeout=5)
+            if text == "malicious 0":
+                raise RuntimeError("failed attack")
+            time.sleep(0.05)
+            return AttackResult(malicious="generated")
+
+    with pytest.raises(RuntimeError, match="failed attack"):
+        build_tree(PartlyFailing(), "DROID", scenes, index, tmp_path, workers=3)
+    instr = tmp_path / "badrobot_cj_DROID/DROID_instr.json"
+    assert len(json.loads(instr.read_text())) == 2
+
+
+def test_content_filter_records_missing_attack_and_reason(tmp_path):
+    scenes, index = make_base("DROID", ["DROID"])
+
+    class Filtered(Exception):
+        code = "content_filter"
+
+    class FilteredAttack(FakeAttack):
+        def attack(self, **kwargs):
+            raise Filtered("provider blocked request")
+
+    tree = build_tree(FilteredAttack(), "DROID", scenes, index, tmp_path)
+    entries = json.loads((tree / "DROID_instr.json").read_text())
+    assert list(entries.values()) == [["", "benign 0"]]
+    failures = json.loads((tree / "generation_failures.json").read_text())
+    assert failures["DROID-0"]["reason"] == "provider_content_filter"
+
+
+def test_generation_config_prevents_mixing_deployments(tmp_path):
+    tree = tmp_path / "attack"
+    record_generation_config(tree, {"attack_model": "model-a", "provider": "azure"})
+    record_generation_config(tree, {"attack_model": "model-a", "provider": "azure"})
+    with pytest.raises(ValueError, match="refusing to mix"):
+        record_generation_config(tree, {"attack_model": "model-b", "provider": "azure"})
+
+
+def test_sequence_survives_attack_and_parquet_roundtrip(tmp_path):
+    scenes, index = make_base("DROID", ["DROID"])
+    rows = scenes.dataset.to_list()
+    rows[0]["images"] = [{"bytes": png_bytes(i), "path": f"f{i}.png"} for i in range(3)]
+    scenes = Scenes("DROID", Dataset.from_list(rows, features=scenes.dataset.features))
+
+    class SequenceAttack(FakeAttack):
+        def attack(self, *, text=None, images=None, **extra):
+            assert images == [png_bytes(i) for i in range(3)]
+            return AttackResult(malicious="rewritten", images=[png_bytes(4), *images[1:]])
+
+    tree = build_tree(SequenceAttack(), "DROID", scenes, index, tmp_path)
+    out_dir = tmp_path / "artifacts"
+    build(tree, None, out_dir, out_dir / "index.json")
+    table = pd.read_parquet(out_dir / "data/badrobot_cj_DROID/train.parquet")
+    assert [img["bytes"] for img in table.iloc[0]["images"]] == [png_bytes(i) for i in (4, 1, 2)]
+    assert table.iloc[0]["malicious"] == "rewritten"
+
+
+def test_rejects_attack_that_drops_frames(tmp_path):
+    scenes, index = make_base("DROID", ["DROID"])
+    rows = scenes.dataset.to_list()
+    rows[0]["images"] = [{"bytes": png_bytes(i), "path": f"f{i}.png"} for i in range(2)]
+    scenes = Scenes("DROID", Dataset.from_list(rows, features=scenes.dataset.features))
+    with pytest.raises(ValueError, match="changed the number of frames"):
+        build_tree(FakeAttack(images={"malicious 0": [png_bytes(0)]}), "DROID", scenes, index, tmp_path)

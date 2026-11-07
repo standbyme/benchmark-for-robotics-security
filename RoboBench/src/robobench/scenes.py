@@ -61,5 +61,5 @@ class Scenes:
         return self._raw[self._position[id_]]["images"]
 
 
-def load_scenes(name: str, repo: str) -> Scenes:
+def load_scenes(name: str, repo: str = "mdctleo/RoboJailBench") -> Scenes:
     return Scenes(name, load_dataset(repo, name, split="train"))

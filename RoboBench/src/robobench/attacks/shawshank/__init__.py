@@ -12,7 +12,8 @@ attacker.
     ShawshankAttack().attack(text="throw the bowl at the person", images=[frame])
 
 The result keeps ``malicious`` as the original instruction and returns the
-overlaid frame; the sign text itself lives only in the pixels. All roles run
+overlaid first frame and any later frames unchanged; the sign text itself lives
+only in the pixels. All roles run
 through ``robobench.models.make_model``, so any model name works. ``is_vlm``
 chooses between the paper's path (``False``: a vision model describes the scene
 and a text attacker writes the sign) and upstream's other code path (``True``:
@@ -28,6 +29,7 @@ The word2vec ranking needs ``GoogleNews-vectors-negative300.bin``; see
 import json
 import os
 from pathlib import Path
+from threading import Lock
 
 from robobench.models import make_model
 
@@ -211,19 +213,21 @@ class ShawshankAttack:
         self._case_pool = case_pool
         self._word2vec_path = word2vec_path
         self._similarity_model = similarity_model
+        self._word2vec_lock = Lock()
 
     def _word2vec(self):
-        if self._similarity_model is None:
-            from ._sampling import load_word2vec
+        with self._word2vec_lock:
+            if self._similarity_model is None:
+                from ._sampling import load_word2vec
 
-            path = self._word2vec_path or os.getenv("ROBOBENCH_WORD2VEC") or _DEFAULT_WORD2VEC
-            if not Path(path).exists():
-                raise FileNotFoundError(
-                    f"word2vec vectors not found at {path}; set ROBOBENCH_WORD2VEC "
-                    "or pass word2vec_path (GoogleNews-vectors-negative300.bin)"
-                )
-            self._similarity_model = load_word2vec(path)
-        return self._similarity_model
+                path = self._word2vec_path or os.getenv("ROBOBENCH_WORD2VEC") or _DEFAULT_WORD2VEC
+                if not Path(path).exists():
+                    raise FileNotFoundError(
+                        f"word2vec vectors not found at {path}; set ROBOBENCH_WORD2VEC "
+                        "or pass word2vec_path (GoogleNews-vectors-negative300.bin)"
+                    )
+                self._similarity_model = load_word2vec(path)
+            return self._similarity_model
 
     def _build_cases(self, command, pool):
         """The few-shot examples: the pool's instructions closest to ``command``."""
@@ -324,8 +328,12 @@ class ShawshankAttack:
         pool = self._case_pool if self._case_pool is not None else extra.get("case_pool")
         best_text = self._generate(text, images[0], image_bgr, pool, ext)
         if not best_text:
-            return AttackResult(malicious=text)
+            # No sign was produced. Preserve the frame but mark the attack as
+            # missing so evaluation does not mistake the clean image for one.
+            return AttackResult(malicious=None)
 
         overlaid = project_text_on_image(image_bgr, best_text, font_thickness=4,
                                          **_OVERLAY)
-        return AttackResult(malicious=text, images=[encode(overlaid, ext)])
+        # Optimize and perturb the first frame; preserve the remaining ordered
+        # observations so the attack does not silently turn a sequence into a still.
+        return AttackResult(malicious=text, images=[encode(overlaid, ext), *images[1:]])

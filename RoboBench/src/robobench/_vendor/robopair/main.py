@@ -63,6 +63,10 @@ def main(args):
         # Get adversarial prompts and improvement
        
         extracted_attack_list = attackLM.get_attack(convs_list, processed_response_list)
+        if any(attack is None for attack in extracted_attack_list):
+            print("RoboPAIR attacker did not return valid JSON after all retries; no attack generated.")
+            logger.finish()
+            return logger.jailbreak_prompt
         
         print("Finished getting adversarial prompts.")
 

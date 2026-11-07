@@ -1,12 +1,12 @@
 import openai
 import time
 from typing import Dict, List
-import os
+from robobench.providers import ProviderContentFiltered, openai_client, openai_model
 
 
 class LanguageModel:
     def __init__(self, model_name):
-        self.model_name = model_name
+        self.model_name = openai_model(model_name)
     
     def batched_generate(self, prompts_list, max_n_tokens, temperature):
         """Generates responses for a batch of prompts using a language model."""
@@ -20,7 +20,7 @@ class GPT(LanguageModel):
     API_TIMEOUT = 20
 
     def __init__(self, model_name, client=None):
-        self.model_name = model_name
+        self.model_name = openai_model(model_name)
         self.client = client
 
     def generate(self, conv: List[Dict], 
@@ -37,13 +37,11 @@ class GPT(LanguageModel):
             str: generated response
         '''
 
-        if self.client is None and os.getenv("OPENAI_API_KEY") is None:
-            raise ValueError("OPENAI_API_KEY is not set")
-
         output = self.API_ERROR_OUTPUT
+        last_error = None
+        client = self.client or openai_client()
         for _ in range(self.API_MAX_RETRY):
             try:
-                client = self.client or openai.OpenAI()
                 completion = client.chat.completions.create(
                     model=self.model_name,
                     messages=conv,
@@ -52,13 +50,26 @@ class GPT(LanguageModel):
                     top_p = top_p,
                     # request_timeout = self.API_TIMEOUT,
                 )
-                output = completion.choices[0].message.content
+                choice = completion.choices[0]
+                if getattr(choice, "finish_reason", None) == "content_filter":
+                    raise ProviderContentFiltered("Azure OpenAI filtered the response")
+                output = choice.message.content
                 break
+            except ProviderContentFiltered:
+                raise
+            except (openai.BadRequestError, openai.AuthenticationError,
+                    openai.NotFoundError, openai.PermissionDeniedError):
+                raise
             except Exception as e:
+                if getattr(e, "code", None) in {"insufficient_quota", "project_spend_limit_exceeded"}:
+                    raise RuntimeError(f"RoboPAIR model {self.model_name}: provider quota or spend limit exhausted") from e
+                last_error = e
                 print(e)
         
             time.sleep(1)
-        return output 
+        if output == self.API_ERROR_OUTPUT and last_error is not None:
+            raise RuntimeError(f"RoboPAIR model {self.model_name} failed after retries") from last_error
+        return output
     
     def batched_generate(self, 
                         convs_list: List[List[Dict]],
