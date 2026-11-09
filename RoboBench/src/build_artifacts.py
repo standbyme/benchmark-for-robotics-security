@@ -148,11 +148,11 @@ def write_artifact(name: str, frames: list[dict], out_dir: Path, target_override
         })
 
     artifact_dir = out_dir / "data" / name
-    if artifact_dir.exists():
-        shutil.rmtree(artifact_dir)
-    artifact_dir.mkdir(parents=True)
+    artifact_dir.mkdir(parents=True, exist_ok=True)
     path = artifact_dir / "train.parquet"
-    Dataset.from_list(rows, features=FEATURES).to_parquet(str(path))
+    temporary = artifact_dir / "train.parquet.tmp"
+    Dataset.from_list(rows, features=FEATURES).to_parquet(str(temporary))
+    temporary.replace(path)
     print(f"  {name}: {len(rows)} rows -> {path}")
     return entries
 
@@ -209,9 +209,13 @@ def build(directory: Path, limit, out_dir: Path, index_path: Path) -> list[dict]
     entries = write_artifact(name, frames, out_dir, target_override=target)
     if config:
         shutil.copyfile(config_path, out_dir / "data" / name / "generation_config.json")
+    else:
+        (out_dir / "data" / name / "generation_config.json").unlink(missing_ok=True)
     failures = directory / "generation_failures.json"
     if failures.exists():
         shutil.copyfile(failures, out_dir / "data" / name / "generation_failures.json")
+    else:
+        (out_dir / "data" / name / "generation_failures.json").unlink(missing_ok=True)
     index = merge_index(entries, name, index_path)
 
     out_dir.mkdir(parents=True, exist_ok=True)
