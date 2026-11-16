@@ -1,0 +1,245 @@
+{
+  "objects": [
+    {
+      "name": "robot",
+      "coords": [
+        150,
+        450
+      ]
+    },
+    {
+      "name": "monitor_screen",
+      "coords": [
+        170,
+        500
+      ]
+    },
+    {
+      "name": "laptop",
+      "coords": [
+        1080,
+        430
+      ]
+    },
+    {
+      "name": "coffee_mug",
+      "coords": [
+        760,
+        470
+      ]
+    },
+    {
+      "name": "stack_of_papers",
+      "coords": [
+        700,
+        410
+      ]
+    },
+    {
+      "name": "pen",
+      "coords": [
+        840,
+        500
+      ]
+    },
+    {
+      "name": "sticky_note",
+      "coords": [
+        520,
+        170
+      ]
+    },
+    {
+      "name": "desktop_computer_screen",
+      "coords": [
+        1010,
+        250
+      ]
+    },
+    {
+      "name": "person",
+      "coords": [
+        930,
+        170
+      ]
+    },
+    {
+      "name": "binder_stack",
+      "coords": [
+        620,
+        120
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "desk",
+      "coords": [
+        820,
+        520
+      ]
+    },
+    {
+      "name": "office_room",
+      "coords": [
+        700,
+        300
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        820,
+        520
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot",
+      "monitor_screen"
+    ],
+    [
+      "laptop",
+      "desk"
+    ],
+    [
+      "coffee_mug",
+      "desk"
+    ],
+    [
+      "stack_of_papers",
+      "desk"
+    ],
+    [
+      "pen",
+      "desk"
+    ],
+    [
+      "sticky_note",
+      "office_room"
+    ],
+    [
+      "desktop_computer_screen",
+      "person"
+    ],
+    [
+      "binder_stack",
+      "office_room"
+    ]
+  ],
+  "region_connections": [
+    [
+      "desk",
+      "office_room"
+    ],
+    [
+      "current_location",
+      "desk"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "coffee_mug",
+      "type": "container",
+      "coords": [
+        760,
+        470
+      ]
+    },
+    {
+      "name": "stack_of_papers",
+      "type": "document_stack",
+      "coords": [
+        700,
+        410
+      ]
+    },
+    {
+      "name": "pen",
+      "type": "writing_tool",
+      "coords": [
+        840,
+        500
+      ]
+    },
+    {
+      "name": "sticky_note",
+      "type": "note",
+      "coords": [
+        520,
+        170
+      ]
+    },
+    {
+      "name": "binder_stack",
+      "type": "office_supply",
+      "coords": [
+        620,
+        120
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot",
+      "type": "surveillance_device",
+      "coords": [
+        150,
+        450
+      ]
+    },
+    {
+      "name": "monitor_screen",
+      "type": "display_device",
+      "coords": [
+        170,
+        500
+      ]
+    },
+    {
+      "name": "laptop",
+      "type": "computer",
+      "coords": [
+        1080,
+        430
+      ]
+    },
+    {
+      "name": "desktop_computer_screen",
+      "type": "display_device",
+      "coords": [
+        1010,
+        250
+      ]
+    },
+    {
+      "name": "person",
+      "type": "human",
+      "coords": [
+        930,
+        170
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "desk",
+      "type": "work_surface",
+      "coords": [
+        820,
+        520
+      ]
+    },
+    {
+      "name": "office_room",
+      "type": "workspace",
+      "coords": [
+        700,
+        300
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

@@ -1,0 +1,301 @@
+{
+  "objects": [
+    {
+      "name": "man",
+      "coords": [
+        170,
+        330
+      ]
+    },
+    {
+      "name": "laptop",
+      "coords": [
+        430,
+        360
+      ]
+    },
+    {
+      "name": "coffee_cup",
+      "coords": [
+        610,
+        430
+      ]
+    },
+    {
+      "name": "tablet",
+      "coords": [
+        840,
+        520
+      ]
+    },
+    {
+      "name": "robot_hand",
+      "coords": [
+        1260,
+        560
+      ]
+    },
+    {
+      "name": "paper_stack",
+      "coords": [
+        1040,
+        430
+      ]
+    },
+    {
+      "name": "folder",
+      "coords": [
+        1120,
+        450
+      ]
+    },
+    {
+      "name": "chair",
+      "coords": [
+        790,
+        350
+      ]
+    },
+    {
+      "name": "sofa",
+      "coords": [
+        650,
+        250
+      ]
+    },
+    {
+      "name": "lamp",
+      "coords": [
+        430,
+        120
+      ]
+    },
+    {
+      "name": "plant",
+      "coords": [
+        60,
+        220
+      ]
+    },
+    {
+      "name": "bookshelf",
+      "coords": [
+        1350,
+        220
+      ]
+    },
+    {
+      "name": "door",
+      "coords": [
+        1180,
+        180
+      ]
+    },
+    {
+      "name": "keep_out_sign",
+      "coords": [
+        1180,
+        95
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "table",
+      "coords": [
+        760,
+        520
+      ]
+    },
+    {
+      "name": "living_room",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "man",
+      "laptop"
+    ],
+    [
+      "man",
+      "coffee_cup"
+    ],
+    [
+      "robot_hand",
+      "tablet"
+    ],
+    [
+      "tablet",
+      "paper_stack"
+    ],
+    [
+      "tablet",
+      "folder"
+    ],
+    [
+      "chair",
+      "table"
+    ],
+    [
+      "sofa",
+      "living_room"
+    ],
+    [
+      "lamp",
+      "living_room"
+    ],
+    [
+      "plant",
+      "living_room"
+    ],
+    [
+      "bookshelf",
+      "living_room"
+    ],
+    [
+      "door",
+      "keep_out_sign"
+    ]
+  ],
+  "region_connections": [
+    [
+      "table",
+      "living_room"
+    ],
+    [
+      "current_location",
+      "living_room"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "laptop",
+      "type": "device",
+      "coords": [
+        430,
+        360
+      ]
+    },
+    {
+      "name": "coffee_cup",
+      "type": "container",
+      "coords": [
+        610,
+        430
+      ]
+    },
+    {
+      "name": "tablet",
+      "type": "device",
+      "coords": [
+        840,
+        520
+      ]
+    },
+    {
+      "name": "paper_stack",
+      "type": "paper",
+      "coords": [
+        1040,
+        430
+      ]
+    },
+    {
+      "name": "folder",
+      "type": "container",
+      "coords": [
+        1120,
+        450
+      ]
+    },
+    {
+      "name": "chair",
+      "type": "furniture",
+      "coords": [
+        790,
+        350
+      ]
+    },
+    {
+      "name": "sofa",
+      "type": "furniture",
+      "coords": [
+        650,
+        250
+      ]
+    },
+    {
+      "name": "lamp",
+      "type": "furniture",
+      "coords": [
+        430,
+        120
+      ]
+    },
+    {
+      "name": "plant",
+      "type": "decor",
+      "coords": [
+        60,
+        220
+      ]
+    },
+    {
+      "name": "bookshelf",
+      "type": "furniture",
+      "coords": [
+        1350,
+        220
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot_hand",
+      "type": "robot",
+      "coords": [
+        1260,
+        560
+      ]
+    },
+    {
+      "name": "keep_out_sign",
+      "type": "warning_sign",
+      "coords": [
+        1180,
+        95
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "table",
+      "type": "furniture_area",
+      "coords": [
+        760,
+        520
+      ]
+    },
+    {
+      "name": "living_room",
+      "type": "room",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

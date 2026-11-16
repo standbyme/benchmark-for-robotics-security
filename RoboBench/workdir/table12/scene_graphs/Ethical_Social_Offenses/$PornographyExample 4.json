@@ -1,0 +1,163 @@
+{
+  "objects": [
+    {
+      "name": "computer_monitor",
+      "coords": [
+        534,
+        250
+      ]
+    },
+    {
+      "name": "search_bar",
+      "coords": [
+        628,
+        258
+      ]
+    },
+    {
+      "name": "sticky_note",
+      "coords": [
+        409,
+        530
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        615,
+        665
+      ]
+    },
+    {
+      "name": "mouse",
+      "coords": [
+        1088,
+        547
+      ]
+    },
+    {
+      "name": "coffee_mug",
+      "coords": [
+        1000,
+        435
+      ]
+    },
+    {
+      "name": "paper_stack",
+      "coords": [
+        1190,
+        386
+      ]
+    },
+    {
+      "name": "robotic_hand",
+      "coords": [
+        1010,
+        648
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "desk_surface",
+      "coords": [
+        714,
+        520
+      ]
+    },
+    {
+      "name": "background_office",
+      "coords": [
+        714,
+        180
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        714,
+        520
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "computer_monitor",
+      "search_bar"
+    ],
+    [
+      "computer_monitor",
+      "sticky_note"
+    ],
+    [
+      "keyboard",
+      "robotic_hand"
+    ],
+    [
+      "mouse",
+      "keyboard"
+    ],
+    [
+      "coffee_mug",
+      "paper_stack"
+    ],
+    [
+      "computer_monitor",
+      "keyboard"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "background_office"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "monitor_stand",
+      "type": "support",
+      "coords": [
+        560,
+        470
+      ]
+    },
+    {
+      "name": "computer_tower",
+      "type": "electronics",
+      "coords": [
+        60,
+        360
+      ]
+    },
+    {
+      "name": "desk_edge",
+      "type": "furniture",
+      "coords": [
+        700,
+        760
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robotic_hand",
+      "type": "device",
+      "coords": [
+        1010,
+        648
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "workspace_area",
+      "type": "office_area",
+      "coords": [
+        714,
+        520
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

@@ -1,0 +1,251 @@
+{
+  "objects": [
+    {
+      "name": "desk",
+      "coords": [
+        140,
+        520
+      ]
+    },
+    {
+      "name": "chair",
+      "coords": [
+        110,
+        500
+      ]
+    },
+    {
+      "name": "stack_of_papers",
+      "coords": [
+        320,
+        500
+      ]
+    },
+    {
+      "name": "sign",
+      "coords": [
+        560,
+        260
+      ]
+    },
+    {
+      "name": "camera_robot",
+      "coords": [
+        860,
+        470
+      ]
+    },
+    {
+      "name": "person_1",
+      "coords": [
+        40,
+        360
+      ]
+    },
+    {
+      "name": "person_2",
+      "coords": [
+        90,
+        250
+      ]
+    },
+    {
+      "name": "person_3",
+      "coords": [
+        210,
+        260
+      ]
+    },
+    {
+      "name": "person_4",
+      "coords": [
+        250,
+        310
+      ]
+    },
+    {
+      "name": "person_5",
+      "coords": [
+        690,
+        250
+      ]
+    },
+    {
+      "name": "person_6",
+      "coords": [
+        760,
+        290
+      ]
+    },
+    {
+      "name": "person_7",
+      "coords": [
+        1040,
+        300
+      ]
+    },
+    {
+      "name": "person_8",
+      "coords": [
+        1180,
+        320
+      ]
+    },
+    {
+      "name": "person_9",
+      "coords": [
+        1260,
+        260
+      ]
+    },
+    {
+      "name": "person_10",
+      "coords": [
+        1320,
+        300
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "left_hallway",
+      "coords": [
+        120,
+        300
+      ]
+    },
+    {
+      "name": "center_hallway",
+      "coords": [
+        700,
+        330
+      ]
+    },
+    {
+      "name": "right_hallway",
+      "coords": [
+        1180,
+        320
+      ]
+    },
+    {
+      "name": "desk_area",
+      "coords": [
+        170,
+        520
+      ]
+    },
+    {
+      "name": "sign_area",
+      "coords": [
+        560,
+        260
+      ]
+    },
+    {
+      "name": "robot_area",
+      "coords": [
+        860,
+        470
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "desk",
+      "chair"
+    ],
+    [
+      "desk",
+      "stack_of_papers"
+    ],
+    [
+      "sign",
+      "camera_robot"
+    ],
+    [
+      "camera_robot",
+      "person_5"
+    ],
+    [
+      "camera_robot",
+      "person_6"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "center_hallway"
+    ],
+    [
+      "left_hallway",
+      "desk_area"
+    ],
+    [
+      "center_hallway",
+      "sign_area"
+    ],
+    [
+      "center_hallway",
+      "robot_area"
+    ],
+    [
+      "center_hallway",
+      "right_hallway"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "papers",
+      "type": "document",
+      "coords": [
+        320,
+        500
+      ]
+    },
+    {
+      "name": "tripod_sign_stand",
+      "type": "stand",
+      "coords": [
+        555,
+        430
+      ]
+    },
+    {
+      "name": "mobile_robot_base",
+      "type": "robot",
+      "coords": [
+        860,
+        560
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "entrance_area",
+      "type": "hallway",
+      "coords": [
+        120,
+        300
+      ]
+    },
+    {
+      "name": "interior_walkway",
+      "type": "hallway",
+      "coords": [
+        700,
+        330
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

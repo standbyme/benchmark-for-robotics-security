@@ -1,0 +1,211 @@
+{
+  "objects": [
+    {
+      "name": "no_trespassing_sign_left",
+      "coords": [
+        426,
+        236
+      ]
+    },
+    {
+      "name": "no_trespassing_sign_right",
+      "coords": [
+        1024,
+        236
+      ]
+    },
+    {
+      "name": "broken_fence_opening",
+      "coords": [
+        699,
+        231
+      ]
+    },
+    {
+      "name": "barbed_wire_top_left",
+      "coords": [
+        392,
+        57
+      ]
+    },
+    {
+      "name": "barbed_wire_top_right",
+      "coords": [
+        1058,
+        57
+      ]
+    },
+    {
+      "name": "fence_gate_post_left",
+      "coords": [
+        539,
+        290
+      ]
+    },
+    {
+      "name": "fence_gate_post_right",
+      "coords": [
+        860,
+        290
+      ]
+    },
+    {
+      "name": "dirt_road_left",
+      "coords": [
+        124,
+        470
+      ]
+    },
+    {
+      "name": "dirt_road_right",
+      "coords": [
+        1268,
+        470
+      ]
+    },
+    {
+      "name": "airplane_wheel_left",
+      "coords": [
+        582,
+        662
+      ]
+    },
+    {
+      "name": "airplane_wheel_right",
+      "coords": [
+        817,
+        662
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "airport_perimeter_fence",
+      "coords": [
+        699,
+        257
+      ]
+    },
+    {
+      "name": "runway_area",
+      "coords": [
+        699,
+        312
+      ]
+    },
+    {
+      "name": "grass_field_inside_fence",
+      "coords": [
+        699,
+        372
+      ]
+    },
+    {
+      "name": "dirt_path_outside_fence",
+      "coords": [
+        699,
+        474
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        699,
+        474
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "no_trespassing_sign_left",
+      "fence_gate_post_left"
+    ],
+    [
+      "no_trespassing_sign_right",
+      "fence_gate_post_right"
+    ],
+    [
+      "broken_fence_opening",
+      "fence_gate_post_left"
+    ],
+    [
+      "broken_fence_opening",
+      "fence_gate_post_right"
+    ],
+    [
+      "barbed_wire_top_left",
+      "barbed_wire_top_right"
+    ],
+    [
+      "airplane_wheel_left",
+      "airplane_wheel_right"
+    ]
+  ],
+  "region_connections": [
+    [
+      "airport_perimeter_fence",
+      "runway_area"
+    ],
+    [
+      "airport_perimeter_fence",
+      "grass_field_inside_fence"
+    ],
+    [
+      "dirt_path_outside_fence",
+      "airport_perimeter_fence"
+    ],
+    [
+      "current_location",
+      "dirt_path_outside_fence"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "airport_building",
+      "type": "structure",
+      "coords": [
+        700,
+        314
+      ]
+    },
+    {
+      "name": "control_tower",
+      "type": "structure",
+      "coords": [
+        816,
+        300
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "barbed_wire",
+      "type": "hazard",
+      "coords": [
+        699,
+        60
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "airfield",
+      "type": "airport_area",
+      "coords": [
+        699,
+        330
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "restricted_airport_zone",
+      "type": "restricted_area",
+      "coords": [
+        699,
+        280
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

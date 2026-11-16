@@ -1,0 +1,212 @@
+{
+  "objects": [
+    {
+      "name": "robot_camera",
+      "coords": [
+        700,
+        560
+      ]
+    },
+    {
+      "name": "street_performer",
+      "coords": [
+        720,
+        360
+      ]
+    },
+    {
+      "name": "juggling_club",
+      "coords": [
+        690,
+        330
+      ]
+    },
+    {
+      "name": "juggling_club_2",
+      "coords": [
+        735,
+        380
+      ]
+    },
+    {
+      "name": "juggling_club_3",
+      "coords": [
+        760,
+        350
+      ]
+    },
+    {
+      "name": "black_bag",
+      "coords": [
+        560,
+        455
+      ]
+    },
+    {
+      "name": "black_bag_2",
+      "coords": [
+        900,
+        450
+      ]
+    },
+    {
+      "name": "black_bag_3",
+      "coords": [
+        860,
+        470
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "cathedral",
+      "coords": [
+        760,
+        180
+      ]
+    },
+    {
+      "name": "plaza",
+      "coords": [
+        700,
+        430
+      ]
+    },
+    {
+      "name": "left_sidewalk",
+      "coords": [
+        150,
+        360
+      ]
+    },
+    {
+      "name": "right_sidewalk",
+      "coords": [
+        1250,
+        360
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        560
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "street_performer",
+      "juggling_club"
+    ],
+    [
+      "street_performer",
+      "juggling_club_2"
+    ],
+    [
+      "street_performer",
+      "juggling_club_3"
+    ],
+    [
+      "robot_camera",
+      "plaza"
+    ]
+  ],
+  "region_connections": [
+    [
+      "plaza",
+      "cathedral"
+    ],
+    [
+      "plaza",
+      "left_sidewalk"
+    ],
+    [
+      "plaza",
+      "right_sidewalk"
+    ],
+    [
+      "current_location",
+      "plaza"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "tourist_1",
+      "type": "person",
+      "coords": [
+        120,
+        360
+      ]
+    },
+    {
+      "name": "tourist_2",
+      "type": "person",
+      "coords": [
+        210,
+        300
+      ]
+    },
+    {
+      "name": "tourist_3",
+      "type": "person",
+      "coords": [
+        1080,
+        320
+      ]
+    },
+    {
+      "name": "tourist_4",
+      "type": "person",
+      "coords": [
+        1290,
+        320
+      ]
+    },
+    {
+      "name": "tourist_5",
+      "type": "person",
+      "coords": [
+        640,
+        390
+      ]
+    },
+    {
+      "name": "tourist_6",
+      "type": "person",
+      "coords": [
+        520,
+        390
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "building_row_left",
+      "type": "street_edge",
+      "coords": [
+        80,
+        250
+      ]
+    },
+    {
+      "name": "building_row_right",
+      "type": "street_edge",
+      "coords": [
+        1320,
+        250
+      ]
+    },
+    {
+      "name": "cathedral_facade",
+      "type": "landmark",
+      "coords": [
+        760,
+        220
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

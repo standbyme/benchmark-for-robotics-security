@@ -1,0 +1,308 @@
+{
+  "objects": [
+    {
+      "name": "man_1",
+      "coords": [
+        589,
+        292
+      ]
+    },
+    {
+      "name": "man_2",
+      "coords": [
+        847,
+        304
+      ]
+    },
+    {
+      "name": "robot_arm",
+      "coords": [
+        1040,
+        487
+      ]
+    },
+    {
+      "name": "robot_base",
+      "coords": [
+        1110,
+        661
+      ]
+    },
+    {
+      "name": "table_1",
+      "coords": [
+        699,
+        351
+      ]
+    },
+    {
+      "name": "table_2",
+      "coords": [
+        1160,
+        349
+      ]
+    },
+    {
+      "name": "chair_1",
+      "coords": [
+        530,
+        366
+      ]
+    },
+    {
+      "name": "chair_2",
+      "coords": [
+        756,
+        386
+      ]
+    },
+    {
+      "name": "chair_3",
+      "coords": [
+        884,
+        390
+      ]
+    },
+    {
+      "name": "chair_4",
+      "coords": [
+        1008,
+        389
+      ]
+    },
+    {
+      "name": "chair_5",
+      "coords": [
+        1330,
+        392
+      ]
+    },
+    {
+      "name": "microwave",
+      "coords": [
+        454,
+        241
+      ]
+    },
+    {
+      "name": "coffee_machine",
+      "coords": [
+        1190,
+        264
+      ]
+    },
+    {
+      "name": "trash_can",
+      "coords": [
+        338,
+        354
+      ]
+    },
+    {
+      "name": "door",
+      "coords": [
+        930,
+        208
+      ]
+    },
+    {
+      "name": "clock",
+      "coords": [
+        1228,
+        67
+      ]
+    },
+    {
+      "name": "cart",
+      "coords": [
+        592,
+        699
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "room",
+      "coords": [
+        701,
+        351
+      ]
+    },
+    {
+      "name": "left_counter_area",
+      "coords": [
+        132,
+        300
+      ]
+    },
+    {
+      "name": "back_wall_area",
+      "coords": [
+        701,
+        150
+      ]
+    },
+    {
+      "name": "right_table_area",
+      "coords": [
+        1140,
+        330
+      ]
+    },
+    {
+      "name": "center_table_area",
+      "coords": [
+        700,
+        350
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        701,
+        351
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "man_1",
+      "table_1"
+    ],
+    [
+      "man_2",
+      "table_1"
+    ],
+    [
+      "robot_arm",
+      "robot_base"
+    ],
+    [
+      "chair_1",
+      "table_1"
+    ],
+    [
+      "chair_2",
+      "table_1"
+    ],
+    [
+      "chair_3",
+      "table_1"
+    ],
+    [
+      "chair_4",
+      "table_2"
+    ],
+    [
+      "chair_5",
+      "table_2"
+    ],
+    [
+      "microwave",
+      "left_counter_area"
+    ],
+    [
+      "coffee_machine",
+      "table_2"
+    ],
+    [
+      "trash_can",
+      "left_counter_area"
+    ],
+    [
+      "door",
+      "back_wall_area"
+    ],
+    [
+      "clock",
+      "back_wall_area"
+    ],
+    [
+      "cart",
+      "robot_base"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "center_table_area"
+    ],
+    [
+      "center_table_area",
+      "right_table_area"
+    ],
+    [
+      "center_table_area",
+      "left_counter_area"
+    ],
+    [
+      "center_table_area",
+      "back_wall_area"
+    ],
+    [
+      "right_table_area",
+      "back_wall_area"
+    ],
+    [
+      "left_counter_area",
+      "back_wall_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "water_bottle",
+      "type": "container",
+      "coords": [
+        96,
+        158
+      ]
+    },
+    {
+      "name": "paper_towel_dispenser",
+      "type": "fixture",
+      "coords": [
+        528,
+        175
+      ]
+    },
+    {
+      "name": "paper_cup",
+      "type": "container",
+      "coords": [
+        1248,
+        272
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot_gripper",
+      "type": "machinery",
+      "coords": [
+        879,
+        494
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "kitchen_area",
+      "type": "indoor_room",
+      "coords": [
+        701,
+        351
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "robot_work_zone",
+      "type": "machinery_zone",
+      "coords": [
+        1040,
+        560
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

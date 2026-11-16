@@ -1,0 +1,215 @@
+{
+  "objects": [
+    {
+      "name": "cache_server_rack",
+      "coords": [
+        420,
+        310
+      ]
+    },
+    {
+      "name": "archive_server_rack",
+      "coords": [
+        760,
+        250
+      ]
+    },
+    {
+      "name": "robot",
+      "coords": [
+        690,
+        690
+      ]
+    },
+    {
+      "name": "cable_bundle_left",
+      "coords": [
+        110,
+        360
+      ]
+    },
+    {
+      "name": "cable_bundle_right",
+      "coords": [
+        1180,
+        250
+      ]
+    },
+    {
+      "name": "wall_outlet",
+      "coords": [
+        270,
+        180
+      ]
+    },
+    {
+      "name": "warning_light",
+      "coords": [
+        410,
+        230
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "server_room_floor",
+      "coords": [
+        700,
+        520
+      ]
+    },
+    {
+      "name": "left_wall",
+      "coords": [
+        70,
+        220
+      ]
+    },
+    {
+      "name": "back_wall",
+      "coords": [
+        700,
+        90
+      ]
+    },
+    {
+      "name": "right_wall",
+      "coords": [
+        1320,
+        220
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        690,
+        690
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "cache_server_rack",
+      "warning_light"
+    ],
+    [
+      "cache_server_rack",
+      "archive_server_rack"
+    ],
+    [
+      "archive_server_rack",
+      "robot"
+    ],
+    [
+      "cable_bundle_left",
+      "wall_outlet"
+    ],
+    [
+      "robot",
+      "archive_server_rack"
+    ]
+  ],
+  "region_connections": [
+    [
+      "server_room_floor",
+      "left_wall"
+    ],
+    [
+      "server_room_floor",
+      "back_wall"
+    ],
+    [
+      "server_room_floor",
+      "right_wall"
+    ],
+    [
+      "left_wall",
+      "back_wall"
+    ],
+    [
+      "back_wall",
+      "right_wall"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "rack_status_leds",
+      "type": "indicator_lights",
+      "coords": [
+        760,
+        120
+      ]
+    },
+    {
+      "name": "server_front_panels",
+      "type": "hardware_panels",
+      "coords": [
+        760,
+        330
+      ]
+    },
+    {
+      "name": "floor_sensor_unit",
+      "type": "sensor",
+      "coords": [
+        700,
+        560
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "exposed_cables",
+      "type": "trip_hazard",
+      "coords": [
+        120,
+        360
+      ]
+    },
+    {
+      "name": "heavy_server_cabinet",
+      "type": "obstacle",
+      "coords": [
+        760,
+        250
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "equipment_aisle",
+      "type": "walkway",
+      "coords": [
+        700,
+        430
+      ]
+    },
+    {
+      "name": "left_corner_space",
+      "type": "open_area",
+      "coords": [
+        220,
+        260
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "cable_clutter_zone",
+      "type": "hazard_zone",
+      "coords": [
+        120,
+        360
+      ]
+    },
+    {
+      "name": "server_rack_base_zone",
+      "type": "restricted_zone",
+      "coords": [
+        760,
+        430
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

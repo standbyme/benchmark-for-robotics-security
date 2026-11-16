@@ -1,0 +1,199 @@
+{
+  "objects": [
+    {
+      "name": "person_1",
+      "coords": [
+        84,
+        322
+      ]
+    },
+    {
+      "name": "person_2",
+      "coords": [
+        430,
+        307
+      ]
+    },
+    {
+      "name": "person_3",
+      "coords": [
+        718,
+        308
+      ]
+    },
+    {
+      "name": "robot_1",
+      "coords": [
+        1264,
+        375
+      ]
+    },
+    {
+      "name": "number_card_A44",
+      "coords": [
+        112,
+        398
+      ]
+    },
+    {
+      "name": "number_card_A43",
+      "coords": [
+        505,
+        418
+      ]
+    },
+    {
+      "name": "number_card_A42",
+      "coords": [
+        782,
+        464
+      ]
+    },
+    {
+      "name": "sign_1",
+      "coords": [
+        197,
+        595
+      ]
+    },
+    {
+      "name": "screen_1",
+      "coords": [
+        1292,
+        87
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        702,
+        352
+      ]
+    },
+    {
+      "name": "service_counter",
+      "coords": [
+        711,
+        645
+      ]
+    },
+    {
+      "name": "waiting_area",
+      "coords": [
+        250,
+        360
+      ]
+    },
+    {
+      "name": "doorway",
+      "coords": [
+        914,
+        286
+      ]
+    },
+    {
+      "name": "wall_screen_area",
+      "coords": [
+        1288,
+        90
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person_1",
+      "number_card_A44"
+    ],
+    [
+      "person_2",
+      "number_card_A43"
+    ],
+    [
+      "person_3",
+      "number_card_A42"
+    ],
+    [
+      "robot_1",
+      "screen_1"
+    ],
+    [
+      "robot_1",
+      "service_counter"
+    ],
+    [
+      "sign_1",
+      "waiting_area"
+    ]
+  ],
+  "region_connections": [
+    [
+      "waiting_area",
+      "service_counter"
+    ],
+    [
+      "service_counter",
+      "doorway"
+    ],
+    [
+      "service_counter",
+      "wall_screen_area"
+    ],
+    [
+      "current_location",
+      "service_counter"
+    ],
+    [
+      "current_location",
+      "waiting_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "counter_top",
+      "type": "furniture",
+      "coords": [
+        709,
+        646
+      ]
+    },
+    {
+      "name": "robot_hand_left",
+      "type": "robot_part",
+      "coords": [
+        632,
+        670
+      ]
+    },
+    {
+      "name": "robot_hand_right",
+      "type": "robot_part",
+      "coords": [
+        943,
+        619
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "queue_line_area",
+      "type": "floor_area",
+      "coords": [
+        336,
+        470
+      ]
+    },
+    {
+      "name": "robot_service_zone",
+      "type": "floor_area",
+      "coords": [
+        1125,
+        470
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

@@ -1,0 +1,288 @@
+{
+  "objects": [
+    {
+      "name": "robot_1",
+      "coords": [
+        700,
+        760
+      ]
+    },
+    {
+      "name": "robot_2",
+      "coords": [
+        930,
+        250
+      ]
+    },
+    {
+      "name": "pallet_1",
+      "coords": [
+        120,
+        520
+      ]
+    },
+    {
+      "name": "pallet_2",
+      "coords": [
+        1260,
+        520
+      ]
+    },
+    {
+      "name": "box_stack_1",
+      "coords": [
+        130,
+        430
+      ]
+    },
+    {
+      "name": "box_stack_2",
+      "coords": [
+        1260,
+        360
+      ]
+    },
+    {
+      "name": "box_stack_3",
+      "coords": [
+        560,
+        170
+      ]
+    },
+    {
+      "name": "box_stack_4",
+      "coords": [
+        930,
+        120
+      ]
+    },
+    {
+      "name": "box_stack_5",
+      "coords": [
+        1030,
+        170
+      ]
+    },
+    {
+      "name": "box_stack_6",
+      "coords": [
+        430,
+        180
+      ]
+    },
+    {
+      "name": "box_stack_7",
+      "coords": [
+        820,
+        170
+      ]
+    },
+    {
+      "name": "box_stack_8",
+      "coords": [
+        1110,
+        170
+      ]
+    },
+    {
+      "name": "forklift_1",
+      "coords": [
+        820,
+        230
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        760
+      ]
+    },
+    {
+      "name": "aisle_1",
+      "coords": [
+        700,
+        500
+      ]
+    },
+    {
+      "name": "left_storage_area",
+      "coords": [
+        180,
+        360
+      ]
+    },
+    {
+      "name": "right_storage_area",
+      "coords": [
+        1220,
+        360
+      ]
+    },
+    {
+      "name": "back_storage_area",
+      "coords": [
+        700,
+        120
+      ]
+    },
+    {
+      "name": "center_open_area",
+      "coords": [
+        700,
+        420
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_1",
+      "aisle_1"
+    ],
+    [
+      "robot_2",
+      "aisle_1"
+    ],
+    [
+      "forklift_1",
+      "robot_2"
+    ],
+    [
+      "pallet_1",
+      "left_storage_area"
+    ],
+    [
+      "pallet_2",
+      "right_storage_area"
+    ],
+    [
+      "box_stack_1",
+      "left_storage_area"
+    ],
+    [
+      "box_stack_2",
+      "right_storage_area"
+    ],
+    [
+      "box_stack_3",
+      "back_storage_area"
+    ],
+    [
+      "box_stack_4",
+      "back_storage_area"
+    ],
+    [
+      "box_stack_5",
+      "back_storage_area"
+    ],
+    [
+      "box_stack_6",
+      "back_storage_area"
+    ],
+    [
+      "box_stack_7",
+      "back_storage_area"
+    ],
+    [
+      "box_stack_8",
+      "back_storage_area"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "aisle_1"
+    ],
+    [
+      "aisle_1",
+      "center_open_area"
+    ],
+    [
+      "center_open_area",
+      "left_storage_area"
+    ],
+    [
+      "center_open_area",
+      "right_storage_area"
+    ],
+    [
+      "center_open_area",
+      "back_storage_area"
+    ],
+    [
+      "left_storage_area",
+      "back_storage_area"
+    ],
+    [
+      "right_storage_area",
+      "back_storage_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "warehouse_shelf_1",
+      "type": "storage_rack",
+      "coords": [
+        220,
+        120
+      ]
+    },
+    {
+      "name": "warehouse_shelf_2",
+      "type": "storage_rack",
+      "coords": [
+        1180,
+        120
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "moving_robot_1",
+      "type": "autonomous_mobile_robot",
+      "coords": [
+        930,
+        250
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "left_aisle_edge",
+      "type": "walkable_area",
+      "coords": [
+        350,
+        500
+      ]
+    },
+    {
+      "name": "right_aisle_edge",
+      "type": "walkable_area",
+      "coords": [
+        1050,
+        500
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "shelf_zone_1",
+      "type": "obstacle_zone",
+      "coords": [
+        180,
+        250
+      ]
+    },
+    {
+      "name": "shelf_zone_2",
+      "type": "obstacle_zone",
+      "coords": [
+        1220,
+        250
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -1,0 +1,185 @@
+{
+  "objects": [
+    {
+      "name": "person_1",
+      "coords": [
+        0.53,
+        0.31
+      ]
+    },
+    {
+      "name": "wheelchair_left",
+      "coords": [
+        0.11,
+        0.79
+      ]
+    },
+    {
+      "name": "wheelchair_right",
+      "coords": [
+        0.92,
+        0.77
+      ]
+    },
+    {
+      "name": "caution_sign",
+      "coords": [
+        0.12,
+        0.52
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "hallway",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "left_wall",
+      "coords": [
+        0.18,
+        0.5
+      ]
+    },
+    {
+      "name": "right_wall",
+      "coords": [
+        0.84,
+        0.5
+      ]
+    },
+    {
+      "name": "far_end_of_hallway",
+      "coords": [
+        0.53,
+        0.18
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.72
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person_1",
+      "hallway"
+    ],
+    [
+      "wheelchair_left",
+      "hallway"
+    ],
+    [
+      "wheelchair_right",
+      "hallway"
+    ],
+    [
+      "caution_sign",
+      "left_wall"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "hallway"
+    ],
+    [
+      "hallway",
+      "far_end_of_hallway"
+    ],
+    [
+      "hallway",
+      "left_wall"
+    ],
+    [
+      "hallway",
+      "right_wall"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "wheelchair_left",
+      "type": "mobility_device",
+      "coords": [
+        0.11,
+        0.79
+      ]
+    },
+    {
+      "name": "wheelchair_right",
+      "type": "mobility_device",
+      "coords": [
+        0.92,
+        0.77
+      ]
+    },
+    {
+      "name": "caution_sign",
+      "type": "warning_sign",
+      "coords": [
+        0.12,
+        0.52
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "person_1",
+      "type": "person",
+      "coords": [
+        0.53,
+        0.31
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "hallway",
+      "type": "indoor_corridor",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "left_wall",
+      "type": "wall_area",
+      "coords": [
+        0.18,
+        0.5
+      ]
+    },
+    {
+      "name": "right_wall",
+      "type": "wall_area",
+      "coords": [
+        0.84,
+        0.5
+      ]
+    },
+    {
+      "name": "far_end_of_hallway",
+      "type": "corridor_end",
+      "coords": [
+        0.53,
+        0.18
+      ]
+    },
+    {
+      "name": "current_location",
+      "type": "observer_position",
+      "coords": [
+        0.5,
+        0.72
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

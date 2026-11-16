@@ -1,0 +1,371 @@
+{
+  "objects": [
+    {
+      "name": "service_robot",
+      "coords": [
+        350,
+        520
+      ]
+    },
+    {
+      "name": "kiosk_screen",
+      "coords": [
+        930,
+        420
+      ]
+    },
+    {
+      "name": "kiosk_base",
+      "coords": [
+        980,
+        650
+      ]
+    },
+    {
+      "name": "glass_door_left",
+      "coords": [
+        560,
+        250
+      ]
+    },
+    {
+      "name": "glass_door_center",
+      "coords": [
+        760,
+        250
+      ]
+    },
+    {
+      "name": "glass_door_right",
+      "coords": [
+        980,
+        250
+      ]
+    },
+    {
+      "name": "man_left_front",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "woman_center_front",
+      "coords": [
+        850,
+        300
+      ]
+    },
+    {
+      "name": "man_right_front",
+      "coords": [
+        1080,
+        320
+      ]
+    },
+    {
+      "name": "woman_right_mid",
+      "coords": [
+        1180,
+        360
+      ]
+    },
+    {
+      "name": "man_far_right",
+      "coords": [
+        1290,
+        330
+      ]
+    },
+    {
+      "name": "man_far_left",
+      "coords": [
+        650,
+        360
+      ]
+    },
+    {
+      "name": "person_partial_right_edge",
+      "coords": [
+        1360,
+        260
+      ]
+    },
+    {
+      "name": "luggage_handle",
+      "coords": [
+        1020,
+        760
+      ]
+    },
+    {
+      "name": "floor_mat",
+      "coords": [
+        760,
+        520
+      ]
+    },
+    {
+      "name": "wall_outlet",
+      "coords": [
+        60,
+        690
+      ]
+    },
+    {
+      "name": "fire_alarm",
+      "coords": [
+        410,
+        260
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "lobby_floor",
+      "coords": [
+        700,
+        650
+      ]
+    },
+    {
+      "name": "entrance_area",
+      "coords": [
+        760,
+        300
+      ]
+    },
+    {
+      "name": "left_wall_area",
+      "coords": [
+        120,
+        350
+      ]
+    },
+    {
+      "name": "right_entry_area",
+      "coords": [
+        1210,
+        360
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        760,
+        520
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "service_robot",
+      "lobby_floor"
+    ],
+    [
+      "kiosk_screen",
+      "kiosk_base"
+    ],
+    [
+      "man_left_front",
+      "floor_mat"
+    ],
+    [
+      "woman_center_front",
+      "floor_mat"
+    ],
+    [
+      "man_right_front",
+      "floor_mat"
+    ],
+    [
+      "woman_right_mid",
+      "floor_mat"
+    ],
+    [
+      "man_far_right",
+      "floor_mat"
+    ],
+    [
+      "man_far_left",
+      "floor_mat"
+    ],
+    [
+      "person_partial_right_edge",
+      "right_entry_area"
+    ],
+    [
+      "glass_door_left",
+      "entrance_area"
+    ],
+    [
+      "glass_door_center",
+      "entrance_area"
+    ],
+    [
+      "glass_door_right",
+      "entrance_area"
+    ],
+    [
+      "luggage_handle",
+      "kiosk_base"
+    ],
+    [
+      "wall_outlet",
+      "left_wall_area"
+    ],
+    [
+      "fire_alarm",
+      "left_wall_area"
+    ]
+  ],
+  "region_connections": [
+    [
+      "lobby_floor",
+      "entrance_area"
+    ],
+    [
+      "lobby_floor",
+      "left_wall_area"
+    ],
+    [
+      "lobby_floor",
+      "right_entry_area"
+    ],
+    [
+      "current_location",
+      "lobby_floor"
+    ],
+    [
+      "current_location",
+      "entrance_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "service_robot",
+      "type": "robot",
+      "coords": [
+        350,
+        520
+      ]
+    },
+    {
+      "name": "kiosk_screen",
+      "type": "screen",
+      "coords": [
+        930,
+        420
+      ]
+    },
+    {
+      "name": "kiosk_base",
+      "type": "stand",
+      "coords": [
+        980,
+        650
+      ]
+    },
+    {
+      "name": "glass_door_left",
+      "type": "door",
+      "coords": [
+        560,
+        250
+      ]
+    },
+    {
+      "name": "glass_door_center",
+      "type": "door",
+      "coords": [
+        760,
+        250
+      ]
+    },
+    {
+      "name": "glass_door_right",
+      "type": "door",
+      "coords": [
+        980,
+        250
+      ]
+    },
+    {
+      "name": "luggage_handle",
+      "type": "handle",
+      "coords": [
+        1020,
+        760
+      ]
+    },
+    {
+      "name": "floor_mat",
+      "type": "mat",
+      "coords": [
+        760,
+        520
+      ]
+    },
+    {
+      "name": "wall_outlet",
+      "type": "outlet",
+      "coords": [
+        60,
+        690
+      ]
+    },
+    {
+      "name": "fire_alarm",
+      "type": "alarm",
+      "coords": [
+        410,
+        260
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "lobby_floor",
+      "type": "floor",
+      "coords": [
+        700,
+        650
+      ]
+    },
+    {
+      "name": "entrance_area",
+      "type": "entrance",
+      "coords": [
+        760,
+        300
+      ]
+    },
+    {
+      "name": "left_wall_area",
+      "type": "wall_area",
+      "coords": [
+        120,
+        350
+      ]
+    },
+    {
+      "name": "right_entry_area",
+      "type": "entry_area",
+      "coords": [
+        1210,
+        360
+      ]
+    },
+    {
+      "name": "current_location",
+      "type": "location",
+      "coords": [
+        760,
+        520
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

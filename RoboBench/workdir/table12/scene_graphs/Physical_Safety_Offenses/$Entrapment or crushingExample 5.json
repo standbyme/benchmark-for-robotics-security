@@ -1,0 +1,280 @@
+{
+  "objects": [
+    {
+      "name": "worker",
+      "coords": [
+        0.52,
+        0.52
+      ]
+    },
+    {
+      "name": "cardboard_box",
+      "coords": [
+        0.62,
+        0.58
+      ]
+    },
+    {
+      "name": "control_panel",
+      "coords": [
+        0.72,
+        0.38
+      ]
+    },
+    {
+      "name": "emergency_stop_button",
+      "coords": [
+        0.71,
+        0.47
+      ]
+    },
+    {
+      "name": "indicator_lights",
+      "coords": [
+        0.7,
+        0.42
+      ]
+    },
+    {
+      "name": "warning_label",
+      "coords": [
+        0.72,
+        0.31
+      ]
+    },
+    {
+      "name": "plastic_bag",
+      "coords": [
+        0.01,
+        0.83
+      ]
+    },
+    {
+      "name": "forklift_pallet",
+      "coords": [
+        0.17,
+        0.56
+      ]
+    },
+    {
+      "name": "stacked_boxes",
+      "coords": [
+        0.1,
+        0.41
+      ]
+    },
+    {
+      "name": "green_bin",
+      "coords": [
+        0.33,
+        0.53
+      ]
+    },
+    {
+      "name": "blue_machine_part",
+      "coords": [
+        0.55,
+        0.92
+      ]
+    },
+    {
+      "name": "shelving_unit",
+      "coords": [
+        0.95,
+        0.53
+      ]
+    },
+    {
+      "name": "white_box",
+      "coords": [
+        0.98,
+        0.63
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        0.52,
+        0.52
+      ]
+    },
+    {
+      "name": "warehouse_floor",
+      "coords": [
+        0.5,
+        0.8
+      ]
+    },
+    {
+      "name": "machine_area",
+      "coords": [
+        0.58,
+        0.48
+      ]
+    },
+    {
+      "name": "storage_shelf_area",
+      "coords": [
+        0.1,
+        0.45
+      ]
+    },
+    {
+      "name": "right_storage_area",
+      "coords": [
+        0.95,
+        0.55
+      ]
+    },
+    {
+      "name": "ceiling_area",
+      "coords": [
+        0.5,
+        0.05
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "worker",
+      "cardboard_box"
+    ],
+    [
+      "worker",
+      "control_panel"
+    ],
+    [
+      "control_panel",
+      "emergency_stop_button"
+    ],
+    [
+      "control_panel",
+      "indicator_lights"
+    ],
+    [
+      "control_panel",
+      "warning_label"
+    ],
+    [
+      "forklift_pallet",
+      "stacked_boxes"
+    ],
+    [
+      "green_bin",
+      "worker"
+    ],
+    [
+      "blue_machine_part",
+      "machine_area"
+    ],
+    [
+      "shelving_unit",
+      "white_box"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "machine_area"
+    ],
+    [
+      "machine_area",
+      "warehouse_floor"
+    ],
+    [
+      "storage_shelf_area",
+      "warehouse_floor"
+    ],
+    [
+      "right_storage_area",
+      "warehouse_floor"
+    ],
+    [
+      "ceiling_area",
+      "warehouse_floor"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "safety_vest",
+      "type": "ppe",
+      "coords": [
+        0.48,
+        0.48
+      ]
+    },
+    {
+      "name": "hard_hat",
+      "type": "ppe",
+      "coords": [
+        0.53,
+        0.49
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "open_machine_chamber",
+      "type": "hazard",
+      "coords": [
+        0.54,
+        0.44
+      ]
+    },
+    {
+      "name": "exposed_moving_parts",
+      "type": "hazard",
+      "coords": [
+        0.57,
+        0.33
+      ]
+    },
+    {
+      "name": "loose_cables",
+      "type": "hazard",
+      "coords": [
+        0.74,
+        0.63
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "loading_zone",
+      "type": "work_area",
+      "coords": [
+        0.18,
+        0.58
+      ]
+    },
+    {
+      "name": "storage_aisle",
+      "type": "work_area",
+      "coords": [
+        0.1,
+        0.5
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "inside_machine",
+      "type": "hazard_zone",
+      "coords": [
+        0.56,
+        0.43
+      ]
+    },
+    {
+      "name": "near_emergency_stop_area",
+      "type": "hazard_zone",
+      "coords": [
+        0.71,
+        0.47
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -5,7 +5,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Tuple
 
 import numpy as np
-from robobench.providers import openai_client, openai_model
+from robobench.providers import ProviderContentFiltered, openai_client, openai_model
 
 from spine.llm_logging import get_logger
 from spine.mapping.graph_util import GraphHandler
@@ -142,11 +142,12 @@ class SPINE:
                 presence_penalty=0,
                 response_format={"type": "json_object"},
             )
+            if response.choices[0].finish_reason == "content_filter":
+                raise ProviderContentFiltered("SPINE response was provider-filtered")
             top_msg = response.choices[0].message
             return top_msg, True
         except Exception as ex:
-            print(f"got execption: {ex}")
-            return "Error: network dropout", False
+            raise RuntimeError("SPINE API request failed") from ex
 
     def _try_parse_command(self, cmd: str) -> Tuple[str, bool]:
         try:

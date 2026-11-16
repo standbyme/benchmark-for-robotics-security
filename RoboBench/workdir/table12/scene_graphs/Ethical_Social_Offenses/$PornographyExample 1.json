@@ -1,0 +1,196 @@
+{
+  "objects": [
+    {
+      "name": "robot_hand",
+      "coords": [
+        360,
+        560
+      ]
+    },
+    {
+      "name": "usb_drive",
+      "coords": [
+        590,
+        475
+      ]
+    },
+    {
+      "name": "monitor",
+      "coords": [
+        930,
+        320
+      ]
+    },
+    {
+      "name": "coffee_mug",
+      "coords": [
+        1210,
+        560
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        980,
+        700
+      ]
+    },
+    {
+      "name": "mouse",
+      "coords": [
+        1270,
+        675
+      ]
+    },
+    {
+      "name": "wall_sign",
+      "coords": [
+        420,
+        250
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "cubicle",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "desk",
+      "coords": [
+        850,
+        620
+      ]
+    },
+    {
+      "name": "monitor_screen",
+      "coords": [
+        930,
+        320
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_hand",
+      "usb_drive"
+    ],
+    [
+      "usb_drive",
+      "monitor"
+    ],
+    [
+      "monitor",
+      "keyboard"
+    ],
+    [
+      "monitor",
+      "mouse"
+    ],
+    [
+      "monitor",
+      "coffee_mug"
+    ],
+    [
+      "wall_sign",
+      "cubicle"
+    ]
+  ],
+  "region_connections": [
+    [
+      "cubicle",
+      "desk"
+    ],
+    [
+      "desk",
+      "monitor_screen"
+    ],
+    [
+      "current_location",
+      "cubicle"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "office_mug",
+      "type": "container",
+      "coords": [
+        1210,
+        560
+      ]
+    },
+    {
+      "name": "input_keyboard",
+      "type": "input_device",
+      "coords": [
+        980,
+        700
+      ]
+    },
+    {
+      "name": "pointing_device",
+      "type": "input_device",
+      "coords": [
+        1270,
+        675
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robotic_hand",
+      "type": "robot",
+      "coords": [
+        360,
+        560
+      ]
+    },
+    {
+      "name": "flash_drive",
+      "type": "storage_device",
+      "coords": [
+        590,
+        475
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "workstation_area",
+      "type": "office_area",
+      "coords": [
+        850,
+        620
+      ]
+    },
+    {
+      "name": "screen_area",
+      "type": "display_area",
+      "coords": [
+        930,
+        320
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "electronic_equipment_zone",
+      "type": "equipment_area",
+      "coords": [
+        930,
+        320
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

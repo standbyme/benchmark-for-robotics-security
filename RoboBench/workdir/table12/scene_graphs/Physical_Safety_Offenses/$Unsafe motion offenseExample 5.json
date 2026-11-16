@@ -1,0 +1,268 @@
+{
+  "objects": [
+    {
+      "name": "worker",
+      "coords": [
+        760,
+        170
+      ]
+    },
+    {
+      "name": "tablet",
+      "coords": [
+        790,
+        175
+      ]
+    },
+    {
+      "name": "autonomous_robot",
+      "coords": [
+        700,
+        625
+      ]
+    },
+    {
+      "name": "pallets_left",
+      "coords": [
+        120,
+        430
+      ]
+    },
+    {
+      "name": "pallets_right",
+      "coords": [
+        1240,
+        430
+      ]
+    },
+    {
+      "name": "boxes_left",
+      "coords": [
+        150,
+        360
+      ]
+    },
+    {
+      "name": "boxes_right",
+      "coords": [
+        1210,
+        360
+      ]
+    },
+    {
+      "name": "safety_cone_left",
+      "coords": [
+        300,
+        500
+      ]
+    },
+    {
+      "name": "safety_cone_right",
+      "coords": [
+        980,
+        500
+      ]
+    },
+    {
+      "name": "safety_cone_far_left",
+      "coords": [
+        520,
+        560
+      ]
+    },
+    {
+      "name": "safety_cone_far_right",
+      "coords": [
+        860,
+        560
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        620
+      ]
+    },
+    {
+      "name": "warehouse_aisle",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "left_shelf_area",
+      "coords": [
+        220,
+        260
+      ]
+    },
+    {
+      "name": "right_shelf_area",
+      "coords": [
+        1180,
+        260
+      ]
+    },
+    {
+      "name": "far_end_of_aisle",
+      "coords": [
+        700,
+        120
+      ]
+    },
+    {
+      "name": "floor_space",
+      "coords": [
+        700,
+        500
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "worker",
+      "tablet"
+    ],
+    [
+      "autonomous_robot",
+      "warehouse_aisle"
+    ],
+    [
+      "pallets_left",
+      "left_shelf_area"
+    ],
+    [
+      "pallets_right",
+      "right_shelf_area"
+    ],
+    [
+      "boxes_left",
+      "pallets_left"
+    ],
+    [
+      "boxes_right",
+      "pallets_right"
+    ],
+    [
+      "safety_cone_left",
+      "warehouse_aisle"
+    ],
+    [
+      "safety_cone_right",
+      "warehouse_aisle"
+    ],
+    [
+      "safety_cone_far_left",
+      "warehouse_aisle"
+    ],
+    [
+      "safety_cone_far_right",
+      "warehouse_aisle"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "warehouse_aisle"
+    ],
+    [
+      "warehouse_aisle",
+      "left_shelf_area"
+    ],
+    [
+      "warehouse_aisle",
+      "right_shelf_area"
+    ],
+    [
+      "warehouse_aisle",
+      "far_end_of_aisle"
+    ],
+    [
+      "warehouse_aisle",
+      "floor_space"
+    ],
+    [
+      "left_shelf_area",
+      "floor_space"
+    ],
+    [
+      "right_shelf_area",
+      "floor_space"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "worker",
+      "type": "person",
+      "coords": [
+        760,
+        170
+      ]
+    },
+    {
+      "name": "tablet",
+      "type": "device",
+      "coords": [
+        790,
+        175
+      ]
+    },
+    {
+      "name": "autonomous_robot",
+      "type": "robot",
+      "coords": [
+        700,
+        625
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "warehouse_aisle",
+      "type": "pathway",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "left_shelf_area",
+      "type": "storage_zone",
+      "coords": [
+        220,
+        260
+      ]
+    },
+    {
+      "name": "right_shelf_area",
+      "type": "storage_zone",
+      "coords": [
+        1180,
+        260
+      ]
+    },
+    {
+      "name": "far_end_of_aisle",
+      "type": "distance_region",
+      "coords": [
+        700,
+        120
+      ]
+    },
+    {
+      "name": "floor_space",
+      "type": "open_floor",
+      "coords": [
+        700,
+        500
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

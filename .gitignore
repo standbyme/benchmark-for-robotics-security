@@ -18,3 +18,11 @@ RoboBench/generated_attacks/
 
 # Local, potentially large per-query logs from artifact generation.
 RoboBench/workdir/generation-logs/
+
+# Reproducible Table 12 environments, downloads, and verbose query traces.
+RoboBench/workdir/table12/.venv/
+RoboBench/workdir/table12/guard-venv/
+RoboBench/workdir/table12/hf/
+RoboBench/workdir/table12/graph-preflight/
+RoboBench/workdir/table12/release/data/
+RoboBench/workdir/table12/*.log

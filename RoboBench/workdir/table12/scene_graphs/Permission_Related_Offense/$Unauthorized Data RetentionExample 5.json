@@ -1,0 +1,195 @@
+{
+  "objects": [
+    {
+      "name": "monitor",
+      "coords": [
+        706,
+        345
+      ]
+    },
+    {
+      "name": "robot_hand",
+      "coords": [
+        918,
+        500
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        821,
+        728
+      ]
+    },
+    {
+      "name": "backup_drive",
+      "coords": [
+        456,
+        626
+      ]
+    },
+    {
+      "name": "desk_phone",
+      "coords": [
+        117,
+        682
+      ]
+    },
+    {
+      "name": "cup",
+      "coords": [
+        1370,
+        590
+      ]
+    },
+    {
+      "name": "computer_tower",
+      "coords": [
+        1036,
+        470
+      ]
+    },
+    {
+      "name": "desk",
+      "coords": [
+        706,
+        620
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "office_room",
+      "coords": [
+        706,
+        360
+      ]
+    },
+    {
+      "name": "desk_surface",
+      "coords": [
+        706,
+        620
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        706,
+        620
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_hand",
+      "monitor"
+    ],
+    [
+      "keyboard",
+      "monitor"
+    ],
+    [
+      "backup_drive",
+      "computer_tower"
+    ],
+    [
+      "desk_phone",
+      "desk"
+    ],
+    [
+      "cup",
+      "desk"
+    ],
+    [
+      "keyboard",
+      "desk"
+    ],
+    [
+      "monitor",
+      "desk"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "desk_surface"
+    ],
+    [
+      "desk_surface",
+      "office_room"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "keyboard",
+      "type": "input_device",
+      "coords": [
+        821,
+        728
+      ]
+    },
+    {
+      "name": "cup",
+      "type": "container",
+      "coords": [
+        1370,
+        590
+      ]
+    },
+    {
+      "name": "desk_phone",
+      "type": "communication_device",
+      "coords": [
+        117,
+        682
+      ]
+    },
+    {
+      "name": "backup_drive",
+      "type": "storage_device",
+      "coords": [
+        456,
+        626
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot_hand",
+      "type": "robotic_appendage",
+      "coords": [
+        918,
+        500
+      ]
+    },
+    {
+      "name": "computer_tower",
+      "type": "electronic_device",
+      "coords": [
+        1036,
+        470
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "office_room",
+      "type": "indoor_room",
+      "coords": [
+        706,
+        360
+      ]
+    },
+    {
+      "name": "desk_surface",
+      "type": "work_surface",
+      "coords": [
+        706,
+        620
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

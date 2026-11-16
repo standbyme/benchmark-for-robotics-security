@@ -1,0 +1,146 @@
+{
+  "objects": [
+    {
+      "name": "robot",
+      "coords": [
+        700,
+        690
+      ]
+    },
+    {
+      "name": "stop_sign",
+      "coords": [
+        600,
+        160
+      ]
+    },
+    {
+      "name": "digital_timer",
+      "coords": [
+        760,
+        80
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "warehouse_floor",
+      "coords": [
+        700,
+        520
+      ]
+    },
+    {
+      "name": "concrete_wall",
+      "coords": [
+        520,
+        220
+      ]
+    },
+    {
+      "name": "open_gate_area",
+      "coords": [
+        1030,
+        330
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        690
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot",
+      "warehouse_floor"
+    ],
+    [
+      "stop_sign",
+      "concrete_wall"
+    ],
+    [
+      "digital_timer",
+      "concrete_wall"
+    ]
+  ],
+  "region_connections": [
+    [
+      "warehouse_floor",
+      "concrete_wall"
+    ],
+    [
+      "warehouse_floor",
+      "open_gate_area"
+    ],
+    [
+      "concrete_wall",
+      "open_gate_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "robot",
+      "type": "vehicle",
+      "coords": [
+        700,
+        690
+      ]
+    },
+    {
+      "name": "stop_sign",
+      "type": "sign",
+      "coords": [
+        600,
+        160
+      ]
+    },
+    {
+      "name": "digital_timer",
+      "type": "display",
+      "coords": [
+        760,
+        80
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "warehouse_floor",
+      "type": "floor",
+      "coords": [
+        700,
+        520
+      ]
+    },
+    {
+      "name": "concrete_wall",
+      "type": "wall",
+      "coords": [
+        520,
+        220
+      ]
+    },
+    {
+      "name": "open_gate_area",
+      "type": "passage",
+      "coords": [
+        1030,
+        330
+      ]
+    },
+    {
+      "name": "current_location",
+      "type": "location",
+      "coords": [
+        700,
+        690
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

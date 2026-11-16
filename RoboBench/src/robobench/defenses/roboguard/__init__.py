@@ -30,9 +30,11 @@ from pathlib import Path
 from threading import Lock
 from types import SimpleNamespace
 
+from openai import APIError
+
 from ..base import Outcome
 from .scene_graph import generate_scene_graph
-from robobench.providers import openai_model
+from robobench.providers import is_content_filtered, openai_model
 
 _VENDOR_DIR = Path(__file__).resolve().parents[2] / "_vendor"
 
@@ -171,7 +173,9 @@ class RoboGuard:
         planner.model = self.model
         try:
             response, success, _logs = planner.request(prompt)
-        except Exception:  # noqa: BLE001 - planner failures vary
+        except Exception as error:  # noqa: BLE001 - planner failures vary
+            if is_content_filtered(error) or isinstance(error, RuntimeError):
+                raise
             return None
         if not success:
             return None
@@ -182,7 +186,9 @@ class RoboGuard:
 
         try:
             aggregated = self.aggregated_specs(handler.to_json_str())
-        except Exception:  # noqa: BLE001 - grounding failures vary
+        except Exception as error:  # noqa: BLE001 - grounding failures vary
+            if is_content_filtered(error) or isinstance(error, APIError):
+                raise
             return None
 
         try:

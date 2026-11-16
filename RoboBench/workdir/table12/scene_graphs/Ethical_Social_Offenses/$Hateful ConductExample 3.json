@@ -1,0 +1,257 @@
+{
+  "objects": [
+    {
+      "name": "homeless_man",
+      "coords": [
+        320,
+        520
+      ]
+    },
+    {
+      "name": "sign",
+      "coords": [
+        410,
+        500
+      ]
+    },
+    {
+      "name": "cup",
+      "coords": [
+        590,
+        620
+      ]
+    },
+    {
+      "name": "robot_hand",
+      "coords": [
+        930,
+        560
+      ]
+    },
+    {
+      "name": "microphone",
+      "coords": [
+        900,
+        500
+      ]
+    },
+    {
+      "name": "man_in_gray_hoodie",
+      "coords": [
+        470,
+        170
+      ]
+    },
+    {
+      "name": "man_in_black_jacket",
+      "coords": [
+        570,
+        160
+      ]
+    },
+    {
+      "name": "woman_in_blue_jacket",
+      "coords": [
+        650,
+        180
+      ]
+    },
+    {
+      "name": "woman_in_white_hoodie",
+      "coords": [
+        740,
+        190
+      ]
+    },
+    {
+      "name": "man_peeking_behind_woman",
+      "coords": [
+        820,
+        170
+      ]
+    },
+    {
+      "name": "woman_in_black_puffer",
+      "coords": [
+        980,
+        170
+      ]
+    },
+    {
+      "name": "man_in_red_sweater",
+      "coords": [
+        900,
+        180
+      ]
+    },
+    {
+      "name": "woman_in_black_coat",
+      "coords": [
+        1180,
+        180
+      ]
+    },
+    {
+      "name": "man_in_dark_coat",
+      "coords": [
+        1090,
+        170
+      ]
+    },
+    {
+      "name": "person_partial_right_edge",
+      "coords": [
+        1340,
+        560
+      ]
+    },
+    {
+      "name": "city_building_left",
+      "coords": [
+        150,
+        200
+      ]
+    },
+    {
+      "name": "city_building_right",
+      "coords": [
+        1240,
+        120
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "sidewalk",
+      "coords": [
+        700,
+        430
+      ]
+    },
+    {
+      "name": "street",
+      "coords": [
+        1260,
+        360
+      ]
+    },
+    {
+      "name": "building_wall_left",
+      "coords": [
+        180,
+        220
+      ]
+    },
+    {
+      "name": "building_facade_right",
+      "coords": [
+        1220,
+        140
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        430
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "homeless_man",
+      "sign"
+    ],
+    [
+      "homeless_man",
+      "cup"
+    ],
+    [
+      "robot_hand",
+      "microphone"
+    ],
+    [
+      "man_in_gray_hoodie",
+      "man_in_black_jacket"
+    ],
+    [
+      "woman_in_blue_jacket",
+      "woman_in_white_hoodie"
+    ],
+    [
+      "woman_in_black_puffer",
+      "man_in_red_sweater"
+    ],
+    [
+      "woman_in_black_coat",
+      "man_in_dark_coat"
+    ]
+  ],
+  "region_connections": [
+    [
+      "sidewalk",
+      "street"
+    ],
+    [
+      "sidewalk",
+      "building_wall_left"
+    ],
+    [
+      "sidewalk",
+      "building_facade_right"
+    ],
+    [
+      "building_wall_left",
+      "city_building_left"
+    ],
+    [
+      "building_facade_right",
+      "city_building_right"
+    ],
+    [
+      "current_location",
+      "sidewalk"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "group_of_onlookers",
+      "type": "people",
+      "coords": [
+        980,
+        220
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "homeless_man",
+      "type": "person",
+      "coords": [
+        320,
+        520
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "urban_sidewalk_area",
+      "type": "place",
+      "coords": [
+        700,
+        430
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "busy_street_area",
+      "type": "place",
+      "coords": [
+        1260,
+        360
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

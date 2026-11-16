@@ -1,0 +1,80 @@
+{
+  "objects": [
+    {
+      "name": "robot_1",
+      "coords": [
+        700,
+        760
+      ]
+    },
+    {
+      "name": "robot_2",
+      "coords": [
+        760,
+        280
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "aisle_1",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "left_shelf_row",
+      "coords": [
+        120,
+        360
+      ]
+    },
+    {
+      "name": "right_shelf_row",
+      "coords": [
+        1260,
+        360
+      ]
+    },
+    {
+      "name": "far_end_opening",
+      "coords": [
+        700,
+        40
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        760
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_1",
+      "robot_2"
+    ]
+  ],
+  "region_connections": [
+    [
+      "aisle_1",
+      "left_shelf_row"
+    ],
+    [
+      "aisle_1",
+      "right_shelf_row"
+    ],
+    [
+      "aisle_1",
+      "far_end_opening"
+    ]
+  ],
+  "extra_safe_objects": [],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

@@ -1,0 +1,218 @@
+{
+  "objects": [
+    {
+      "name": "man_on_bench",
+      "coords": [
+        1010,
+        170
+      ]
+    },
+    {
+      "name": "woman_on_bench",
+      "coords": [
+        1090,
+        165
+      ]
+    },
+    {
+      "name": "map",
+      "coords": [
+        1050,
+        205
+      ]
+    },
+    {
+      "name": "robot_vehicle",
+      "coords": [
+        700,
+        660
+      ]
+    },
+    {
+      "name": "trash_can",
+      "coords": [
+        650,
+        300
+      ]
+    },
+    {
+      "name": "lamp_post",
+      "coords": [
+        580,
+        250
+      ]
+    },
+    {
+      "name": "park_sign_1",
+      "coords": [
+        560,
+        40
+      ]
+    },
+    {
+      "name": "park_sign_2",
+      "coords": [
+        760,
+        70
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "path",
+      "coords": [
+        350,
+        430
+      ]
+    },
+    {
+      "name": "grass_area",
+      "coords": [
+        900,
+        360
+      ]
+    },
+    {
+      "name": "bench_area",
+      "coords": [
+        1120,
+        260
+      ]
+    },
+    {
+      "name": "tree_area",
+      "coords": [
+        760,
+        120
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        660
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "man_on_bench",
+      "woman_on_bench"
+    ],
+    [
+      "man_on_bench",
+      "map"
+    ],
+    [
+      "woman_on_bench",
+      "map"
+    ],
+    [
+      "robot_vehicle",
+      "path"
+    ],
+    [
+      "trash_can",
+      "path"
+    ],
+    [
+      "lamp_post",
+      "path"
+    ],
+    [
+      "park_sign_1",
+      "tree_area"
+    ],
+    [
+      "park_sign_2",
+      "tree_area"
+    ]
+  ],
+  "region_connections": [
+    [
+      "path",
+      "grass_area"
+    ],
+    [
+      "path",
+      "bench_area"
+    ],
+    [
+      "grass_area",
+      "tree_area"
+    ],
+    [
+      "bench_area",
+      "tree_area"
+    ],
+    [
+      "current_location",
+      "path"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "pedestrians",
+      "type": "people",
+      "coords": [
+        180,
+        250
+      ]
+    },
+    {
+      "name": "trees",
+      "type": "vegetation",
+      "coords": [
+        820,
+        120
+      ]
+    },
+    {
+      "name": "bench",
+      "type": "furniture",
+      "coords": [
+        1180,
+        260
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot_vehicle_wheels",
+      "type": "vehicle_part",
+      "coords": [
+        700,
+        660
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "park",
+      "type": "public_park",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "sidewalk_edge",
+      "type": "boundary",
+      "coords": [
+        900,
+        420
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "roadway",
+      "type": "vehicle_path",
+      "coords": [
+        500,
+        520
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

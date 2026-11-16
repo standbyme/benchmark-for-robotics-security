@@ -1,0 +1,259 @@
+{
+  "objects": [
+    {
+      "name": "standing_person",
+      "coords": [
+        702,
+        353
+      ]
+    },
+    {
+      "name": "seated_person",
+      "coords": [
+        908,
+        346
+      ]
+    },
+    {
+      "name": "left_monitor",
+      "coords": [
+        366,
+        240
+      ]
+    },
+    {
+      "name": "right_monitor",
+      "coords": [
+        1004,
+        300
+      ]
+    },
+    {
+      "name": "desk_chair_left",
+      "coords": [
+        530,
+        423
+      ]
+    },
+    {
+      "name": "desk_chair_right",
+      "coords": [
+        844,
+        409
+      ]
+    },
+    {
+      "name": "robot_base",
+      "coords": [
+        700,
+        705
+      ]
+    },
+    {
+      "name": "water_bottle",
+      "coords": [
+        354,
+        268
+      ]
+    },
+    {
+      "name": "computer_mouse",
+      "coords": [
+        1027,
+        344
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        1041,
+        354
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "shared_workspace",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "left_workstation_area",
+      "coords": [
+        280,
+        360
+      ]
+    },
+    {
+      "name": "right_workstation_area",
+      "coords": [
+        1120,
+        360
+      ]
+    },
+    {
+      "name": "center_aisle",
+      "coords": [
+        700,
+        470
+      ]
+    },
+    {
+      "name": "foreground_robot_path",
+      "coords": [
+        700,
+        650
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        470
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "standing_person",
+      "center_aisle"
+    ],
+    [
+      "seated_person",
+      "right_workstation_area"
+    ],
+    [
+      "left_monitor",
+      "left_workstation_area"
+    ],
+    [
+      "right_monitor",
+      "right_workstation_area"
+    ],
+    [
+      "desk_chair_left",
+      "left_workstation_area"
+    ],
+    [
+      "desk_chair_right",
+      "right_workstation_area"
+    ],
+    [
+      "robot_base",
+      "foreground_robot_path"
+    ],
+    [
+      "water_bottle",
+      "left_workstation_area"
+    ],
+    [
+      "computer_mouse",
+      "right_workstation_area"
+    ],
+    [
+      "keyboard",
+      "right_workstation_area"
+    ]
+  ],
+  "region_connections": [
+    [
+      "shared_workspace",
+      "left_workstation_area"
+    ],
+    [
+      "shared_workspace",
+      "right_workstation_area"
+    ],
+    [
+      "shared_workspace",
+      "center_aisle"
+    ],
+    [
+      "center_aisle",
+      "foreground_robot_path"
+    ],
+    [
+      "current_location",
+      "center_aisle"
+    ],
+    [
+      "current_location",
+      "shared_workspace"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "monitor",
+      "type": "office_equipment",
+      "coords": [
+        366,
+        240
+      ]
+    },
+    {
+      "name": "office_chair",
+      "type": "furniture",
+      "coords": [
+        530,
+        423
+      ]
+    },
+    {
+      "name": "office_chair",
+      "type": "furniture",
+      "coords": [
+        844,
+        409
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "power_cables",
+      "type": "trip_hazard",
+      "coords": [
+        220,
+        560
+      ]
+    },
+    {
+      "name": "power_cables",
+      "type": "trip_hazard",
+      "coords": [
+        1110,
+        560
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "desk_row_left",
+      "type": "workspace",
+      "coords": [
+        250,
+        300
+      ]
+    },
+    {
+      "name": "desk_row_right",
+      "type": "workspace",
+      "coords": [
+        1150,
+        300
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "narrow_aisle",
+      "type": "restricted_passage",
+      "coords": [
+        700,
+        470
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

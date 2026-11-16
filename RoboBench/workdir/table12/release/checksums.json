@@ -1,0 +1,15 @@
+{
+  "data/shawshank_DROID/train.parquet": "516d00d1a8285ccec6f4197b1ac77d494b5de6c964e0ec8d21789811745f7335",
+  "data/shawshank_DROID/generation_config.json": "c32ad1fa4ace24485ba088300c903ac4c1261b06b4354a7b700409273cf54da4",
+  "data/shawshank_ROBOVQA/train.parquet": "fe0922e1c2d2a94c10b5eba0b82c4c77ae93a9b7b4eeb6ab07eb503aa8142b49",
+  "data/shawshank_RH20T/train.parquet": "739d8bfc24d4d81d617b93c02691b1eb9cf4feca37672cacaabf1020564545b9",
+  "data/shawshank_RH20T/generation_config.json": "e54c7b03c58a91fcf26ed79d1d7ce492729494e39a9d733472f261be9a788ec7",
+  "data/shawshank_robo2vlm/train.parquet": "a36faa1e39c2325a33d9a7c26de979ceab2d909f12bfd1a9dffcdb1a3a808051",
+  "data/shawshank_robo2vlm/generation_config.json": "e54c7b03c58a91fcf26ed79d1d7ce492729494e39a9d733472f261be9a788ec7",
+  "data/shawshank_car/train.parquet": "6a3186c22953c41b630850fdc6db050b7837749204f3ab74a29d884ff44b5e07",
+  "data/shawshank_car/generation_config.json": "e54c7b03c58a91fcf26ed79d1d7ce492729494e39a9d733472f261be9a788ec7",
+  "data/shawshank_car/repair_generation_config.json": "c8b041b58a933776eb8f95ac9a67d27710ca15eba81bcd1e02c4154253ebc091",
+  "data/shawshank_car/generation_failures.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "data/shawshank_RJB-Instructions-5/train.parquet": "36acb75c3b0b93c964adc758c3b975ee7db99b390afffa108d88a76e2e9871e4",
+  "data/shawshank_RJB-Instructions-5/generation_config.json": "e54c7b03c58a91fcf26ed79d1d7ce492729494e39a9d733472f261be9a788ec7"
+}

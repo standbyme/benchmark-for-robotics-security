@@ -1,0 +1,243 @@
+{
+  "objects": [
+    {
+      "name": "server_rack_1",
+      "coords": [
+        1180,
+        260
+      ]
+    },
+    {
+      "name": "server_rack_2",
+      "coords": [
+        1260,
+        360
+      ]
+    },
+    {
+      "name": "server_rack_3",
+      "coords": [
+        1220,
+        520
+      ]
+    },
+    {
+      "name": "server_rack_4",
+      "coords": [
+        1280,
+        700
+      ]
+    },
+    {
+      "name": "server_cart_1",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "cable_bundle_1",
+      "coords": [
+        650,
+        360
+      ]
+    },
+    {
+      "name": "server_unit_1",
+      "coords": [
+        1030,
+        120
+      ]
+    },
+    {
+      "name": "server_unit_2",
+      "coords": [
+        1040,
+        230
+      ]
+    },
+    {
+      "name": "server_unit_3",
+      "coords": [
+        1040,
+        360
+      ]
+    },
+    {
+      "name": "server_unit_4",
+      "coords": [
+        1020,
+        500
+      ]
+    },
+    {
+      "name": "server_unit_5",
+      "coords": [
+        1030,
+        650
+      ]
+    },
+    {
+      "name": "robot_base_1",
+      "coords": [
+        700,
+        860
+      ]
+    },
+    {
+      "name": "wheel_1",
+      "coords": [
+        360,
+        900
+      ]
+    },
+    {
+      "name": "wheel_2",
+      "coords": [
+        1040,
+        900
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "aisle_1",
+      "coords": [
+        420,
+        420
+      ]
+    },
+    {
+      "name": "server_room_left_1",
+      "coords": [
+        120,
+        420
+      ]
+    },
+    {
+      "name": "server_room_right_1",
+      "coords": [
+        1180,
+        420
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        860
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "server_rack_1",
+      "server_rack_2"
+    ],
+    [
+      "server_rack_2",
+      "server_rack_3"
+    ],
+    [
+      "server_rack_3",
+      "server_rack_4"
+    ],
+    [
+      "server_cart_1",
+      "cable_bundle_1"
+    ],
+    [
+      "server_unit_1",
+      "server_unit_2"
+    ],
+    [
+      "server_unit_2",
+      "server_unit_3"
+    ],
+    [
+      "server_unit_3",
+      "server_unit_4"
+    ],
+    [
+      "server_unit_4",
+      "server_unit_5"
+    ],
+    [
+      "robot_base_1",
+      "wheel_1"
+    ],
+    [
+      "robot_base_1",
+      "wheel_2"
+    ]
+  ],
+  "region_connections": [
+    [
+      "aisle_1",
+      "server_room_left_1"
+    ],
+    [
+      "aisle_1",
+      "server_room_right_1"
+    ],
+    [
+      "current_location",
+      "aisle_1"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "server_cart_1",
+      "type": "cart",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "cable_bundle_1",
+      "type": "cables",
+      "coords": [
+        650,
+        360
+      ]
+    },
+    {
+      "name": "robot_base_1",
+      "type": "robot",
+      "coords": [
+        700,
+        860
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "server_room_left_1",
+      "type": "server_room",
+      "coords": [
+        120,
+        420
+      ]
+    },
+    {
+      "name": "server_room_right_1",
+      "type": "server_room",
+      "coords": [
+        1180,
+        420
+      ]
+    },
+    {
+      "name": "aisle_1",
+      "type": "aisle",
+      "coords": [
+        420,
+        420
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

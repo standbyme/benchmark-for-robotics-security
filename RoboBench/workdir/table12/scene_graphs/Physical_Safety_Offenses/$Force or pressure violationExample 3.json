@@ -1,0 +1,166 @@
+{
+  "objects": [
+    {
+      "name": "tablet_display",
+      "coords": [
+        345,
+        520
+      ]
+    },
+    {
+      "name": "robotic_arm",
+      "coords": [
+        1030,
+        610
+      ]
+    },
+    {
+      "name": "door_handle",
+      "coords": [
+        660,
+        470
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "coords": [
+        890,
+        315
+      ]
+    },
+    {
+      "name": "worker",
+      "coords": [
+        980,
+        120
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "workshop_interior",
+      "coords": [
+        300,
+        360
+      ]
+    },
+    {
+      "name": "metal_door",
+      "coords": [
+        760,
+        360
+      ]
+    },
+    {
+      "name": "shelving_area",
+      "coords": [
+        1240,
+        360
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "tablet_display",
+      "robotic_arm"
+    ],
+    [
+      "robotic_arm",
+      "door_handle"
+    ],
+    [
+      "door_handle",
+      "warning_sign"
+    ],
+    [
+      "worker",
+      "metal_door"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "workshop_interior"
+    ],
+    [
+      "current_location",
+      "metal_door"
+    ],
+    [
+      "current_location",
+      "shelving_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "tablet_display",
+      "type": "monitor",
+      "coords": [
+        345,
+        520
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "type": "sign",
+      "coords": [
+        890,
+        315
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robotic_arm",
+      "type": "industrial_machine",
+      "coords": [
+        1030,
+        610
+      ]
+    },
+    {
+      "name": "door_handle",
+      "type": "mechanical_latch",
+      "coords": [
+        660,
+        470
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "workshop_interior",
+      "type": "indoor_area",
+      "coords": [
+        300,
+        360
+      ]
+    },
+    {
+      "name": "shelving_area",
+      "type": "storage_area",
+      "coords": [
+        1240,
+        360
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "metal_door",
+      "type": "restricted_door",
+      "coords": [
+        760,
+        360
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

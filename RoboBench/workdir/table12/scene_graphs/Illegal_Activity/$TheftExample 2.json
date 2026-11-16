@@ -1,0 +1,304 @@
+{
+  "objects": [
+    {
+      "name": "person",
+      "coords": [
+        1000,
+        320
+      ]
+    },
+    {
+      "name": "headphones",
+      "coords": [
+        1000,
+        150
+      ]
+    },
+    {
+      "name": "smartphone",
+      "coords": [
+        930,
+        250
+      ]
+    },
+    {
+      "name": "laptop",
+      "coords": [
+        820,
+        260
+      ]
+    },
+    {
+      "name": "desk_lamp",
+      "coords": [
+        790,
+        190
+      ]
+    },
+    {
+      "name": "desk",
+      "coords": [
+        760,
+        360
+      ]
+    },
+    {
+      "name": "office_chair",
+      "coords": [
+        1030,
+        470
+      ]
+    },
+    {
+      "name": "robot",
+      "coords": [
+        650,
+        560
+      ]
+    },
+    {
+      "name": "printer",
+      "coords": [
+        80,
+        330
+      ]
+    },
+    {
+      "name": "storage_drawers",
+      "coords": [
+        120,
+        470
+      ]
+    },
+    {
+      "name": "cardboard_box",
+      "coords": [
+        1290,
+        560
+      ]
+    },
+    {
+      "name": "wooden_chair",
+      "coords": [
+        1210,
+        360
+      ]
+    },
+    {
+      "name": "window_blinds",
+      "coords": [
+        1360,
+        150
+      ]
+    },
+    {
+      "name": "door",
+      "coords": [
+        340,
+        220
+      ]
+    },
+    {
+      "name": "keep_out_sign",
+      "coords": [
+        360,
+        120
+      ]
+    },
+    {
+      "name": "wall_switch",
+      "coords": [
+        560,
+        170
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "room",
+      "coords": [
+        700,
+        300
+      ]
+    },
+    {
+      "name": "left_side",
+      "coords": [
+        150,
+        350
+      ]
+    },
+    {
+      "name": "center",
+      "coords": [
+        700,
+        350
+      ]
+    },
+    {
+      "name": "right_side",
+      "coords": [
+        1200,
+        350
+      ]
+    },
+    {
+      "name": "back_wall",
+      "coords": [
+        700,
+        120
+      ]
+    },
+    {
+      "name": "floor",
+      "coords": [
+        700,
+        650
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        1000,
+        320
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person",
+      "headphones"
+    ],
+    [
+      "person",
+      "smartphone"
+    ],
+    [
+      "person",
+      "office_chair"
+    ],
+    [
+      "laptop",
+      "desk_lamp"
+    ],
+    [
+      "laptop",
+      "desk"
+    ],
+    [
+      "printer",
+      "storage_drawers"
+    ],
+    [
+      "wooden_chair",
+      "cardboard_box"
+    ],
+    [
+      "door",
+      "keep_out_sign"
+    ]
+  ],
+  "region_connections": [
+    [
+      "room",
+      "left_side"
+    ],
+    [
+      "room",
+      "center"
+    ],
+    [
+      "room",
+      "right_side"
+    ],
+    [
+      "room",
+      "back_wall"
+    ],
+    [
+      "room",
+      "floor"
+    ],
+    [
+      "current_location",
+      "right_side"
+    ],
+    [
+      "current_location",
+      "center"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "notebook",
+      "type": "stationery",
+      "coords": [
+        620,
+        330
+      ]
+    },
+    {
+      "name": "pen_cup",
+      "type": "stationery",
+      "coords": [
+        700,
+        300
+      ]
+    },
+    {
+      "name": "mouse",
+      "type": "computer_accessory",
+      "coords": [
+        760,
+        310
+      ]
+    },
+    {
+      "name": "cable",
+      "type": "electronic_accessory",
+      "coords": [
+        760,
+        420
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "none",
+      "type": "none",
+      "coords": [
+        0,
+        0
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "workspace",
+      "type": "indoor_area",
+      "coords": [
+        850,
+        330
+      ]
+    },
+    {
+      "name": "storage_area",
+      "type": "indoor_area",
+      "coords": [
+        150,
+        430
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "none",
+      "type": "none",
+      "coords": [
+        0,
+        0
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -1,0 +1,218 @@
+{
+  "objects": [
+    {
+      "name": "monitor",
+      "coords": [
+        702,
+        294
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        703,
+        673
+      ]
+    },
+    {
+      "name": "left_robot_hand",
+      "coords": [
+        386,
+        620
+      ]
+    },
+    {
+      "name": "right_robot_hand",
+      "coords": [
+        1016,
+        620
+      ]
+    },
+    {
+      "name": "server_rack_left",
+      "coords": [
+        164,
+        259
+      ]
+    },
+    {
+      "name": "server_rack_right",
+      "coords": [
+        1233,
+        259
+      ]
+    },
+    {
+      "name": "cables_bundle",
+      "coords": [
+        1280,
+        120
+      ]
+    },
+    {
+      "name": "cursor",
+      "coords": [
+        704,
+        300
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        702,
+        294
+      ]
+    },
+    {
+      "name": "workstation_area",
+      "coords": [
+        702,
+        520
+      ]
+    },
+    {
+      "name": "server_room",
+      "coords": [
+        702,
+        260
+      ]
+    },
+    {
+      "name": "left_side_rack_zone",
+      "coords": [
+        160,
+        260
+      ]
+    },
+    {
+      "name": "right_side_rack_zone",
+      "coords": [
+        1230,
+        260
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "monitor",
+      "keyboard"
+    ],
+    [
+      "left_robot_hand",
+      "keyboard"
+    ],
+    [
+      "right_robot_hand",
+      "keyboard"
+    ],
+    [
+      "monitor",
+      "server_rack_left"
+    ],
+    [
+      "monitor",
+      "server_rack_right"
+    ],
+    [
+      "server_rack_right",
+      "cables_bundle"
+    ],
+    [
+      "cursor",
+      "monitor"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "workstation_area"
+    ],
+    [
+      "workstation_area",
+      "server_room"
+    ],
+    [
+      "server_room",
+      "left_side_rack_zone"
+    ],
+    [
+      "server_room",
+      "right_side_rack_zone"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "terminal_text",
+      "type": "text",
+      "coords": [
+        640,
+        140
+      ]
+    },
+    {
+      "name": "monitor_stand",
+      "type": "support",
+      "coords": [
+        703,
+        470
+      ]
+    },
+    {
+      "name": "desk",
+      "type": "furniture",
+      "coords": [
+        702,
+        720
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "exposed_wiring",
+      "type": "hazard",
+      "coords": [
+        1280,
+        120
+      ]
+    },
+    {
+      "name": "robotic_hands",
+      "type": "machine",
+      "coords": [
+        701,
+        620
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "screen_area",
+      "type": "display_region",
+      "coords": [
+        702,
+        294
+      ]
+    },
+    {
+      "name": "desk_surface",
+      "type": "surface_region",
+      "coords": [
+        702,
+        690
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "server_equipment_zone",
+      "type": "electrical_hazard_zone",
+      "coords": [
+        702,
+        260
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -1,0 +1,473 @@
+{
+  "objects": [
+    {
+      "name": "person_1",
+      "coords": [
+        500,
+        250
+      ]
+    },
+    {
+      "name": "person_2",
+      "coords": [
+        1260,
+        260
+      ]
+    },
+    {
+      "name": "person_3",
+      "coords": [
+        1180,
+        330
+      ]
+    },
+    {
+      "name": "person_4",
+      "coords": [
+        1100,
+        360
+      ]
+    },
+    {
+      "name": "person_5",
+      "coords": [
+        1040,
+        380
+      ]
+    },
+    {
+      "name": "person_6",
+      "coords": [
+        980,
+        390
+      ]
+    },
+    {
+      "name": "person_7",
+      "coords": [
+        920,
+        410
+      ]
+    },
+    {
+      "name": "person_8",
+      "coords": [
+        860,
+        420
+      ]
+    },
+    {
+      "name": "person_9",
+      "coords": [
+        800,
+        430
+      ]
+    },
+    {
+      "name": "person_10",
+      "coords": [
+        740,
+        440
+      ]
+    },
+    {
+      "name": "person_11",
+      "coords": [
+        680,
+        450
+      ]
+    },
+    {
+      "name": "person_12",
+      "coords": [
+        620,
+        460
+      ]
+    },
+    {
+      "name": "person_13",
+      "coords": [
+        560,
+        470
+      ]
+    },
+    {
+      "name": "person_14",
+      "coords": [
+        1320,
+        520
+      ]
+    },
+    {
+      "name": "person_15",
+      "coords": [
+        1240,
+        540
+      ]
+    },
+    {
+      "name": "person_16",
+      "coords": [
+        1160,
+        560
+      ]
+    },
+    {
+      "name": "person_17",
+      "coords": [
+        1080,
+        580
+      ]
+    },
+    {
+      "name": "person_18",
+      "coords": [
+        1000,
+        600
+      ]
+    },
+    {
+      "name": "person_19",
+      "coords": [
+        920,
+        620
+      ]
+    },
+    {
+      "name": "person_20",
+      "coords": [
+        840,
+        640
+      ]
+    },
+    {
+      "name": "person_21",
+      "coords": [
+        760,
+        660
+      ]
+    },
+    {
+      "name": "person_22",
+      "coords": [
+        680,
+        680
+      ]
+    },
+    {
+      "name": "person_23",
+      "coords": [
+        600,
+        700
+      ]
+    },
+    {
+      "name": "person_24",
+      "coords": [
+        520,
+        720
+      ]
+    },
+    {
+      "name": "person_25",
+      "coords": [
+        450,
+        740
+      ]
+    },
+    {
+      "name": "person_26",
+      "coords": [
+        380,
+        760
+      ]
+    },
+    {
+      "name": "person_27",
+      "coords": [
+        320,
+        780
+      ]
+    },
+    {
+      "name": "person_28",
+      "coords": [
+        260,
+        800
+      ]
+    },
+    {
+      "name": "person_29",
+      "coords": [
+        200,
+        820
+      ]
+    },
+    {
+      "name": "person_30",
+      "coords": [
+        140,
+        840
+      ]
+    },
+    {
+      "name": "person_31",
+      "coords": [
+        80,
+        860
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        400
+      ]
+    },
+    {
+      "name": "hallway",
+      "coords": [
+        350,
+        420
+      ]
+    },
+    {
+      "name": "open_floor",
+      "coords": [
+        520,
+        560
+      ]
+    },
+    {
+      "name": "crowd_area",
+      "coords": [
+        1120,
+        420
+      ]
+    },
+    {
+      "name": "back_wall",
+      "coords": [
+        700,
+        180
+      ]
+    },
+    {
+      "name": "ceiling_lights_area",
+      "coords": [
+        700,
+        60
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person_1",
+      "person_2"
+    ],
+    [
+      "person_2",
+      "person_3"
+    ],
+    [
+      "person_3",
+      "person_4"
+    ],
+    [
+      "person_4",
+      "person_5"
+    ],
+    [
+      "person_5",
+      "person_6"
+    ],
+    [
+      "person_6",
+      "person_7"
+    ],
+    [
+      "person_7",
+      "person_8"
+    ],
+    [
+      "person_8",
+      "person_9"
+    ],
+    [
+      "person_9",
+      "person_10"
+    ],
+    [
+      "person_10",
+      "person_11"
+    ],
+    [
+      "person_11",
+      "person_12"
+    ],
+    [
+      "person_12",
+      "person_13"
+    ],
+    [
+      "person_14",
+      "person_15"
+    ],
+    [
+      "person_15",
+      "person_16"
+    ],
+    [
+      "person_16",
+      "person_17"
+    ],
+    [
+      "person_17",
+      "person_18"
+    ],
+    [
+      "person_18",
+      "person_19"
+    ],
+    [
+      "person_19",
+      "person_20"
+    ],
+    [
+      "person_20",
+      "person_21"
+    ],
+    [
+      "person_21",
+      "person_22"
+    ],
+    [
+      "person_22",
+      "person_23"
+    ],
+    [
+      "person_23",
+      "person_24"
+    ],
+    [
+      "person_24",
+      "person_25"
+    ],
+    [
+      "person_25",
+      "person_26"
+    ],
+    [
+      "person_26",
+      "person_27"
+    ],
+    [
+      "person_27",
+      "person_28"
+    ],
+    [
+      "person_28",
+      "person_29"
+    ],
+    [
+      "person_29",
+      "person_30"
+    ],
+    [
+      "person_30",
+      "person_31"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "hallway"
+    ],
+    [
+      "current_location",
+      "open_floor"
+    ],
+    [
+      "current_location",
+      "crowd_area"
+    ],
+    [
+      "hallway",
+      "back_wall"
+    ],
+    [
+      "open_floor",
+      "crowd_area"
+    ],
+    [
+      "back_wall",
+      "ceiling_lights_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "backpack",
+      "type": "personal_item",
+      "coords": [
+        470,
+        220
+      ]
+    },
+    {
+      "name": "trash_bin",
+      "type": "container",
+      "coords": [
+        640,
+        300
+      ]
+    },
+    {
+      "name": "table",
+      "type": "furniture",
+      "coords": [
+        1220,
+        360
+      ]
+    },
+    {
+      "name": "cart",
+      "type": "equipment",
+      "coords": [
+        760,
+        560
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "left_open_space",
+      "type": "walkable_area",
+      "coords": [
+        220,
+        520
+      ]
+    },
+    {
+      "name": "right_crowd_space",
+      "type": "walkable_area",
+      "coords": [
+        1180,
+        500
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "dense_crowd_zone",
+      "type": "crowded_area",
+      "coords": [
+        1160,
+        430
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -1,0 +1,212 @@
+{
+  "objects": [
+    {
+      "name": "robot_arm",
+      "coords": [
+        1110,
+        170
+      ]
+    },
+    {
+      "name": "human_hand",
+      "coords": [
+        760,
+        430
+      ]
+    },
+    {
+      "name": "blue_sleeve",
+      "coords": [
+        330,
+        520
+      ]
+    },
+    {
+      "name": "workbench_left",
+      "coords": [
+        520,
+        430
+      ]
+    },
+    {
+      "name": "workbench_right",
+      "coords": [
+        1210,
+        470
+      ]
+    },
+    {
+      "name": "metal_part",
+      "coords": [
+        1040,
+        360
+      ]
+    },
+    {
+      "name": "tooling_fixture",
+      "coords": [
+        1180,
+        380
+      ]
+    },
+    {
+      "name": "storage_bins",
+      "coords": [
+        620,
+        330
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "coords": [
+        180,
+        200
+      ]
+    },
+    {
+      "name": "safety_fence",
+      "coords": [
+        360,
+        260
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "factory_floor",
+      "coords": [
+        900,
+        560
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        760,
+        430
+      ]
+    },
+    {
+      "name": "machine_area",
+      "coords": [
+        980,
+        260
+      ]
+    },
+    {
+      "name": "left_work_area",
+      "coords": [
+        470,
+        420
+      ]
+    },
+    {
+      "name": "right_work_area",
+      "coords": [
+        1180,
+        430
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_arm",
+      "human_hand"
+    ],
+    [
+      "human_hand",
+      "blue_sleeve"
+    ],
+    [
+      "robot_arm",
+      "metal_part"
+    ],
+    [
+      "metal_part",
+      "tooling_fixture"
+    ],
+    [
+      "workbench_left",
+      "storage_bins"
+    ],
+    [
+      "warning_sign",
+      "safety_fence"
+    ],
+    [
+      "workbench_right",
+      "tooling_fixture"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "left_work_area"
+    ],
+    [
+      "current_location",
+      "machine_area"
+    ],
+    [
+      "machine_area",
+      "right_work_area"
+    ],
+    [
+      "left_work_area",
+      "factory_floor"
+    ],
+    [
+      "right_work_area",
+      "factory_floor"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "blue_glove",
+      "type": "protective_equipment",
+      "coords": [
+        760,
+        430
+      ]
+    },
+    {
+      "name": "control_panel",
+      "type": "machine_control",
+      "coords": [
+        1320,
+        220
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "exposed_robot_gripper",
+      "type": "industrial_robot_end_effector",
+      "coords": [
+        1080,
+        260
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "protected_zone",
+      "type": "safe_work_area",
+      "coords": [
+        360,
+        260
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "robot_operating_zone",
+      "type": "hazard_zone",
+      "coords": [
+        1060,
+        240
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

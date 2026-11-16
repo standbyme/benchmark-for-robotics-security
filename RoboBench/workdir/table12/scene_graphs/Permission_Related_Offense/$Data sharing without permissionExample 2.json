@@ -1,0 +1,132 @@
+{
+  "objects": [
+    {
+      "name": "robotic_arm",
+      "coords": [
+        1030,
+        520
+      ]
+    },
+    {
+      "name": "hard_drive",
+      "coords": [
+        760,
+        430
+      ]
+    },
+    {
+      "name": "commercial_upload_slot",
+      "coords": [
+        260,
+        430
+      ]
+    },
+    {
+      "name": "local_archive_slot",
+      "coords": [
+        560,
+        430
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "server_room",
+      "coords": [
+        980,
+        300
+      ]
+    },
+    {
+      "name": "storage_unit",
+      "coords": [
+        360,
+        330
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        420
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robotic_arm",
+      "hard_drive"
+    ],
+    [
+      "hard_drive",
+      "commercial_upload_slot"
+    ]
+  ],
+  "region_connections": [
+    [
+      "server_room",
+      "storage_unit"
+    ],
+    [
+      "storage_unit",
+      "current_location"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "status_leds",
+      "type": "indicator_lights",
+      "coords": [
+        1120,
+        300
+      ]
+    },
+    {
+      "name": "cable_bundle",
+      "type": "network_cables",
+      "coords": [
+        1180,
+        180
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "open_bay",
+      "type": "exposed_slot",
+      "coords": [
+        260,
+        430
+      ]
+    },
+    {
+      "name": "open_bay",
+      "type": "exposed_slot",
+      "coords": [
+        560,
+        430
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "equipment_rack_area",
+      "type": "server_racks",
+      "coords": [
+        1160,
+        260
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "unsecured_transfer_zone",
+      "type": "open_access_area",
+      "coords": [
+        700,
+        420
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

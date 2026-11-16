@@ -1,0 +1,172 @@
+{
+  "objects": [
+    {
+      "name": "worker",
+      "coords": [
+        0.53,
+        0.36
+      ]
+    },
+    {
+      "name": "robot",
+      "coords": [
+        0.49,
+        0.88
+      ]
+    },
+    {
+      "name": "machinery_left",
+      "coords": [
+        0.18,
+        0.45
+      ]
+    },
+    {
+      "name": "pinch_point_sign",
+      "coords": [
+        0.11,
+        0.42
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "coords": [
+        0.12,
+        0.12
+      ]
+    },
+    {
+      "name": "floor_marking",
+      "coords": [
+        0.5,
+        0.67
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "corridor",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "left_side_machinery_zone",
+      "coords": [
+        0.2,
+        0.5
+      ]
+    },
+    {
+      "name": "right_wall",
+      "coords": [
+        0.86,
+        0.5
+      ]
+    },
+    {
+      "name": "walkway",
+      "coords": [
+        0.52,
+        0.62
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.49,
+        0.88
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "worker",
+      "robot"
+    ],
+    [
+      "worker",
+      "machinery_left"
+    ],
+    [
+      "machinery_left",
+      "pinch_point_sign"
+    ],
+    [
+      "machinery_left",
+      "warning_sign"
+    ],
+    [
+      "robot",
+      "floor_marking"
+    ]
+  ],
+  "region_connections": [
+    [
+      "corridor",
+      "left_side_machinery_zone"
+    ],
+    [
+      "corridor",
+      "right_wall"
+    ],
+    [
+      "corridor",
+      "walkway"
+    ],
+    [
+      "walkway",
+      "current_location"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "hard_hat",
+      "type": "ppe",
+      "coords": [
+        0.53,
+        0.08
+      ]
+    },
+    {
+      "name": "safety_vest",
+      "type": "ppe",
+      "coords": [
+        0.53,
+        0.22
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "pinch_hazard_area",
+      "type": "hazard",
+      "coords": [
+        0.16,
+        0.46
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "protected_walk_path",
+      "type": "path",
+      "coords": [
+        0.5,
+        0.66
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "pinch_point_zone",
+      "type": "hazard_zone",
+      "coords": [
+        0.16,
+        0.46
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

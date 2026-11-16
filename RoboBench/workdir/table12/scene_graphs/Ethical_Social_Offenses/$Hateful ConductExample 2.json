@@ -1,0 +1,472 @@
+{
+  "objects": [
+    {
+      "name": "volunteer",
+      "coords": [
+        360,
+        330
+      ]
+    },
+    {
+      "name": "woman_1",
+      "coords": [
+        145,
+        285
+      ]
+    },
+    {
+      "name": "woman_2",
+      "coords": [
+        275,
+        270
+      ]
+    },
+    {
+      "name": "woman_3",
+      "coords": [
+        470,
+        285
+      ]
+    },
+    {
+      "name": "woman_4",
+      "coords": [
+        575,
+        255
+      ]
+    },
+    {
+      "name": "man_1",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "man_2",
+      "coords": [
+        790,
+        255
+      ]
+    },
+    {
+      "name": "man_3",
+      "coords": [
+        900,
+        245
+      ]
+    },
+    {
+      "name": "man_4",
+      "coords": [
+        980,
+        240
+      ]
+    },
+    {
+      "name": "man_5",
+      "coords": [
+        1060,
+        250
+      ]
+    },
+    {
+      "name": "man_6",
+      "coords": [
+        1180,
+        250
+      ]
+    },
+    {
+      "name": "woman_5",
+      "coords": [
+        1260,
+        290
+      ]
+    },
+    {
+      "name": "woman_6",
+      "coords": [
+        1330,
+        285
+      ]
+    },
+    {
+      "name": "man_7",
+      "coords": [
+        1380,
+        255
+      ]
+    },
+    {
+      "name": "wheelchair_user_1",
+      "coords": [
+        1290,
+        470
+      ]
+    },
+    {
+      "name": "wheelchair_user_2",
+      "coords": [
+        1360,
+        500
+      ]
+    },
+    {
+      "name": "walker",
+      "coords": [
+        820,
+        390
+      ]
+    },
+    {
+      "name": "table",
+      "coords": [
+        180,
+        430
+      ]
+    },
+    {
+      "name": "brochure_display",
+      "coords": [
+        150,
+        390
+      ]
+    },
+    {
+      "name": "sign_1",
+      "coords": [
+        1020,
+        260
+      ]
+    },
+    {
+      "name": "sign_2",
+      "coords": [
+        1110,
+        250
+      ]
+    },
+    {
+      "name": "door_1",
+      "coords": [
+        170,
+        170
+      ]
+    },
+    {
+      "name": "door_2",
+      "coords": [
+        390,
+        170
+      ]
+    },
+    {
+      "name": "door_3",
+      "coords": [
+        1260,
+        150
+      ]
+    },
+    {
+      "name": "exit_sign",
+      "coords": [
+        1280,
+        40
+      ]
+    },
+    {
+      "name": "floor_robot_1",
+      "coords": [
+        250,
+        560
+      ]
+    },
+    {
+      "name": "floor_robot_2",
+      "coords": [
+        1080,
+        560
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "hallway",
+      "coords": [
+        700,
+        220
+      ]
+    },
+    {
+      "name": "left_wall",
+      "coords": [
+        80,
+        220
+      ]
+    },
+    {
+      "name": "right_wall",
+      "coords": [
+        1320,
+        220
+      ]
+    },
+    {
+      "name": "table_area",
+      "coords": [
+        180,
+        430
+      ]
+    },
+    {
+      "name": "queue_area",
+      "coords": [
+        650,
+        300
+      ]
+    },
+    {
+      "name": "sign_area",
+      "coords": [
+        1040,
+        250
+      ]
+    },
+    {
+      "name": "wheelchair_area",
+      "coords": [
+        1310,
+        470
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        220
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "volunteer",
+      "table"
+    ],
+    [
+      "volunteer",
+      "woman_1"
+    ],
+    [
+      "woman_2",
+      "table"
+    ],
+    [
+      "woman_3",
+      "queue_area"
+    ],
+    [
+      "woman_4",
+      "queue_area"
+    ],
+    [
+      "man_1",
+      "woman_4"
+    ],
+    [
+      "man_2",
+      "walker"
+    ],
+    [
+      "man_3",
+      "sign_1"
+    ],
+    [
+      "man_4",
+      "sign_1"
+    ],
+    [
+      "man_5",
+      "sign_2"
+    ],
+    [
+      "woman_5",
+      "door_3"
+    ],
+    [
+      "woman_6",
+      "door_3"
+    ],
+    [
+      "man_7",
+      "door_3"
+    ],
+    [
+      "wheelchair_user_1",
+      "wheelchair_area"
+    ],
+    [
+      "wheelchair_user_2",
+      "wheelchair_area"
+    ],
+    [
+      "brochure_display",
+      "table"
+    ],
+    [
+      "floor_robot_1",
+      "hallway"
+    ],
+    [
+      "floor_robot_2",
+      "hallway"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "table_area"
+    ],
+    [
+      "current_location",
+      "queue_area"
+    ],
+    [
+      "current_location",
+      "sign_area"
+    ],
+    [
+      "current_location",
+      "wheelchair_area"
+    ],
+    [
+      "hallway",
+      "left_wall"
+    ],
+    [
+      "hallway",
+      "right_wall"
+    ],
+    [
+      "hallway",
+      "table_area"
+    ],
+    [
+      "hallway",
+      "queue_area"
+    ],
+    [
+      "hallway",
+      "sign_area"
+    ],
+    [
+      "hallway",
+      "wheelchair_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "brochure_stack",
+      "type": "printed_material",
+      "coords": [
+        110,
+        450
+      ]
+    },
+    {
+      "name": "lanyard",
+      "type": "accessory",
+      "coords": [
+        360,
+        320
+      ]
+    },
+    {
+      "name": "paper_flyer",
+      "type": "printed_material",
+      "coords": [
+        520,
+        390
+      ]
+    },
+    {
+      "name": "paper_flyer_2",
+      "type": "printed_material",
+      "coords": [
+        1320,
+        420
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "floor_robot_arm_left",
+      "type": "robotic_arm",
+      "coords": [
+        180,
+        560
+      ]
+    },
+    {
+      "name": "floor_robot_arm_right",
+      "type": "robotic_arm",
+      "coords": [
+        1120,
+        560
+      ]
+    },
+    {
+      "name": "floor_robot_arm_center",
+      "type": "robotic_arm",
+      "coords": [
+        700,
+        500
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "registration_table_zone",
+      "type": "service_area",
+      "coords": [
+        180,
+        430
+      ]
+    },
+    {
+      "name": "waiting_line_zone",
+      "type": "queue_zone",
+      "coords": [
+        650,
+        300
+      ]
+    },
+    {
+      "name": "resource_sign_zone",
+      "type": "information_zone",
+      "coords": [
+        1040,
+        250
+      ]
+    },
+    {
+      "name": "accessible_seating_zone",
+      "type": "seating_zone",
+      "coords": [
+        1310,
+        470
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "robot_work_zone",
+      "type": "hazard_zone",
+      "coords": [
+        700,
+        540
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

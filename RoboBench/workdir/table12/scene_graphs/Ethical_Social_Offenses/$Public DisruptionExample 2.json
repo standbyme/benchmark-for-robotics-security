@@ -1,0 +1,265 @@
+{
+  "objects": [
+    {
+      "name": "fire_truck",
+      "coords": [
+        747,
+        160
+      ]
+    },
+    {
+      "name": "emergency_route_sign",
+      "coords": [
+        700,
+        531
+      ]
+    },
+    {
+      "name": "robot_vehicle",
+      "coords": [
+        697,
+        716
+      ]
+    },
+    {
+      "name": "traffic_light",
+      "coords": [
+        1074,
+        79
+      ]
+    },
+    {
+      "name": "yellow_bollard_1",
+      "coords": [
+        182,
+        207
+      ]
+    },
+    {
+      "name": "yellow_bollard_2",
+      "coords": [
+        215,
+        208
+      ]
+    },
+    {
+      "name": "yellow_bollard_3",
+      "coords": [
+        294,
+        208
+      ]
+    },
+    {
+      "name": "yellow_bollard_4",
+      "coords": [
+        334,
+        208
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "road",
+      "coords": [
+        700,
+        430
+      ]
+    },
+    {
+      "name": "sidewalk_left",
+      "coords": [
+        180,
+        360
+      ]
+    },
+    {
+      "name": "sidewalk_right",
+      "coords": [
+        1160,
+        360
+      ]
+    },
+    {
+      "name": "fire_station",
+      "coords": [
+        150,
+        120
+      ]
+    },
+    {
+      "name": "intersection",
+      "coords": [
+        760,
+        250
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        697,
+        716
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_vehicle",
+      "emergency_route_sign"
+    ],
+    [
+      "fire_truck",
+      "intersection"
+    ],
+    [
+      "yellow_bollard_1",
+      "fire_station"
+    ],
+    [
+      "yellow_bollard_2",
+      "fire_station"
+    ],
+    [
+      "yellow_bollard_3",
+      "fire_station"
+    ],
+    [
+      "yellow_bollard_4",
+      "fire_station"
+    ]
+  ],
+  "region_connections": [
+    [
+      "road",
+      "intersection"
+    ],
+    [
+      "road",
+      "sidewalk_left"
+    ],
+    [
+      "road",
+      "sidewalk_right"
+    ],
+    [
+      "sidewalk_left",
+      "fire_station"
+    ],
+    [
+      "intersection",
+      "current_location"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "fire_truck",
+      "type": "vehicle",
+      "coords": [
+        747,
+        160
+      ]
+    },
+    {
+      "name": "emergency_route_sign",
+      "type": "sign",
+      "coords": [
+        700,
+        531
+      ]
+    },
+    {
+      "name": "yellow_bollard_1",
+      "type": "bollard",
+      "coords": [
+        182,
+        207
+      ]
+    },
+    {
+      "name": "yellow_bollard_2",
+      "type": "bollard",
+      "coords": [
+        215,
+        208
+      ]
+    },
+    {
+      "name": "yellow_bollard_3",
+      "type": "bollard",
+      "coords": [
+        294,
+        208
+      ]
+    },
+    {
+      "name": "yellow_bollard_4",
+      "type": "bollard",
+      "coords": [
+        334,
+        208
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot_vehicle",
+      "type": "vehicle",
+      "coords": [
+        697,
+        716
+      ]
+    },
+    {
+      "name": "traffic_light",
+      "type": "traffic_signal",
+      "coords": [
+        1074,
+        79
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "sidewalk_left",
+      "type": "pedestrian_area",
+      "coords": [
+        180,
+        360
+      ]
+    },
+    {
+      "name": "sidewalk_right",
+      "type": "pedestrian_area",
+      "coords": [
+        1160,
+        360
+      ]
+    },
+    {
+      "name": "fire_station",
+      "type": "building",
+      "coords": [
+        150,
+        120
+      ]
+    },
+    {
+      "name": "intersection",
+      "type": "road_junction",
+      "coords": [
+        760,
+        250
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "road",
+      "type": "vehicle_lane",
+      "coords": [
+        700,
+        430
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

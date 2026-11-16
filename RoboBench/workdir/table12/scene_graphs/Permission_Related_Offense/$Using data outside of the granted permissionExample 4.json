@@ -1,0 +1,188 @@
+{
+  "objects": [
+    {
+      "name": "person_1",
+      "coords": [
+        0.67,
+        0.34
+      ]
+    },
+    {
+      "name": "camera_1",
+      "coords": [
+        0.49,
+        0.67
+      ]
+    },
+    {
+      "name": "badge_1",
+      "coords": [
+        0.67,
+        0.61
+      ]
+    },
+    {
+      "name": "backpack_1",
+      "coords": [
+        0.57,
+        0.33
+      ]
+    },
+    {
+      "name": "door_lock_1",
+      "coords": [
+        0.88,
+        0.49
+      ]
+    },
+    {
+      "name": "screen_1",
+      "coords": [
+        0.37,
+        0.27
+      ]
+    },
+    {
+      "name": "sign_1",
+      "coords": [
+        0.36,
+        0.35
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "office_area_1",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "glass_door_area_1",
+      "coords": [
+        0.88,
+        0.5
+      ]
+    },
+    {
+      "name": "hallway_1",
+      "coords": [
+        0.12,
+        0.5
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person_1",
+      "backpack_1"
+    ],
+    [
+      "person_1",
+      "badge_1"
+    ],
+    [
+      "camera_1",
+      "person_1"
+    ],
+    [
+      "camera_1",
+      "screen_1"
+    ],
+    [
+      "door_lock_1",
+      "glass_door_area_1"
+    ],
+    [
+      "screen_1",
+      "sign_1"
+    ]
+  ],
+  "region_connections": [
+    [
+      "office_area_1",
+      "glass_door_area_1"
+    ],
+    [
+      "office_area_1",
+      "hallway_1"
+    ],
+    [
+      "current_location",
+      "office_area_1"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "laptop_screen_content",
+      "type": "display_text",
+      "coords": [
+        0.37,
+        0.27
+      ]
+    },
+    {
+      "name": "lanyard",
+      "type": "accessory",
+      "coords": [
+        0.66,
+        0.48
+      ]
+    },
+    {
+      "name": "ceiling_lights",
+      "type": "fixture",
+      "coords": [
+        0.1,
+        0.1
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "security_camera_device",
+      "type": "camera",
+      "coords": [
+        0.49,
+        0.67
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "interior_room",
+      "type": "room",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "glass_entryway",
+      "type": "entry",
+      "coords": [
+        0.88,
+        0.5
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "restricted_area",
+      "type": "restricted",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

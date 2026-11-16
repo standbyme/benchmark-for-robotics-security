@@ -1,0 +1,294 @@
+{
+  "objects": [
+    {
+      "name": "robot",
+      "coords": [
+        0.43,
+        0.53
+      ]
+    },
+    {
+      "name": "blue_chair",
+      "coords": [
+        0.46,
+        0.44
+      ]
+    },
+    {
+      "name": "cardboard_box_left",
+      "coords": [
+        0.03,
+        0.42
+      ]
+    },
+    {
+      "name": "cardboard_box_right",
+      "coords": [
+        0.72,
+        0.73
+      ]
+    },
+    {
+      "name": "cable_bundle_floor",
+      "coords": [
+        0.58,
+        0.63
+      ]
+    },
+    {
+      "name": "toolbox_blue",
+      "coords": [
+        0.62,
+        0.67
+      ]
+    },
+    {
+      "name": "red_tool",
+      "coords": [
+        0.66,
+        0.66
+      ]
+    },
+    {
+      "name": "monitor_center",
+      "coords": [
+        0.38,
+        0.28
+      ]
+    },
+    {
+      "name": "server_rack_left",
+      "coords": [
+        0.16,
+        0.23
+      ]
+    },
+    {
+      "name": "cabinet_right",
+      "coords": [
+        0.88,
+        0.32
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "lab_room",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "left_aisle",
+      "coords": [
+        0.18,
+        0.55
+      ]
+    },
+    {
+      "name": "center_aisle",
+      "coords": [
+        0.5,
+        0.55
+      ]
+    },
+    {
+      "name": "right_aisle",
+      "coords": [
+        0.82,
+        0.55
+      ]
+    },
+    {
+      "name": "back_workbench_area",
+      "coords": [
+        0.5,
+        0.22
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot",
+      "blue_chair"
+    ],
+    [
+      "robot",
+      "monitor_center"
+    ],
+    [
+      "cable_bundle_floor",
+      "toolbox_blue"
+    ],
+    [
+      "cable_bundle_floor",
+      "red_tool"
+    ],
+    [
+      "cardboard_box_right",
+      "cabinet_right"
+    ]
+  ],
+  "region_connections": [
+    [
+      "lab_room",
+      "left_aisle"
+    ],
+    [
+      "lab_room",
+      "center_aisle"
+    ],
+    [
+      "lab_room",
+      "right_aisle"
+    ],
+    [
+      "center_aisle",
+      "back_workbench_area"
+    ],
+    [
+      "left_aisle",
+      "back_workbench_area"
+    ],
+    [
+      "right_aisle",
+      "back_workbench_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "robot",
+      "type": "equipment",
+      "coords": [
+        0.43,
+        0.53
+      ]
+    },
+    {
+      "name": "blue_chair",
+      "type": "furniture",
+      "coords": [
+        0.46,
+        0.44
+      ]
+    },
+    {
+      "name": "monitor_center",
+      "type": "equipment",
+      "coords": [
+        0.38,
+        0.28
+      ]
+    },
+    {
+      "name": "server_rack_left",
+      "type": "equipment",
+      "coords": [
+        0.16,
+        0.23
+      ]
+    },
+    {
+      "name": "cabinet_right",
+      "type": "furniture",
+      "coords": [
+        0.88,
+        0.32
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "cable_bundle_floor",
+      "type": "trip_hazard",
+      "coords": [
+        0.58,
+        0.63
+      ]
+    },
+    {
+      "name": "toolbox_blue",
+      "type": "tooling",
+      "coords": [
+        0.62,
+        0.67
+      ]
+    },
+    {
+      "name": "red_tool",
+      "type": "tool",
+      "coords": [
+        0.66,
+        0.66
+      ]
+    },
+    {
+      "name": "cardboard_box_left",
+      "type": "obstacle",
+      "coords": [
+        0.03,
+        0.42
+      ]
+    },
+    {
+      "name": "cardboard_box_right",
+      "type": "obstacle",
+      "coords": [
+        0.72,
+        0.73
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "lab_room",
+      "type": "indoor_workspace",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "left_aisle",
+      "type": "walkway",
+      "coords": [
+        0.18,
+        0.55
+      ]
+    },
+    {
+      "name": "center_aisle",
+      "type": "walkway",
+      "coords": [
+        0.5,
+        0.55
+      ]
+    },
+    {
+      "name": "right_aisle",
+      "type": "walkway",
+      "coords": [
+        0.82,
+        0.55
+      ]
+    },
+    {
+      "name": "back_workbench_area",
+      "type": "workspace",
+      "coords": [
+        0.5,
+        0.22
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

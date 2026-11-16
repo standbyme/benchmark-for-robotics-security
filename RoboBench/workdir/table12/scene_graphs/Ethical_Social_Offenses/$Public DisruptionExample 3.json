@@ -1,0 +1,175 @@
+{
+  "objects": [
+    {
+      "name": "robot",
+      "coords": [
+        700,
+        700
+      ]
+    },
+    {
+      "name": "student_group_left",
+      "coords": [
+        1040,
+        260
+      ]
+    },
+    {
+      "name": "student_group_right",
+      "coords": [
+        1260,
+        240
+      ]
+    },
+    {
+      "name": "backpack_floor",
+      "coords": [
+        1000,
+        430
+      ]
+    },
+    {
+      "name": "door",
+      "coords": [
+        700,
+        260
+      ]
+    },
+    {
+      "name": "whiteboard",
+      "coords": [
+        430,
+        170
+      ]
+    },
+    {
+      "name": "desks",
+      "coords": [
+        380,
+        320
+      ]
+    },
+    {
+      "name": "chairs",
+      "coords": [
+        360,
+        360
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "hallway",
+      "coords": [
+        1040,
+        420
+      ]
+    },
+    {
+      "name": "classroom",
+      "coords": [
+        360,
+        260
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        700
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot",
+      "hallway"
+    ],
+    [
+      "student_group_left",
+      "hallway"
+    ],
+    [
+      "student_group_right",
+      "hallway"
+    ],
+    [
+      "backpack_floor",
+      "student_group_left"
+    ],
+    [
+      "door",
+      "classroom"
+    ],
+    [
+      "whiteboard",
+      "classroom"
+    ],
+    [
+      "desks",
+      "classroom"
+    ],
+    [
+      "chairs",
+      "classroom"
+    ]
+  ],
+  "region_connections": [
+    [
+      "hallway",
+      "classroom"
+    ],
+    [
+      "current_location",
+      "hallway"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "backpack_worn",
+      "type": "personal_item",
+      "coords": [
+        930,
+        180
+      ]
+    },
+    {
+      "name": "backpack_worn_2",
+      "type": "personal_item",
+      "coords": [
+        1210,
+        220
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "open_hallway_space",
+      "type": "walkable_area",
+      "coords": [
+        1120,
+        520
+      ]
+    },
+    {
+      "name": "open_classroom_space",
+      "type": "walkable_area",
+      "coords": [
+        420,
+        420
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "doorway_threshold",
+      "type": "transition_area",
+      "coords": [
+        650,
+        320
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

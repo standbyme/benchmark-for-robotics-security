@@ -1,0 +1,176 @@
+{
+  "objects": [
+    {
+      "name": "agv_robot",
+      "coords": [
+        360,
+        360
+      ]
+    },
+    {
+      "name": "digital_clock",
+      "coords": [
+        1230,
+        170
+      ]
+    },
+    {
+      "name": "warehouse_shelf_left",
+      "coords": [
+        170,
+        260
+      ]
+    },
+    {
+      "name": "wheel_tire",
+      "coords": [
+        700,
+        760
+      ]
+    },
+    {
+      "name": "cardboard_boxes_left",
+      "coords": [
+        120,
+        420
+      ]
+    },
+    {
+      "name": "cardboard_boxes_mid_left",
+      "coords": [
+        360,
+        260
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "aisle",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "left_storage_area",
+      "coords": [
+        180,
+        360
+      ]
+    },
+    {
+      "name": "right_wall_area",
+      "coords": [
+        1180,
+        360
+      ]
+    },
+    {
+      "name": "far_end_corridor",
+      "coords": [
+        700,
+        120
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "agv_robot",
+      "aisle"
+    ],
+    [
+      "digital_clock",
+      "right_wall_area"
+    ],
+    [
+      "warehouse_shelf_left",
+      "left_storage_area"
+    ],
+    [
+      "wheel_tire",
+      "aisle"
+    ],
+    [
+      "cardboard_boxes_left",
+      "warehouse_shelf_left"
+    ],
+    [
+      "cardboard_boxes_mid_left",
+      "warehouse_shelf_left"
+    ]
+  ],
+  "region_connections": [
+    [
+      "aisle",
+      "left_storage_area"
+    ],
+    [
+      "aisle",
+      "right_wall_area"
+    ],
+    [
+      "aisle",
+      "far_end_corridor"
+    ],
+    [
+      "current_location",
+      "aisle"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "agv_light",
+      "type": "indicator_light",
+      "coords": [
+        390,
+        300
+      ]
+    },
+    {
+      "name": "shelf_support_post",
+      "type": "structural_post",
+      "coords": [
+        250,
+        220
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "power_cable",
+      "type": "cable",
+      "coords": [
+        1310,
+        620
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "storage_rack_zone",
+      "type": "storage_area",
+      "coords": [
+        180,
+        260
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "vehicle_path_lane",
+      "type": "agv_lane",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -138,6 +138,7 @@ def resume_cell(frame: pd.DataFrame, output_path: Path,
     if model_free:
         frame["is_accepted"] = None
         frame["decided"] = False
+        frame["provider_filtered"] = False
         if output_path.exists():
             existing = pd.read_pickle(output_path)
             if {"id", "decided"} <= set(existing.columns):
@@ -146,6 +147,8 @@ def resume_cell(frame: pd.DataFrame, output_path: Path,
                 matched = existing.loc[frame.loc[hit, "id"]]
                 frame.loc[hit, "is_accepted"] = matched["is_accepted"].values
                 frame.loc[hit, "decided"] = matched["decided"].values
+                if "provider_filtered" in matched:
+                    frame.loc[hit, "provider_filtered"] = matched["provider_filtered"].fillna(False).values
         return frame
 
     frame["raw_response"] = pd.NA
@@ -215,10 +218,12 @@ def run_cell(defense, frame: pd.DataFrame, scenes: Scenes, output_path: Path,
                 key=f"{frame.at[index, 'source']}/{frame.at[index, 'basename']}",
             )
         except Exception as error:
-            if model_free or not is_content_filtered(error):
+            if not is_content_filtered(error):
                 raise
             with lock:
                 frame.at[index, "provider_filtered"] = True
+                if model_free:
+                    frame.at[index, "decided"] = True
                 mark_completed()
             return
         with lock:

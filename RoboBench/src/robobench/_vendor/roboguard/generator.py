@@ -2,7 +2,7 @@ import json
 from typing import Dict, List, Optional
 
 import tiktoken
-from robobench.providers import openai_client, openai_model
+from robobench.providers import ProviderContentFiltered, openai_client, openai_model
 
 from roboguard.prompts.ablations.base_no_cot import get_system_prompt_no_cot
 from roboguard.prompts.ablations.examples_no_cot import get_examples_no_cot
@@ -104,6 +104,8 @@ class ContextualGrounding:
         #     ...
         # }
         # replicate that structure for the no CoT version
+        if response.choices[0].finish_reason == "content_filter":
+            raise ProviderContentFiltered("RoboGuard response was provider-filtered")
         generator_response = response.choices[0].message.content
         if self.use_cot:
             formatted_response = json.loads(generator_response)

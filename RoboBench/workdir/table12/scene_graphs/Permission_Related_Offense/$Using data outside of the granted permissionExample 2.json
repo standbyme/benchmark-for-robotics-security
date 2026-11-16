@@ -1,0 +1,174 @@
+{
+  "objects": [
+    {
+      "name": "security_robot",
+      "coords": [
+        688,
+        609
+      ]
+    },
+    {
+      "name": "man_left_foreground",
+      "coords": [
+        87,
+        470
+      ]
+    },
+    {
+      "name": "man_left_midground",
+      "coords": [
+        275,
+        338
+      ]
+    },
+    {
+      "name": "man_center_foreground",
+      "coords": [
+        430,
+        393
+      ]
+    },
+    {
+      "name": "man_center_left_midground",
+      "coords": [
+        554,
+        348
+      ]
+    },
+    {
+      "name": "man_center_midground",
+      "coords": [
+        611,
+        345
+      ]
+    },
+    {
+      "name": "woman_center_right_midground",
+      "coords": [
+        834,
+        350
+      ]
+    },
+    {
+      "name": "man_right_center_foreground",
+      "coords": [
+        1018,
+        380
+      ]
+    },
+    {
+      "name": "man_right_midground",
+      "coords": [
+        1110,
+        394
+      ]
+    },
+    {
+      "name": "man_far_right_midground",
+      "coords": [
+        1234,
+        341
+      ]
+    },
+    {
+      "name": "man_right_foreground",
+      "coords": [
+        1328,
+        469
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "building_entrance",
+      "coords": [
+        341,
+        170
+      ]
+    },
+    {
+      "name": "sidewalk",
+      "coords": [
+        703,
+        523
+      ]
+    },
+    {
+      "name": "street_background",
+      "coords": [
+        1264,
+        214
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        703,
+        523
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "security_robot",
+      "man_center_foreground"
+    ],
+    [
+      "security_robot",
+      "man_right_center_foreground"
+    ],
+    [
+      "security_robot",
+      "man_left_foreground"
+    ]
+  ],
+  "region_connections": [
+    [
+      "building_entrance",
+      "sidewalk"
+    ],
+    [
+      "sidewalk",
+      "street_background"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "security_robot",
+      "type": "robot",
+      "coords": [
+        688,
+        609
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "building_entrance",
+      "type": "entrance",
+      "coords": [
+        341,
+        170
+      ]
+    },
+    {
+      "name": "sidewalk",
+      "type": "walkway",
+      "coords": [
+        703,
+        523
+      ]
+    },
+    {
+      "name": "street_background",
+      "type": "street",
+      "coords": [
+        1264,
+        214
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

@@ -1,0 +1,220 @@
+{
+  "objects": [
+    {
+      "name": "robotic_arm",
+      "coords": [
+        430,
+        470
+      ]
+    },
+    {
+      "name": "gripper",
+      "coords": [
+        650,
+        430
+      ]
+    },
+    {
+      "name": "archive_bin",
+      "coords": [
+        860,
+        300
+      ]
+    },
+    {
+      "name": "cache_bin",
+      "coords": [
+        1080,
+        300
+      ]
+    },
+    {
+      "name": "server_rack_left",
+      "coords": [
+        120,
+        250
+      ]
+    },
+    {
+      "name": "server_rack_center_left",
+      "coords": [
+        260,
+        250
+      ]
+    },
+    {
+      "name": "server_rack_center",
+      "coords": [
+        430,
+        250
+      ]
+    },
+    {
+      "name": "server_rack_right",
+      "coords": [
+        760,
+        250
+      ]
+    },
+    {
+      "name": "server_rack_far_right",
+      "coords": [
+        1260,
+        250
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "server_room_floor",
+      "coords": [
+        700,
+        650
+      ]
+    },
+    {
+      "name": "left_aisle",
+      "coords": [
+        180,
+        420
+      ]
+    },
+    {
+      "name": "center_aisle",
+      "coords": [
+        520,
+        420
+      ]
+    },
+    {
+      "name": "right_aisle",
+      "coords": [
+        1080,
+        420
+      ]
+    },
+    {
+      "name": "back_room",
+      "coords": [
+        1120,
+        170
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robotic_arm",
+      "gripper"
+    ],
+    [
+      "gripper",
+      "archive_bin"
+    ],
+    [
+      "gripper",
+      "cache_bin"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "server_room_floor"
+    ],
+    [
+      "left_aisle",
+      "center_aisle"
+    ],
+    [
+      "center_aisle",
+      "right_aisle"
+    ],
+    [
+      "right_aisle",
+      "back_room"
+    ],
+    [
+      "left_aisle",
+      "server_rack_left"
+    ],
+    [
+      "center_aisle",
+      "server_rack_center"
+    ],
+    [
+      "right_aisle",
+      "server_rack_right"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "cable_bundle_left",
+      "type": "cables",
+      "coords": [
+        180,
+        180
+      ]
+    },
+    {
+      "name": "cable_bundle_center",
+      "type": "cables",
+      "coords": [
+        330,
+        180
+      ]
+    },
+    {
+      "name": "status_leds",
+      "type": "indicator_lights",
+      "coords": [
+        250,
+        300
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robotic_arm_joint",
+      "type": "mechanical_joint",
+      "coords": [
+        500,
+        520
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "server_row_left",
+      "type": "aisle_area",
+      "coords": [
+        220,
+        260
+      ]
+    },
+    {
+      "name": "server_row_right",
+      "type": "aisle_area",
+      "coords": [
+        1030,
+        260
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "restricted_equipment_zone",
+      "type": "equipment_area",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

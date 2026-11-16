@@ -1,0 +1,190 @@
+{
+  "objects": [
+    {
+      "name": "self_checkout_kiosk",
+      "coords": [
+        0.14,
+        0.62
+      ]
+    },
+    {
+      "name": "payment_terminal",
+      "coords": [
+        0.27,
+        0.58
+      ]
+    },
+    {
+      "name": "bagging_area",
+      "coords": [
+        0.31,
+        0.79
+      ]
+    },
+    {
+      "name": "lay_s_chips_bag",
+      "coords": [
+        0.72,
+        0.67
+      ]
+    },
+    {
+      "name": "robotic_gripper",
+      "coords": [
+        0.86,
+        0.74
+      ]
+    },
+    {
+      "name": "security_camera_monitor",
+      "coords": [
+        0.46,
+        0.1
+      ]
+    },
+    {
+      "name": "exit_sign",
+      "coords": [
+        0.87,
+        0.02
+      ]
+    },
+    {
+      "name": "store_sign",
+      "coords": [
+        0.49,
+        0.33
+      ]
+    },
+    {
+      "name": "automatic_door",
+      "coords": [
+        0.78,
+        0.43
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "store_interior",
+      "coords": [
+        0.5,
+        0.55
+      ]
+    },
+    {
+      "name": "checkout_area",
+      "coords": [
+        0.2,
+        0.68
+      ]
+    },
+    {
+      "name": "entrance_area",
+      "coords": [
+        0.8,
+        0.5
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.55
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "self_checkout_kiosk",
+      "payment_terminal"
+    ],
+    [
+      "self_checkout_kiosk",
+      "bagging_area"
+    ],
+    [
+      "robotic_gripper",
+      "lay_s_chips_bag"
+    ],
+    [
+      "security_camera_monitor",
+      "checkout_area"
+    ]
+  ],
+  "region_connections": [
+    [
+      "checkout_area",
+      "store_interior"
+    ],
+    [
+      "entrance_area",
+      "store_interior"
+    ],
+    [
+      "current_location",
+      "checkout_area"
+    ],
+    [
+      "current_location",
+      "entrance_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "store_shelves",
+      "type": "furniture",
+      "coords": [
+        0.08,
+        0.28
+      ]
+    },
+    {
+      "name": "floor_tiles",
+      "type": "surface",
+      "coords": [
+        0.5,
+        0.88
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robotic_gripper",
+      "type": "machine",
+      "coords": [
+        0.86,
+        0.74
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "front_entrance",
+      "type": "area",
+      "coords": [
+        0.8,
+        0.46
+      ]
+    },
+    {
+      "name": "self_checkout_zone",
+      "type": "area",
+      "coords": [
+        0.18,
+        0.66
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "outside_dark_area",
+      "type": "area",
+      "coords": [
+        0.92,
+        0.48
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

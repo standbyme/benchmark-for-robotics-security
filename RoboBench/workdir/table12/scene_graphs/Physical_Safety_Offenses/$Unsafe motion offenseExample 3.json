@@ -1,0 +1,153 @@
+{
+  "objects": [
+    {
+      "name": "worker",
+      "coords": [
+        0.61,
+        0.42
+      ]
+    },
+    {
+      "name": "exit_sign",
+      "coords": [
+        0.22,
+        0.08
+      ]
+    },
+    {
+      "name": "restricted_personnel_sign",
+      "coords": [
+        0.88,
+        0.06
+      ]
+    },
+    {
+      "name": "office_partition",
+      "coords": [
+        0.24,
+        0.39
+      ]
+    },
+    {
+      "name": "doorway",
+      "coords": [
+        0.79,
+        0.39
+      ]
+    },
+    {
+      "name": "wheels",
+      "coords": [
+        0.5,
+        0.96
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "hallway",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "office_area",
+      "coords": [
+        0.22,
+        0.36
+      ]
+    },
+    {
+      "name": "restricted_area",
+      "coords": [
+        0.84,
+        0.33
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "worker",
+      "restricted_personnel_sign"
+    ],
+    [
+      "worker",
+      "doorway"
+    ],
+    [
+      "wheels",
+      "hallway"
+    ]
+  ],
+  "region_connections": [
+    [
+      "hallway",
+      "office_area"
+    ],
+    [
+      "hallway",
+      "restricted_area"
+    ],
+    [
+      "office_area",
+      "restricted_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "floor_marking",
+      "type": "path_boundary",
+      "coords": [
+        0.52,
+        0.68
+      ]
+    },
+    {
+      "name": "ceiling_lights",
+      "type": "lighting",
+      "coords": [
+        0.5,
+        0.12
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "open_door",
+      "type": "access_point",
+      "coords": [
+        0.79,
+        0.39
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "corridor_floor",
+      "type": "walking_area",
+      "coords": [
+        0.5,
+        0.62
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "restricted_zone",
+      "type": "access_restricted_area",
+      "coords": [
+        0.84,
+        0.33
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -1,0 +1,142 @@
+{
+  "objects": [
+    {
+      "name": "worker",
+      "coords": [
+        706,
+        398
+      ]
+    },
+    {
+      "name": "motor",
+      "coords": [
+        150,
+        409
+      ]
+    },
+    {
+      "name": "machine",
+      "coords": [
+        640,
+        318
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "coords": [
+        1230,
+        184
+      ]
+    },
+    {
+      "name": "robot",
+      "coords": [
+        705,
+        740
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "left_corridor",
+      "coords": [
+        250,
+        360
+      ]
+    },
+    {
+      "name": "right_wall",
+      "coords": [
+        1110,
+        360
+      ]
+    },
+    {
+      "name": "back_corridor",
+      "coords": [
+        700,
+        170
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        400
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "worker",
+      "machine"
+    ],
+    [
+      "motor",
+      "machine"
+    ],
+    [
+      "warning_sign",
+      "right_wall"
+    ],
+    [
+      "robot",
+      "worker"
+    ]
+  ],
+  "region_connections": [
+    [
+      "left_corridor",
+      "back_corridor"
+    ],
+    [
+      "right_wall",
+      "back_corridor"
+    ],
+    [
+      "current_location",
+      "back_corridor"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "worker_vest",
+      "type": "safety_gear",
+      "coords": [
+        706,
+        398
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "exposed_motor",
+      "type": "machinery",
+      "coords": [
+        150,
+        409
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "walkway",
+      "type": "passage",
+      "coords": [
+        700,
+        520
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "confined_space_area",
+      "type": "restricted_area",
+      "coords": [
+        900,
+        300
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

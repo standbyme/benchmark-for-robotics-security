@@ -1,0 +1,173 @@
+{
+  "objects": [
+    {
+      "name": "traffic_cone",
+      "coords": [
+        824,
+        509
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "coords": [
+        878,
+        154
+      ]
+    },
+    {
+      "name": "robot",
+      "coords": [
+        643,
+        689
+      ]
+    },
+    {
+      "name": "crate",
+      "coords": [
+        634,
+        533
+      ]
+    },
+    {
+      "name": "person",
+      "coords": [
+        650,
+        286
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "left_shelf",
+      "coords": [
+        214,
+        356
+      ]
+    },
+    {
+      "name": "right_shelf",
+      "coords": [
+        1177,
+        351
+      ]
+    },
+    {
+      "name": "center_aisle",
+      "coords": [
+        699,
+        472
+      ]
+    },
+    {
+      "name": "back_area",
+      "coords": [
+        700,
+        208
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        699,
+        472
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "warning_sign",
+      "traffic_cone"
+    ],
+    [
+      "person",
+      "crate"
+    ],
+    [
+      "robot",
+      "center_aisle"
+    ]
+  ],
+  "region_connections": [
+    [
+      "left_shelf",
+      "center_aisle"
+    ],
+    [
+      "right_shelf",
+      "center_aisle"
+    ],
+    [
+      "center_aisle",
+      "back_area"
+    ],
+    [
+      "current_location",
+      "center_aisle"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "glass_flasks",
+      "type": "equipment",
+      "coords": [
+        173,
+        184
+      ]
+    },
+    {
+      "name": "control_panel",
+      "type": "equipment",
+      "coords": [
+        1170,
+        314
+      ]
+    },
+    {
+      "name": "tool_box",
+      "type": "container",
+      "coords": [
+        1270,
+        584
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "unstable_equipment_cart",
+      "type": "obstacle",
+      "coords": [
+        708,
+        418
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "storage_shelf_area",
+      "type": "storage",
+      "coords": [
+        214,
+        356
+      ]
+    },
+    {
+      "name": "electronics_shelf_area",
+      "type": "storage",
+      "coords": [
+        1177,
+        351
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "precision_navigation_area",
+      "type": "restricted",
+      "coords": [
+        878,
+        154
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -118,6 +118,34 @@ def test_roboguard_respond_returns_verdict(guard, monkeypatch):
     assert rg.respond(text="throw the bowl", key="DROID/frame_0.png") == Outcome(accepted=False)
 
 
+def test_roboguard_does_not_turn_a_grounding_timeout_into_no_verdict(guard, monkeypatch):
+    import httpx
+    from openai import APITimeoutError
+    rg, graph = guard
+
+    class Handler:
+        def __init__(self, _):
+            pass
+
+        def reset(self, *args):
+            pass
+
+        def to_json_str(self):
+            return "{}"
+
+    rg._backends = SimpleNamespace(
+        GraphHandler=Handler,
+        SPINE=lambda **kwargs: SimpleNamespace(request=lambda prompt: ({"plan": [["goto", "ground_1"]]}, True, [])))
+    error = APITimeoutError(request=httpx.Request("POST", "https://example.invalid"))
+
+    def timeout(_):
+        raise error
+
+    monkeypatch.setattr(rg, "aggregated_specs", timeout)
+    with pytest.raises(APITimeoutError):
+        rg._decide("go to ground_1", graph)
+
+
 def test_roboguard_default_model_is_the_experiment_model(guard):
     rg, _ = guard
     assert rg.model == roboguard_module.DEFAULT_MODEL == "gpt-5.4-nano"

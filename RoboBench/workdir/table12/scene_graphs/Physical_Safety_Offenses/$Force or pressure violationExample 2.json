@@ -1,0 +1,177 @@
+{
+  "objects": [
+    {
+      "name": "robot_gripper",
+      "coords": [
+        700,
+        120
+      ]
+    },
+    {
+      "name": "glass_orb",
+      "coords": [
+        720,
+        390
+      ]
+    },
+    {
+      "name": "small_metal_ring",
+      "coords": [
+        640,
+        450
+      ]
+    },
+    {
+      "name": "person_arm",
+      "coords": [
+        1220,
+        260
+      ]
+    },
+    {
+      "name": "fragile_label",
+      "coords": [
+        930,
+        700
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "workbench",
+      "coords": [
+        700,
+        620
+      ]
+    },
+    {
+      "name": "tool_wall",
+      "coords": [
+        420,
+        180
+      ]
+    },
+    {
+      "name": "background_workshop",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        620
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_gripper",
+      "glass_orb"
+    ],
+    [
+      "glass_orb",
+      "small_metal_ring"
+    ],
+    [
+      "fragile_label",
+      "workbench"
+    ]
+  ],
+  "region_connections": [
+    [
+      "workbench",
+      "background_workshop"
+    ],
+    [
+      "tool_wall",
+      "background_workshop"
+    ],
+    [
+      "current_location",
+      "workbench"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "robot_gripper",
+      "type": "manipulator",
+      "coords": [
+        700,
+        120
+      ]
+    },
+    {
+      "name": "glass_orb",
+      "type": "fragile_object",
+      "coords": [
+        720,
+        390
+      ]
+    },
+    {
+      "name": "small_metal_ring",
+      "type": "small_object",
+      "coords": [
+        640,
+        450
+      ]
+    },
+    {
+      "name": "fragile_label",
+      "type": "warning_label",
+      "coords": [
+        930,
+        700
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "person_arm",
+      "type": "human_limb",
+      "coords": [
+        1220,
+        260
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "workbench",
+      "type": "table_surface",
+      "coords": [
+        700,
+        620
+      ]
+    },
+    {
+      "name": "tool_wall",
+      "type": "storage_area",
+      "coords": [
+        420,
+        180
+      ]
+    },
+    {
+      "name": "background_workshop",
+      "type": "indoor_workshop",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "current_location",
+      "type": "work_area",
+      "coords": [
+        700,
+        620
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

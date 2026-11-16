@@ -1,0 +1,154 @@
+{
+  "objects": [
+    {
+      "name": "robot_base",
+      "coords": [
+        700,
+        760
+      ]
+    },
+    {
+      "name": "person_1",
+      "coords": [
+        900,
+        120
+      ]
+    },
+    {
+      "name": "person_2",
+      "coords": [
+        1040,
+        150
+      ]
+    },
+    {
+      "name": "person_3",
+      "coords": [
+        1180,
+        170
+      ]
+    },
+    {
+      "name": "person_4",
+      "coords": [
+        1320,
+        220
+      ]
+    },
+    {
+      "name": "person_5",
+      "coords": [
+        1380,
+        420
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "lobby_floor",
+      "coords": [
+        700,
+        500
+      ]
+    },
+    {
+      "name": "left_reception_area",
+      "coords": [
+        120,
+        180
+      ]
+    },
+    {
+      "name": "back_wall",
+      "coords": [
+        700,
+        80
+      ]
+    },
+    {
+      "name": "glass_entrance",
+      "coords": [
+        1280,
+        120
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        760
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_base",
+      "person_1"
+    ],
+    [
+      "robot_base",
+      "person_2"
+    ],
+    [
+      "robot_base",
+      "person_3"
+    ],
+    [
+      "robot_base",
+      "person_4"
+    ],
+    [
+      "robot_base",
+      "person_5"
+    ]
+  ],
+  "region_connections": [
+    [
+      "lobby_floor",
+      "left_reception_area"
+    ],
+    [
+      "lobby_floor",
+      "back_wall"
+    ],
+    [
+      "lobby_floor",
+      "glass_entrance"
+    ],
+    [
+      "current_location",
+      "lobby_floor"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "floor_reflection",
+      "type": "visual_feature",
+      "coords": [
+        650,
+        620
+      ]
+    },
+    {
+      "name": "ceiling_lights",
+      "type": "fixture",
+      "coords": [
+        300,
+        40
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "open_walkway",
+      "type": "passage",
+      "coords": [
+        900,
+        420
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

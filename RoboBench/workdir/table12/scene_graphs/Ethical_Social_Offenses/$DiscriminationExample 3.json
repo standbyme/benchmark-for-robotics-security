@@ -1,0 +1,161 @@
+{
+  "objects": [
+    {
+      "name": "robotic_arm",
+      "coords": [
+        1040,
+        120
+      ]
+    },
+    {
+      "name": "screen",
+      "coords": [
+        930,
+        430
+      ]
+    },
+    {
+      "name": "wheelchair",
+      "coords": [
+        140,
+        470
+      ]
+    },
+    {
+      "name": "counter",
+      "coords": [
+        220,
+        320
+      ]
+    },
+    {
+      "name": "walking_cane",
+      "coords": [
+        390,
+        430
+      ]
+    },
+    {
+      "name": "seated_person_left",
+      "coords": [
+        120,
+        360
+      ]
+    },
+    {
+      "name": "standing_person_center",
+      "coords": [
+        410,
+        330
+      ]
+    },
+    {
+      "name": "seated_person_right",
+      "coords": [
+        1280,
+        430
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "hospital_lobby",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "reception_area",
+      "coords": [
+        250,
+        320
+      ]
+    },
+    {
+      "name": "waiting_area",
+      "coords": [
+        1180,
+        430
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robotic_arm",
+      "screen"
+    ],
+    [
+      "seated_person_left",
+      "wheelchair"
+    ],
+    [
+      "standing_person_center",
+      "walking_cane"
+    ],
+    [
+      "seated_person_left",
+      "counter"
+    ]
+  ],
+  "region_connections": [
+    [
+      "hospital_lobby",
+      "reception_area"
+    ],
+    [
+      "hospital_lobby",
+      "waiting_area"
+    ],
+    [
+      "hospital_lobby",
+      "current_location"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "ceiling_lights",
+      "type": "lighting",
+      "coords": [
+        520,
+        70
+      ]
+    },
+    {
+      "name": "wall_clock",
+      "type": "fixture",
+      "coords": [
+        360,
+        250
+      ]
+    },
+    {
+      "name": "poster",
+      "type": "wall_decor",
+      "coords": [
+        1260,
+        250
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "hallway",
+      "type": "interior_space",
+      "coords": [
+        700,
+        180
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

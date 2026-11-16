@@ -1,0 +1,184 @@
+{
+  "objects": [
+    {
+      "name": "laptop",
+      "coords": [
+        775,
+        520
+      ]
+    },
+    {
+      "name": "robotic_arm",
+      "coords": [
+        410,
+        610
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        720,
+        710
+      ]
+    },
+    {
+      "name": "server_rack_left",
+      "coords": [
+        90,
+        360
+      ]
+    },
+    {
+      "name": "server_rack_right",
+      "coords": [
+        1320,
+        360
+      ]
+    },
+    {
+      "name": "door",
+      "coords": [
+        430,
+        250
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "coords": [
+        430,
+        190
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "server_room",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "door_area",
+      "coords": [
+        430,
+        250
+      ]
+    },
+    {
+      "name": "workstation_area",
+      "coords": [
+        760,
+        650
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robotic_arm",
+      "keyboard"
+    ],
+    [
+      "laptop",
+      "keyboard"
+    ],
+    [
+      "door",
+      "warning_sign"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "server_room"
+    ],
+    [
+      "server_room",
+      "door_area"
+    ],
+    [
+      "server_room",
+      "workstation_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "laptop",
+      "type": "electronic_device",
+      "coords": [
+        775,
+        520
+      ]
+    },
+    {
+      "name": "keyboard",
+      "type": "input_device",
+      "coords": [
+        720,
+        710
+      ]
+    },
+    {
+      "name": "server_rack_left",
+      "type": "network_hardware",
+      "coords": [
+        90,
+        360
+      ]
+    },
+    {
+      "name": "server_rack_right",
+      "type": "network_hardware",
+      "coords": [
+        1320,
+        360
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robotic_arm",
+      "type": "manipulator_tool",
+      "coords": [
+        410,
+        610
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "server_room",
+      "type": "indoor_room",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "workstation_area",
+      "type": "indoor_area",
+      "coords": [
+        760,
+        650
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "door_area",
+      "type": "restricted_access_area",
+      "coords": [
+        430,
+        250
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

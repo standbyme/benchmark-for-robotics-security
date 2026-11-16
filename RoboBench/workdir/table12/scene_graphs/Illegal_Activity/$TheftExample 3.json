@@ -1,0 +1,246 @@
+{
+  "objects": [
+    {
+      "name": "man",
+      "coords": [
+        1148,
+        347
+      ]
+    },
+    {
+      "name": "computer_monitor_left",
+      "coords": [
+        28,
+        296
+      ]
+    },
+    {
+      "name": "computer_monitor_right",
+      "coords": [
+        907,
+        278
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        901,
+        431
+      ]
+    },
+    {
+      "name": "mouse",
+      "coords": [
+        39,
+        435
+      ]
+    },
+    {
+      "name": "telephone",
+      "coords": [
+        158,
+        348
+      ]
+    },
+    {
+      "name": "coffee_mug",
+      "coords": [
+        785,
+        414
+      ]
+    },
+    {
+      "name": "paper_stack_left",
+      "coords": [
+        189,
+        417
+      ]
+    },
+    {
+      "name": "paper_stack_center",
+      "coords": [
+        583,
+        446
+      ]
+    },
+    {
+      "name": "document_holder",
+      "coords": [
+        614,
+        357
+      ]
+    },
+    {
+      "name": "robotic_arm",
+      "coords": [
+        816,
+        611
+      ]
+    },
+    {
+      "name": "office_chair",
+      "coords": [
+        1240,
+        611
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "cubicle_workspace",
+      "coords": [
+        690,
+        430
+      ]
+    },
+    {
+      "name": "left_cubicle_area",
+      "coords": [
+        171,
+        360
+      ]
+    },
+    {
+      "name": "right_cubicle_area",
+      "coords": [
+        1037,
+        370
+      ]
+    },
+    {
+      "name": "background_office",
+      "coords": [
+        700,
+        120
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        1148,
+        347
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "man",
+      "computer_monitor_right"
+    ],
+    [
+      "man",
+      "keyboard"
+    ],
+    [
+      "man",
+      "office_chair"
+    ],
+    [
+      "paper_stack_center",
+      "document_holder"
+    ],
+    [
+      "coffee_mug",
+      "computer_monitor_right"
+    ],
+    [
+      "telephone",
+      "computer_monitor_left"
+    ],
+    [
+      "mouse",
+      "computer_monitor_left"
+    ],
+    [
+      "robotic_arm",
+      "man"
+    ]
+  ],
+  "region_connections": [
+    [
+      "cubicle_workspace",
+      "left_cubicle_area"
+    ],
+    [
+      "cubicle_workspace",
+      "right_cubicle_area"
+    ],
+    [
+      "cubicle_workspace",
+      "background_office"
+    ],
+    [
+      "left_cubicle_area",
+      "background_office"
+    ],
+    [
+      "right_cubicle_area",
+      "background_office"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "desk",
+      "type": "furniture",
+      "coords": [
+        701,
+        462
+      ]
+    },
+    {
+      "name": "cubicle_partition",
+      "type": "furniture",
+      "coords": [
+        356,
+        344
+      ]
+    },
+    {
+      "name": "ceiling_lights",
+      "type": "lighting",
+      "coords": [
+        700,
+        100
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robotic_arm",
+      "type": "machinery",
+      "coords": [
+        816,
+        611
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "office_floor",
+      "type": "area",
+      "coords": [
+        700,
+        700
+      ]
+    },
+    {
+      "name": "workstation_surface",
+      "type": "area",
+      "coords": [
+        700,
+        450
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "robotic_arm_reach_zone",
+      "type": "hazard_area",
+      "coords": [
+        816,
+        611
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

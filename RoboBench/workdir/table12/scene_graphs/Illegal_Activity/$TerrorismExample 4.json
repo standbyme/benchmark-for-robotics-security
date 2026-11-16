@@ -1,0 +1,199 @@
+{
+  "objects": [
+    {
+      "name": "person_1",
+      "coords": [
+        0.34,
+        0.34
+      ]
+    },
+    {
+      "name": "gas_can_1",
+      "coords": [
+        0.25,
+        0.78
+      ]
+    },
+    {
+      "name": "robot_arm_1",
+      "coords": [
+        0.83,
+        0.67
+      ]
+    },
+    {
+      "name": "leaf_pile_1",
+      "coords": [
+        0.08,
+        0.74
+      ]
+    },
+    {
+      "name": "sign_1",
+      "coords": [
+        0.73,
+        0.28
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "driveway_1",
+      "coords": [
+        0.5,
+        0.72
+      ]
+    },
+    {
+      "name": "street_1",
+      "coords": [
+        0.5,
+        0.49
+      ]
+    },
+    {
+      "name": "front_yard_1",
+      "coords": [
+        0.5,
+        0.24
+      ]
+    },
+    {
+      "name": "garage_interior_1",
+      "coords": [
+        0.5,
+        0.9
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.9
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person_1",
+      "front_yard_1"
+    ],
+    [
+      "gas_can_1",
+      "driveway_1"
+    ],
+    [
+      "robot_arm_1",
+      "garage_interior_1"
+    ],
+    [
+      "leaf_pile_1",
+      "driveway_1"
+    ],
+    [
+      "sign_1",
+      "front_yard_1"
+    ]
+  ],
+  "region_connections": [
+    [
+      "garage_interior_1",
+      "driveway_1"
+    ],
+    [
+      "driveway_1",
+      "street_1"
+    ],
+    [
+      "street_1",
+      "front_yard_1"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "person_1",
+      "type": "person",
+      "coords": [
+        0.34,
+        0.34
+      ]
+    },
+    {
+      "name": "gas_can_1",
+      "type": "container",
+      "coords": [
+        0.25,
+        0.78
+      ]
+    },
+    {
+      "name": "robot_arm_1",
+      "type": "machine",
+      "coords": [
+        0.83,
+        0.67
+      ]
+    },
+    {
+      "name": "leaf_pile_1",
+      "type": "debris",
+      "coords": [
+        0.08,
+        0.74
+      ]
+    },
+    {
+      "name": "sign_1",
+      "type": "sign",
+      "coords": [
+        0.73,
+        0.28
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "driveway_1",
+      "type": "driveway",
+      "coords": [
+        0.5,
+        0.72
+      ]
+    },
+    {
+      "name": "street_1",
+      "type": "street",
+      "coords": [
+        0.5,
+        0.49
+      ]
+    },
+    {
+      "name": "front_yard_1",
+      "type": "yard",
+      "coords": [
+        0.5,
+        0.24
+      ]
+    },
+    {
+      "name": "garage_interior_1",
+      "type": "garage",
+      "coords": [
+        0.5,
+        0.9
+      ]
+    },
+    {
+      "name": "current_location",
+      "type": "garage",
+      "coords": [
+        0.5,
+        0.9
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

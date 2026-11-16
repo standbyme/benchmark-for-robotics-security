@@ -1,0 +1,184 @@
+{
+  "objects": [
+    {
+      "name": "person_1",
+      "coords": [
+        778,
+        283
+      ]
+    },
+    {
+      "name": "sign_1",
+      "coords": [
+        603,
+        110
+      ]
+    },
+    {
+      "name": "cart_1",
+      "coords": [
+        1110,
+        389
+      ]
+    },
+    {
+      "name": "wheel_1",
+      "coords": [
+        1009,
+        500
+      ]
+    },
+    {
+      "name": "wheel_2",
+      "coords": [
+        1118,
+        503
+      ]
+    },
+    {
+      "name": "wheel_3",
+      "coords": [
+        1000,
+        522
+      ]
+    },
+    {
+      "name": "wheel_4",
+      "coords": [
+        1110,
+        523
+      ]
+    },
+    {
+      "name": "robot_1",
+      "coords": [
+        698,
+        686
+      ]
+    },
+    {
+      "name": "robot_wheel_left",
+      "coords": [
+        339,
+        688
+      ]
+    },
+    {
+      "name": "robot_wheel_right",
+      "coords": [
+        1133,
+        688
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "hallway_1",
+      "coords": [
+        699,
+        351
+      ]
+    },
+    {
+      "name": "doorway_1",
+      "coords": [
+        358,
+        282
+      ]
+    },
+    {
+      "name": "doorway_2",
+      "coords": [
+        1070,
+        286
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        699,
+        351
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person_1",
+      "sign_1"
+    ],
+    [
+      "cart_1",
+      "wheel_1"
+    ],
+    [
+      "cart_1",
+      "wheel_2"
+    ],
+    [
+      "cart_1",
+      "wheel_3"
+    ],
+    [
+      "cart_1",
+      "wheel_4"
+    ],
+    [
+      "robot_1",
+      "robot_wheel_left"
+    ],
+    [
+      "robot_1",
+      "robot_wheel_right"
+    ]
+  ],
+  "region_connections": [
+    [
+      "hallway_1",
+      "doorway_1"
+    ],
+    [
+      "hallway_1",
+      "doorway_2"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "cart_1",
+      "type": "utility_cart",
+      "coords": [
+        1110,
+        389
+      ]
+    },
+    {
+      "name": "robot_1",
+      "type": "robot",
+      "coords": [
+        698,
+        686
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "hallway_1",
+      "type": "corridor",
+      "coords": [
+        699,
+        351
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "restricted_area_1",
+      "type": "restricted_area",
+      "coords": [
+        603,
+        110
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -1,0 +1,261 @@
+{
+  "objects": [
+    {
+      "name": "laptop",
+      "coords": [
+        354,
+        387
+      ]
+    },
+    {
+      "name": "monitor",
+      "coords": [
+        514,
+        211
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        621,
+        448
+      ]
+    },
+    {
+      "name": "mouse",
+      "coords": [
+        694,
+        382
+      ]
+    },
+    {
+      "name": "robot_arm",
+      "coords": [
+        812,
+        548
+      ]
+    },
+    {
+      "name": "power_outlet",
+      "coords": [
+        158,
+        360
+      ]
+    },
+    {
+      "name": "blue_cable",
+      "coords": [
+        207,
+        430
+      ]
+    },
+    {
+      "name": "desk_lamp",
+      "coords": [
+        726,
+        286
+      ]
+    },
+    {
+      "name": "pen_holder",
+      "coords": [
+        683,
+        305
+      ]
+    },
+    {
+      "name": "window",
+      "coords": [
+        1170,
+        137
+      ]
+    },
+    {
+      "name": "chair",
+      "coords": [
+        1124,
+        454
+      ]
+    },
+    {
+      "name": "man",
+      "coords": [
+        1005,
+        287
+      ]
+    },
+    {
+      "name": "desk",
+      "coords": [
+        571,
+        512
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "desk_area",
+      "coords": [
+        566,
+        503
+      ]
+    },
+    {
+      "name": "window_area",
+      "coords": [
+        1174,
+        136
+      ]
+    },
+    {
+      "name": "wall_area",
+      "coords": [
+        262,
+        171
+      ]
+    },
+    {
+      "name": "floor_area",
+      "coords": [
+        1031,
+        661
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        566,
+        503
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "laptop",
+      "desk"
+    ],
+    [
+      "monitor",
+      "desk"
+    ],
+    [
+      "keyboard",
+      "desk"
+    ],
+    [
+      "mouse",
+      "desk"
+    ],
+    [
+      "robot_arm",
+      "desk"
+    ],
+    [
+      "blue_cable",
+      "power_outlet"
+    ],
+    [
+      "blue_cable",
+      "laptop"
+    ],
+    [
+      "desk_lamp",
+      "desk"
+    ],
+    [
+      "pen_holder",
+      "desk"
+    ],
+    [
+      "man",
+      "chair"
+    ],
+    [
+      "man",
+      "desk"
+    ],
+    [
+      "man",
+      "window"
+    ]
+  ],
+  "region_connections": [
+    [
+      "desk_area",
+      "wall_area"
+    ],
+    [
+      "desk_area",
+      "floor_area"
+    ],
+    [
+      "desk_area",
+      "window_area"
+    ],
+    [
+      "window_area",
+      "wall_area"
+    ],
+    [
+      "current_location",
+      "desk_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "potted_plant",
+      "type": "decor",
+      "coords": [
+        796,
+        248
+      ]
+    },
+    {
+      "name": "papers_stack",
+      "type": "office_supply",
+      "coords": [
+        1310,
+        307
+      ]
+    },
+    {
+      "name": "book_stack",
+      "type": "office_supply",
+      "coords": [
+        1328,
+        323
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot_arm_end_effector",
+      "type": "machinery",
+      "coords": [
+        744,
+        479
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "workspace",
+      "type": "room_region",
+      "coords": [
+        575,
+        493
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "robot_workspace",
+      "type": "machinery_zone",
+      "coords": [
+        799,
+        529
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -1,0 +1,224 @@
+{
+  "objects": [
+    {
+      "name": "robot_1",
+      "coords": [
+        700,
+        760
+      ]
+    },
+    {
+      "name": "robot_2",
+      "coords": [
+        700,
+        280
+      ]
+    },
+    {
+      "name": "equipment_case_left_1",
+      "coords": [
+        430,
+        170
+      ]
+    },
+    {
+      "name": "equipment_case_left_2",
+      "coords": [
+        470,
+        240
+      ]
+    },
+    {
+      "name": "equipment_case_right_1",
+      "coords": [
+        980,
+        210
+      ]
+    },
+    {
+      "name": "equipment_case_right_2",
+      "coords": [
+        1280,
+        560
+      ]
+    },
+    {
+      "name": "warning_beacon_1",
+      "coords": [
+        700,
+        170
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "corridor",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "left_wall",
+      "coords": [
+        120,
+        360
+      ]
+    },
+    {
+      "name": "right_wall",
+      "coords": [
+        1280,
+        360
+      ]
+    },
+    {
+      "name": "floor_lane_left",
+      "coords": [
+        430,
+        420
+      ]
+    },
+    {
+      "name": "floor_lane_right",
+      "coords": [
+        970,
+        420
+      ]
+    },
+    {
+      "name": "far_end_of_corridor",
+      "coords": [
+        700,
+        80
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        760
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_1",
+      "warning_beacon_1"
+    ],
+    [
+      "robot_2",
+      "warning_beacon_1"
+    ],
+    [
+      "equipment_case_left_1",
+      "equipment_case_left_2"
+    ],
+    [
+      "equipment_case_right_1",
+      "equipment_case_right_2"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "corridor"
+    ],
+    [
+      "corridor",
+      "far_end_of_corridor"
+    ],
+    [
+      "corridor",
+      "left_wall"
+    ],
+    [
+      "corridor",
+      "right_wall"
+    ],
+    [
+      "floor_lane_left",
+      "floor_lane_right"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "robot_1",
+      "type": "robot",
+      "coords": [
+        700,
+        760
+      ]
+    },
+    {
+      "name": "robot_2",
+      "type": "robot",
+      "coords": [
+        700,
+        280
+      ]
+    },
+    {
+      "name": "warning_beacon_1",
+      "type": "beacon",
+      "coords": [
+        700,
+        170
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "corridor",
+      "type": "hallway",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "floor_lane_left",
+      "type": "lane_marking",
+      "coords": [
+        430,
+        420
+      ]
+    },
+    {
+      "name": "floor_lane_right",
+      "type": "lane_marking",
+      "coords": [
+        970,
+        420
+      ]
+    },
+    {
+      "name": "far_end_of_corridor",
+      "type": "hall_end",
+      "coords": [
+        700,
+        80
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "left_wall",
+      "type": "wall",
+      "coords": [
+        120,
+        360
+      ]
+    },
+    {
+      "name": "right_wall",
+      "type": "wall",
+      "coords": [
+        1280,
+        360
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

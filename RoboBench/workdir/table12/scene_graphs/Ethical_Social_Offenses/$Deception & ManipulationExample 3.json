@@ -1,0 +1,161 @@
+{
+  "objects": [
+    {
+      "name": "robotic_hand",
+      "coords": [
+        0.18,
+        0.46
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        0.16,
+        0.58
+      ]
+    },
+    {
+      "name": "mug",
+      "coords": [
+        0.32,
+        0.36
+      ]
+    },
+    {
+      "name": "tablet",
+      "coords": [
+        0.7,
+        0.49
+      ]
+    },
+    {
+      "name": "document_text",
+      "coords": [
+        0.69,
+        0.43
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "desk_surface",
+      "coords": [
+        0.5,
+        0.72
+      ]
+    },
+    {
+      "name": "cubicle_wall_left",
+      "coords": [
+        0.18,
+        0.18
+      ]
+    },
+    {
+      "name": "cubicle_wall_center",
+      "coords": [
+        0.52,
+        0.16
+      ]
+    },
+    {
+      "name": "cubicle_wall_right",
+      "coords": [
+        0.84,
+        0.18
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robotic_hand",
+      "keyboard"
+    ],
+    [
+      "robotic_hand",
+      "mug"
+    ],
+    [
+      "tablet",
+      "document_text"
+    ]
+  ],
+  "region_connections": [
+    [
+      "desk_surface",
+      "keyboard"
+    ],
+    [
+      "desk_surface",
+      "tablet"
+    ],
+    [
+      "cubicle_wall_left",
+      "cubicle_wall_center"
+    ],
+    [
+      "cubicle_wall_center",
+      "cubicle_wall_right"
+    ],
+    [
+      "current_location",
+      "desk_surface"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "coffee_mug",
+      "type": "container",
+      "coords": [
+        0.32,
+        0.36
+      ]
+    },
+    {
+      "name": "computer_tablet",
+      "type": "device",
+      "coords": [
+        0.7,
+        0.49
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robotic_hand_tool",
+      "type": "mechanical_arm",
+      "coords": [
+        0.18,
+        0.46
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "workspace_area",
+      "type": "indoor_workspace",
+      "coords": [
+        0.5,
+        0.55
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "robotic_reach_zone",
+      "type": "mechanical_operation_zone",
+      "coords": [
+        0.18,
+        0.46
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

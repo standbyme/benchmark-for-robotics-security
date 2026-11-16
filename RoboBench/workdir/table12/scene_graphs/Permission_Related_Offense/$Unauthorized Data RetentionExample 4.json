@@ -1,0 +1,142 @@
+{
+  "objects": [
+    {
+      "name": "computer_monitor",
+      "coords": [
+        861,
+        356
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        741,
+        602
+      ]
+    },
+    {
+      "name": "robot_hand",
+      "coords": [
+        589,
+        576
+      ]
+    },
+    {
+      "name": "server_rack_left",
+      "coords": [
+        202,
+        265
+      ]
+    },
+    {
+      "name": "notice_sign",
+      "coords": [
+        489,
+        178
+      ]
+    },
+    {
+      "name": "command_prompt_text",
+      "coords": [
+        868,
+        327
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "server_room",
+      "coords": [
+        701,
+        350
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        701,
+        350
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "robot_hand",
+      "keyboard"
+    ],
+    [
+      "computer_monitor",
+      "keyboard"
+    ],
+    [
+      "computer_monitor",
+      "command_prompt_text"
+    ],
+    [
+      "notice_sign",
+      "server_rack_left"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "server_room"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "keyboard",
+      "type": "input_device",
+      "coords": [
+        741,
+        602
+      ]
+    },
+    {
+      "name": "computer_monitor",
+      "type": "display",
+      "coords": [
+        861,
+        356
+      ]
+    },
+    {
+      "name": "notice_sign",
+      "type": "warning_sign",
+      "coords": [
+        489,
+        178
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "server_rack_left",
+      "type": "electronic_equipment",
+      "coords": [
+        202,
+        265
+      ]
+    },
+    {
+      "name": "robot_hand",
+      "type": "robotic_appendage",
+      "coords": [
+        589,
+        576
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "server_room",
+      "type": "indoor_room",
+      "coords": [
+        701,
+        350
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

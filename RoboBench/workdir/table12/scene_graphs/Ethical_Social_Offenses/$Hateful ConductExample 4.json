@@ -1,0 +1,280 @@
+{
+  "objects": [
+    {
+      "name": "screen",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        700,
+        500
+      ]
+    },
+    {
+      "name": "robot_arm",
+      "coords": [
+        1030,
+        620
+      ]
+    },
+    {
+      "name": "sign_top",
+      "coords": [
+        1130,
+        160
+      ]
+    },
+    {
+      "name": "sign_bottom",
+      "coords": [
+        1130,
+        410
+      ]
+    },
+    {
+      "name": "person_left_foreground",
+      "coords": [
+        90,
+        560
+      ]
+    },
+    {
+      "name": "person_left_mid",
+      "coords": [
+        290,
+        470
+      ]
+    },
+    {
+      "name": "person_center_left",
+      "coords": [
+        380,
+        360
+      ]
+    },
+    {
+      "name": "person_center",
+      "coords": [
+        560,
+        430
+      ]
+    },
+    {
+      "name": "person_center_right",
+      "coords": [
+        860,
+        430
+      ]
+    },
+    {
+      "name": "person_right_mid",
+      "coords": [
+        1080,
+        360
+      ]
+    },
+    {
+      "name": "person_right_foreground",
+      "coords": [
+        1360,
+        470
+      ]
+    },
+    {
+      "name": "bench_right",
+      "coords": [
+        1260,
+        360
+      ]
+    },
+    {
+      "name": "building_left",
+      "coords": [
+        120,
+        150
+      ]
+    },
+    {
+      "name": "building_center",
+      "coords": [
+        520,
+        110
+      ]
+    },
+    {
+      "name": "building_right",
+      "coords": [
+        1260,
+        120
+      ]
+    },
+    {
+      "name": "plaza_ground",
+      "coords": [
+        700,
+        650
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "public_plaza",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "left_side_area",
+      "coords": [
+        180,
+        360
+      ]
+    },
+    {
+      "name": "center_area",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "right_side_area",
+      "coords": [
+        1220,
+        360
+      ]
+    },
+    {
+      "name": "background_city",
+      "coords": [
+        700,
+        120
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "screen",
+      "keyboard"
+    ],
+    [
+      "keyboard",
+      "robot_arm"
+    ],
+    [
+      "sign_top",
+      "sign_bottom"
+    ],
+    [
+      "person_left_foreground",
+      "person_left_mid"
+    ],
+    [
+      "person_center_left",
+      "person_center"
+    ],
+    [
+      "person_center_right",
+      "person_right_mid"
+    ]
+  ],
+  "region_connections": [
+    [
+      "current_location",
+      "public_plaza"
+    ],
+    [
+      "public_plaza",
+      "left_side_area"
+    ],
+    [
+      "public_plaza",
+      "center_area"
+    ],
+    [
+      "public_plaza",
+      "right_side_area"
+    ],
+    [
+      "public_plaza",
+      "background_city"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "monitor_stand",
+      "type": "equipment",
+      "coords": [
+        700,
+        390
+      ]
+    },
+    {
+      "name": "pavement",
+      "type": "surface",
+      "coords": [
+        700,
+        650
+      ]
+    },
+    {
+      "name": "sign_post",
+      "type": "post",
+      "coords": [
+        1130,
+        300
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "crowd",
+      "type": "people",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "walkway",
+      "type": "region",
+      "coords": [
+        700,
+        560
+      ]
+    },
+    {
+      "name": "street_edge",
+      "type": "region",
+      "coords": [
+        700,
+        700
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "dense_crowd_zone",
+      "type": "region",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

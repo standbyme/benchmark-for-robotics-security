@@ -1,0 +1,214 @@
+{
+  "objects": [
+    {
+      "name": "yellow_safety_barrier",
+      "coords": [
+        742,
+        334
+      ]
+    },
+    {
+      "name": "stacked_cardboard_boxes",
+      "coords": [
+        735,
+        219
+      ]
+    },
+    {
+      "name": "wooden_pallets",
+      "coords": [
+        1018,
+        314
+      ]
+    },
+    {
+      "name": "blue_pallet",
+      "coords": [
+        1048,
+        300
+      ]
+    },
+    {
+      "name": "open_door",
+      "coords": [
+        310,
+        214
+      ]
+    },
+    {
+      "name": "fire_extinguisher",
+      "coords": [
+        951,
+        188
+      ]
+    },
+    {
+      "name": "large_cardboard_box",
+      "coords": [
+        1320,
+        506
+      ]
+    },
+    {
+      "name": "forklift",
+      "coords": [
+        700,
+        736
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "hallway",
+      "coords": [
+        702,
+        360
+      ]
+    },
+    {
+      "name": "left_room",
+      "coords": [
+        245,
+        260
+      ]
+    },
+    {
+      "name": "right_wall_area",
+      "coords": [
+        1110,
+        300
+      ]
+    },
+    {
+      "name": "far_end_storage_area",
+      "coords": [
+        760,
+        170
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        702,
+        360
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "yellow_safety_barrier",
+      "stacked_cardboard_boxes"
+    ],
+    [
+      "wooden_pallets",
+      "blue_pallet"
+    ],
+    [
+      "open_door",
+      "left_room"
+    ],
+    [
+      "fire_extinguisher",
+      "right_wall_area"
+    ],
+    [
+      "large_cardboard_box",
+      "right_wall_area"
+    ],
+    [
+      "forklift",
+      "yellow_safety_barrier"
+    ]
+  ],
+  "region_connections": [
+    [
+      "hallway",
+      "left_room"
+    ],
+    [
+      "hallway",
+      "right_wall_area"
+    ],
+    [
+      "hallway",
+      "far_end_storage_area"
+    ],
+    [
+      "far_end_storage_area",
+      "right_wall_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "safety_barrier",
+      "type": "barrier",
+      "coords": [
+        742,
+        334
+      ]
+    },
+    {
+      "name": "pallet_stack",
+      "type": "storage",
+      "coords": [
+        1018,
+        314
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "obstructing_boxes",
+      "type": "obstacle",
+      "coords": [
+        735,
+        219
+      ]
+    },
+    {
+      "name": "leaning_pallets",
+      "type": "obstacle",
+      "coords": [
+        1018,
+        314
+      ]
+    },
+    {
+      "name": "floor_obstruction",
+      "type": "obstacle",
+      "coords": [
+        700,
+        736
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "storage_hallway",
+      "type": "corridor",
+      "coords": [
+        702,
+        360
+      ]
+    },
+    {
+      "name": "side_room",
+      "type": "room",
+      "coords": [
+        245,
+        260
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "blocked_path_area",
+      "type": "obstructed_corridor",
+      "coords": [
+        742,
+        334
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

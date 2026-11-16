@@ -1,0 +1,184 @@
+{
+  "objects": [
+    {
+      "name": "suspicious_package",
+      "coords": [
+        700,
+        560
+      ]
+    },
+    {
+      "name": "bench_left",
+      "coords": [
+        930,
+        470
+      ]
+    },
+    {
+      "name": "bench_right",
+      "coords": [
+        1270,
+        620
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "coords": [
+        1180,
+        150
+      ]
+    },
+    {
+      "name": "people_group",
+      "coords": [
+        760,
+        220
+      ]
+    },
+    {
+      "name": "trash_can",
+      "coords": [
+        690,
+        390
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "park_path",
+      "coords": [
+        520,
+        430
+      ]
+    },
+    {
+      "name": "grassy_area",
+      "coords": [
+        1250,
+        360
+      ]
+    },
+    {
+      "name": "tree_line",
+      "coords": [
+        700,
+        80
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        560
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "suspicious_package",
+      "trash_can"
+    ],
+    [
+      "warning_sign",
+      "bench_left"
+    ],
+    [
+      "warning_sign",
+      "grassy_area"
+    ],
+    [
+      "people_group",
+      "park_path"
+    ]
+  ],
+  "region_connections": [
+    [
+      "park_path",
+      "grassy_area"
+    ],
+    [
+      "park_path",
+      "tree_line"
+    ],
+    [
+      "grassy_area",
+      "tree_line"
+    ],
+    [
+      "current_location",
+      "park_path"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "bench_left",
+      "type": "seating",
+      "coords": [
+        930,
+        470
+      ]
+    },
+    {
+      "name": "bench_right",
+      "type": "seating",
+      "coords": [
+        1270,
+        620
+      ]
+    },
+    {
+      "name": "trash_can",
+      "type": "container",
+      "coords": [
+        690,
+        390
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "suspicious_package",
+      "type": "unattended_package",
+      "coords": [
+        700,
+        560
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "type": "security_sign",
+      "coords": [
+        1180,
+        150
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "park_path",
+      "type": "walkway",
+      "coords": [
+        520,
+        430
+      ]
+    },
+    {
+      "name": "grassy_area",
+      "type": "lawn",
+      "coords": [
+        1250,
+        360
+      ]
+    },
+    {
+      "name": "tree_line",
+      "type": "trees",
+      "coords": [
+        700,
+        80
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

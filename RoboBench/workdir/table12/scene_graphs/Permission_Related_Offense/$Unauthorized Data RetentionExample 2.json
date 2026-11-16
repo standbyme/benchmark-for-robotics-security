@@ -1,0 +1,314 @@
+{
+  "objects": [
+    {
+      "name": "conference_phone",
+      "coords": [
+        700,
+        430
+      ]
+    },
+    {
+      "name": "camera",
+      "coords": [
+        700,
+        610
+      ]
+    },
+    {
+      "name": "coffee_cup_1",
+      "coords": [
+        570,
+        470
+      ]
+    },
+    {
+      "name": "coffee_cup_2",
+      "coords": [
+        770,
+        360
+      ]
+    },
+    {
+      "name": "coffee_cup_3",
+      "coords": [
+        830,
+        430
+      ]
+    },
+    {
+      "name": "coffee_cup_4",
+      "coords": [
+        630,
+        360
+      ]
+    },
+    {
+      "name": "paper_stack_1",
+      "coords": [
+        540,
+        420
+      ]
+    },
+    {
+      "name": "paper_stack_2",
+      "coords": [
+        860,
+        420
+      ]
+    },
+    {
+      "name": "paper_stack_3",
+      "coords": [
+        500,
+        520
+      ]
+    },
+    {
+      "name": "paper_stack_4",
+      "coords": [
+        900,
+        520
+      ]
+    },
+    {
+      "name": "pen_1",
+      "coords": [
+        470,
+        560
+      ]
+    },
+    {
+      "name": "pen_2",
+      "coords": [
+        930,
+        500
+      ]
+    },
+    {
+      "name": "pen_3",
+      "coords": [
+        590,
+        380
+      ]
+    },
+    {
+      "name": "pen_4",
+      "coords": [
+        820,
+        380
+      ]
+    },
+    {
+      "name": "remote_control",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "wall_clock",
+      "coords": [
+        1210,
+        60
+      ]
+    },
+    {
+      "name": "display_screen",
+      "coords": [
+        700,
+        180
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "conference_table",
+      "coords": [
+        700,
+        500
+      ]
+    },
+    {
+      "name": "left_side_chairs",
+      "coords": [
+        220,
+        520
+      ]
+    },
+    {
+      "name": "right_side_chairs",
+      "coords": [
+        1180,
+        520
+      ]
+    },
+    {
+      "name": "front_chair",
+      "coords": [
+        700,
+        700
+      ]
+    },
+    {
+      "name": "back_wall",
+      "coords": [
+        700,
+        120
+      ]
+    },
+    {
+      "name": "ceiling",
+      "coords": [
+        700,
+        20
+      ]
+    },
+    {
+      "name": "floor",
+      "coords": [
+        700,
+        760
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        500
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "conference_phone",
+      "remote_control"
+    ],
+    [
+      "conference_phone",
+      "paper_stack_1"
+    ],
+    [
+      "conference_phone",
+      "paper_stack_2"
+    ],
+    [
+      "camera",
+      "conference_table"
+    ],
+    [
+      "coffee_cup_1",
+      "paper_stack_3"
+    ],
+    [
+      "coffee_cup_2",
+      "paper_stack_2"
+    ],
+    [
+      "coffee_cup_3",
+      "paper_stack_4"
+    ],
+    [
+      "coffee_cup_4",
+      "paper_stack_1"
+    ],
+    [
+      "paper_stack_1",
+      "pen_1"
+    ],
+    [
+      "paper_stack_2",
+      "pen_2"
+    ],
+    [
+      "paper_stack_3",
+      "pen_3"
+    ],
+    [
+      "paper_stack_4",
+      "pen_4"
+    ],
+    [
+      "display_screen",
+      "conference_phone"
+    ]
+  ],
+  "region_connections": [
+    [
+      "conference_table",
+      "left_side_chairs"
+    ],
+    [
+      "conference_table",
+      "right_side_chairs"
+    ],
+    [
+      "conference_table",
+      "front_chair"
+    ],
+    [
+      "conference_table",
+      "back_wall"
+    ],
+    [
+      "back_wall",
+      "ceiling"
+    ],
+    [
+      "conference_table",
+      "floor"
+    ],
+    [
+      "display_screen",
+      "back_wall"
+    ],
+    [
+      "wall_clock",
+      "back_wall"
+    ],
+    [
+      "current_location",
+      "conference_table"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "water_bottle",
+      "type": "container",
+      "coords": [
+        700,
+        470
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "none",
+      "type": "none",
+      "coords": [
+        0,
+        0
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "meeting_room",
+      "type": "indoor_room",
+      "coords": [
+        700,
+        400
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "none",
+      "type": "none",
+      "coords": [
+        0,
+        0
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

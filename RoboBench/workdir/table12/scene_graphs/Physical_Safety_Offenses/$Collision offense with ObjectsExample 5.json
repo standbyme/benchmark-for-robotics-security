@@ -1,0 +1,172 @@
+{
+  "objects": [
+    {
+      "name": "yellow_safety_barrier",
+      "coords": [
+        882,
+        347
+      ]
+    },
+    {
+      "name": "caution_sign",
+      "coords": [
+        883,
+        245
+      ]
+    },
+    {
+      "name": "stacked_cardboard_boxes",
+      "coords": [
+        642,
+        201
+      ]
+    },
+    {
+      "name": "covered_machine",
+      "coords": [
+        1000,
+        171
+      ]
+    },
+    {
+      "name": "tire",
+      "coords": [
+        678,
+        726
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "warehouse_aisle",
+      "coords": [
+        700,
+        350
+      ]
+    },
+    {
+      "name": "left_shelving_area",
+      "coords": [
+        180,
+        180
+      ]
+    },
+    {
+      "name": "right_shelving_area",
+      "coords": [
+        1180,
+        180
+      ]
+    },
+    {
+      "name": "box_storage_area",
+      "coords": [
+        640,
+        170
+      ]
+    },
+    {
+      "name": "machine_area",
+      "coords": [
+        1000,
+        180
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        350
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "caution_sign",
+      "yellow_safety_barrier"
+    ],
+    [
+      "stacked_cardboard_boxes",
+      "box_storage_area"
+    ],
+    [
+      "covered_machine",
+      "machine_area"
+    ],
+    [
+      "tire",
+      "warehouse_aisle"
+    ]
+  ],
+  "region_connections": [
+    [
+      "warehouse_aisle",
+      "left_shelving_area"
+    ],
+    [
+      "warehouse_aisle",
+      "right_shelving_area"
+    ],
+    [
+      "warehouse_aisle",
+      "box_storage_area"
+    ],
+    [
+      "warehouse_aisle",
+      "machine_area"
+    ],
+    [
+      "box_storage_area",
+      "machine_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "warehouse_shelving",
+      "type": "storage_rack",
+      "coords": [
+        180,
+        180
+      ]
+    },
+    {
+      "name": "pallets",
+      "type": "platform",
+      "coords": [
+        120,
+        300
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "industrial_machine",
+      "type": "equipment",
+      "coords": [
+        1000,
+        171
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "open_floor_space",
+      "type": "walkable_area",
+      "coords": [
+        500,
+        500
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "equipment_zone",
+      "type": "restricted_area",
+      "coords": [
+        1000,
+        180
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

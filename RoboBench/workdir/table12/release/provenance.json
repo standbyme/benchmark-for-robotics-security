@@ -1,0 +1,180 @@
+{
+  "source": {
+    "repo": "mdctleo/RoboJailBench",
+    "revision": "a645680dcc06521a467d76b7661e9a427f5fe464",
+    "artifacts": {
+      "DROID": {
+        "rows": 100,
+        "sha256": "3c965bc09d3515459f63f45f8ad35da5d607ad6506b2d61226c3300fe7fca714"
+      },
+      "badrobot_cd_DROID": {
+        "rows": 100,
+        "sha256": "8454ea325e4917af32e4b44c56d42c885d3ebb466dc43b6bc9f2332eb5ea6ecf"
+      },
+      "badrobot_cj_DROID": {
+        "rows": 100,
+        "sha256": "fdca7283dcc16ff58276f68b07d350e68ec40fea4da4b33f617d542c9be48a3f"
+      },
+      "badrobot_sm_DROID": {
+        "rows": 100,
+        "sha256": "4706e64b25f9860d700e2fbcd875cddb729a95a5c830948bfba0abd2e6b72b6a"
+      },
+      "robopair_DROID": {
+        "rows": 100,
+        "sha256": "1b092465f0823ca4b13dd8a899a6eec6665d893a7021c31b69027ffe093d1103"
+      },
+      "ROBOVQA": {
+        "rows": 100,
+        "sha256": "10b0a9a6fa804ab99813c57f2a603b84046a638ae1febf041b8311111fbf1d01"
+      },
+      "badrobot_cd_ROBOVQA": {
+        "rows": 100,
+        "sha256": "d9f954b0f1d5fad22b3f81cb7483325f0b6fbd987c094c347f124d67370eadbe"
+      },
+      "badrobot_cj_ROBOVQA": {
+        "rows": 100,
+        "sha256": "403b1a87fab74ac90de4e97c3a1ec15f3b09c168ccdfa47050df2bdbc4b9d522"
+      },
+      "badrobot_sm_ROBOVQA": {
+        "rows": 100,
+        "sha256": "7d5f1f1ccbd4fe2691790c64d96c469abd84d66ab7bf0189c49ce359918d11e1"
+      },
+      "robopair_ROBOVQA": {
+        "rows": 100,
+        "sha256": "92870b67d41998927b48d808d9595f553dcf938945f19ed4fee0d38b6b8a30ab"
+      },
+      "RH20T": {
+        "rows": 100,
+        "sha256": "bff210c447c9edf597d3dd8562fbb5a3e9c81f24fef8b770b1609da0800bfcd5"
+      },
+      "badrobot_cd_RH20T": {
+        "rows": 100,
+        "sha256": "a431d4c81ce8b43c5e8053c2a267dff863b07baa4844f39634a4ab6dde03cd78"
+      },
+      "badrobot_cj_RH20T": {
+        "rows": 100,
+        "sha256": "e7786c8935d80dc3154368c139eade02c4a15b459548ce9cbe761d38d768f85f"
+      },
+      "badrobot_sm_RH20T": {
+        "rows": 100,
+        "sha256": "69f2253fc1a573f03ee7ec1e13c331ae5d3c6219dcb5eb23b4b8769788d71fa8"
+      },
+      "robopair_RH20T": {
+        "rows": 100,
+        "sha256": "1b3e77fa9300958db84760c922ef220ece877ef6da0a90d0303c29eb77295d46"
+      },
+      "robo2vlm": {
+        "rows": 100,
+        "sha256": "e8736fc1e1b7c99da9793e5906299d530cd7d4b44f16c5570a2b250b5497a165"
+      },
+      "badrobot_cd_robo2vlm": {
+        "rows": 100,
+        "sha256": "3e7c8df613b6994590b903d65d1c2577d876e8c7b6288856ffb2b8cc3f786318"
+      },
+      "badrobot_cj_robo2vlm": {
+        "rows": 100,
+        "sha256": "c8d968d997559e8e6d9e2679d047645186875328fc75bed6c8d30656cdbc4599"
+      },
+      "badrobot_sm_robo2vlm": {
+        "rows": 100,
+        "sha256": "284b3d1658e5476b87f8c47a482a528743c272c9c09ee1e01c484c00408c4de8"
+      },
+      "robopair_robo2vlm": {
+        "rows": 100,
+        "sha256": "b57fe73a868b23f221fa9e1ba1648718aa3410de22f39bdf9da1c1b3241c4290"
+      },
+      "car": {
+        "rows": 100,
+        "sha256": "7a0f6706b0f61da43dc14bfd8eba907d648a518aced46dcf61aae44f285c05e8"
+      },
+      "badrobot_cd_car": {
+        "rows": 100,
+        "sha256": "d61cc4896eb6c1e69c0b5bb2886b1de6dc59de9b59fa4361d9797173f6f290cd"
+      },
+      "badrobot_cj_car": {
+        "rows": 100,
+        "sha256": "af37dce59ec93f7a8ddd954af90a42e33b7e5139ffb2622988265dfb8ee003ec"
+      },
+      "badrobot_sm_car": {
+        "rows": 100,
+        "sha256": "246c1bf62a9c0d78074f4006d3e689510be1f1000060b37342ef4f64e840068a"
+      },
+      "robopair_car": {
+        "rows": 100,
+        "sha256": "a9f288a6d15ad0033168265102e650e2070ce2523437a8e25450ebedd4cf2d0e"
+      },
+      "RJB-Instructions-5": {
+        "rows": 90,
+        "sha256": "6b3053f21b57e512f7d91844f134238ffe4b54d18f0f2bbc37cd8b91a05da75c"
+      },
+      "badrobot_cd_RJB-Instructions-5": {
+        "rows": 90,
+        "sha256": "ff5624a9a9e321636844eca61af89bcdaa816b3e90d08e22ca48604f9791b008"
+      },
+      "badrobot_cj_RJB-Instructions-5": {
+        "rows": 90,
+        "sha256": "f8f71330648a52bc802e30adacf17a9550f35eae49268f971273176078c686ea"
+      },
+      "badrobot_sm_RJB-Instructions-5": {
+        "rows": 90,
+        "sha256": "48739d2c9f0aae52a9cef266fa19941c3afb5d541271047555fea0080fefaa55"
+      },
+      "robopair_RJB-Instructions-5": {
+        "rows": 90,
+        "sha256": "a759046ec12a9431d5249b9c23682cd27ae173c826a418f94cbe7615e28aa11d"
+      },
+      "shawshank_ROBOVQA": {
+        "rows": 100,
+        "sha256": "fe0922e1c2d2a94c10b5eba0b82c4c77ae93a9b7b4eeb6ab07eb503aa8142b49"
+      }
+    }
+  },
+  "origins": {
+    "shawshank_DROID": {
+      "source": "artifacts/azure-run/data/shawshank_DROID",
+      "note": "Existing attack reused; all defenses are evaluated afresh."
+    },
+    "shawshank_ROBOVQA": {
+      "source": "published artifact",
+      "revision": "a645680dcc06521a467d76b7661e9a427f5fe464"
+    },
+    "shawshank_RH20T": {
+      "source": "artifacts/azure-run/data/shawshank_RH20T",
+      "note": "Existing attack reused; all defenses are evaluated afresh."
+    },
+    "shawshank_robo2vlm": {
+      "source": "artifacts/azure-run/data/shawshank_robo2vlm",
+      "note": "Existing attack reused; all defenses are evaluated afresh."
+    },
+    "shawshank_car": {
+      "source": "artifacts/azure-run/data/shawshank_car",
+      "note": "Existing attack reused; all defenses are evaluated afresh.",
+      "repair": {
+        "model": "gpt-5.4-mini-1",
+        "attempted": 1,
+        "note": "Retried missing visual attacks once for the Table 12 run."
+      }
+    },
+    "shawshank_RJB-Instructions-5": {
+      "source": "generated_attacks/table12-rjb5/shawshank_RJB-Instructions-5",
+      "configuration": {
+        "attack_model": "gpt-5.4-mini-1",
+        "vlm_model": "gpt-5.4-mini-1",
+        "judge_model": "gpt-5.4-mini-1",
+        "iterations": 20,
+        "is_vlm": false,
+        "provider": "azure",
+        "endpoint_sha256": "5f1403ee67843ea27c38e1f5c3ff4dfd11cb38bf0c427b07939164ddc30a950a",
+        "max_completion_tokens": 1024
+      }
+    }
+  },
+  "sha256": {
+    "shawshank_DROID": "516d00d1a8285ccec6f4197b1ac77d494b5de6c964e0ec8d21789811745f7335",
+    "shawshank_ROBOVQA": "fe0922e1c2d2a94c10b5eba0b82c4c77ae93a9b7b4eeb6ab07eb503aa8142b49",
+    "shawshank_RH20T": "739d8bfc24d4d81d617b93c02691b1eb9cf4feca37672cacaabf1020564545b9",
+    "shawshank_robo2vlm": "a36faa1e39c2325a33d9a7c26de979ceab2d909f12bfd1a9dffcdb1a3a808051",
+    "shawshank_car": "6a3186c22953c41b630850fdc6db050b7837749204f3ab74a29d884ff44b5e07",
+    "shawshank_RJB-Instructions-5": "36acb75c3b0b93c964adc758c3b975ee7db99b390afffa108d88a76e2e9871e4"
+  }
+}

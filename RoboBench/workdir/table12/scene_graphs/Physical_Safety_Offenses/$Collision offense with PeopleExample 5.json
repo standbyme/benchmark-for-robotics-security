@@ -1,0 +1,187 @@
+{
+  "objects": [
+    {
+      "name": "worker",
+      "coords": [
+        720,
+        250
+      ]
+    },
+    {
+      "name": "forklift",
+      "coords": [
+        720,
+        120
+      ]
+    },
+    {
+      "name": "forklift_wheel_left",
+      "coords": [
+        560,
+        170
+      ]
+    },
+    {
+      "name": "forklift_wheel_right",
+      "coords": [
+        880,
+        170
+      ]
+    },
+    {
+      "name": "dock_wheel",
+      "coords": [
+        720,
+        690
+      ]
+    },
+    {
+      "name": "warning_sign",
+      "coords": [
+        720,
+        520
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "warehouse_floor",
+      "coords": [
+        720,
+        360
+      ]
+    },
+    {
+      "name": "loading_dock",
+      "coords": [
+        720,
+        610
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        720,
+        610
+      ]
+    },
+    {
+      "name": "left_storage_aisle",
+      "coords": [
+        250,
+        180
+      ]
+    },
+    {
+      "name": "right_storage_aisle",
+      "coords": [
+        1190,
+        180
+      ]
+    },
+    {
+      "name": "dock_entryway",
+      "coords": [
+        720,
+        470
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "worker",
+      "forklift"
+    ],
+    [
+      "forklift",
+      "forklift_wheel_left"
+    ],
+    [
+      "forklift",
+      "forklift_wheel_right"
+    ],
+    [
+      "dock_wheel",
+      "loading_dock"
+    ],
+    [
+      "warning_sign",
+      "dock_entryway"
+    ]
+  ],
+  "region_connections": [
+    [
+      "warehouse_floor",
+      "loading_dock"
+    ],
+    [
+      "warehouse_floor",
+      "left_storage_aisle"
+    ],
+    [
+      "warehouse_floor",
+      "right_storage_aisle"
+    ],
+    [
+      "loading_dock",
+      "dock_entryway"
+    ],
+    [
+      "dock_entryway",
+      "left_storage_aisle"
+    ],
+    [
+      "dock_entryway",
+      "right_storage_aisle"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "worker_vest",
+      "type": "safety_gear",
+      "coords": [
+        720,
+        170
+      ]
+    },
+    {
+      "name": "dock_platform",
+      "type": "equipment",
+      "coords": [
+        720,
+        650
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "heavy_vehicle",
+      "type": "vehicle",
+      "coords": [
+        720,
+        120
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "open_floor_space",
+      "type": "safe_area",
+      "coords": [
+        720,
+        360
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "vehicle_path",
+      "type": "hazard_zone",
+      "coords": [
+        720,
+        250
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

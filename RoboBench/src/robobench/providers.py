@@ -58,7 +58,10 @@ def openai_client():
         from .azure_rate_limit import AzureRateLimiter
 
         limiter = AzureRateLimiter(base)
-        http_client = httpx.Client(timeout=httpx.Timeout(600, connect=5),
+        timeout = float(os.getenv("ROBOBENCH_AZURE_TIMEOUT", "600"))
+        if timeout <= 0:
+            raise ValueError("ROBOBENCH_AZURE_TIMEOUT must be positive")
+        http_client = httpx.Client(timeout=httpx.Timeout(timeout, connect=5),
                                    event_hooks={"request": [limiter.before_request],
                                                 "response": [limiter.after_response]})
         return OpenAI(api_key=key, base_url=base.rstrip("/"), http_client=http_client)

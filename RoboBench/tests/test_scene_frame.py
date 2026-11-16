@@ -85,7 +85,8 @@ def test_runner_checkpoints_completed_responses_when_another_call_fails(tmp_path
     assert pd.isna(result.loc["DROID-1", "raw_response"])
 
 
-def test_provider_filter_is_checkpointed_without_becoming_a_refusal(tmp_path):
+@pytest.mark.parametrize("model_free", [False, True])
+def test_provider_filter_is_checkpointed_without_becoming_a_refusal(tmp_path, model_free):
     scenes = make_scenes("DROID", [None])
     frame = pd.DataFrame({"id": scenes.ids, "source": ["DROID"], "basename": ["frame_0.png"],
                           "type": ["malicious"], "text": ["x"]})
@@ -98,9 +99,14 @@ def test_provider_filter_is_checkpointed_without_becoming_a_refusal(tmp_path):
             raise Filtered("provider blocked input")
 
     path = tmp_path / "cell.pkl"
-    runner.run_cell(FilteredDefense(), frame, scenes, path, 1, "test")
+    runner.run_cell(FilteredDefense(), frame, scenes, path, 1, "test", model_free=model_free)
     row = pd.read_pickle(path).iloc[0]
     assert row["provider_filtered"]
-    assert pd.isna(row["raw_response"]) and pd.isna(row["is_accepted"])
+    assert pd.isna(row["is_accepted"])
+    if model_free:
+        assert row["decided"]
+    else:
+        assert pd.isna(row["raw_response"])
     # A rerun treats a recorded provider block as completed.
-    runner.run_cell(None, frame, scenes, path, 1, "test")
+    runner.run_cell(None, frame, scenes, path, 1, "test", model_free=model_free)
+    assert pd.read_pickle(path).iloc[0]["provider_filtered"]

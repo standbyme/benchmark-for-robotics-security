@@ -1,5 +1,9 @@
 # Generation status — Azure run
 
+The current requested scope is the five-attack GPT-5.4-Mini table using RJB-5,
+documented in [table12_status.md](table12_status.md). The RJB-20 runs below are
+historical experiments and are excluded from that table.
+
 The original OpenAI project reached its spending limit. Its completed results
 and partial trees remain under `artifacts/expanded-pilot` and
 `generated_attacks/expanded`; they are not mixed into the new model-generated

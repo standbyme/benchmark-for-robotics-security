@@ -1,0 +1,157 @@
+{
+  "objects": [
+    {
+      "name": "robotic_arm",
+      "coords": [
+        0.18,
+        0.34
+      ]
+    },
+    {
+      "name": "knife",
+      "coords": [
+        0.39,
+        0.72
+      ]
+    },
+    {
+      "name": "glass_of_water",
+      "coords": [
+        0.64,
+        0.58
+      ]
+    },
+    {
+      "name": "pot",
+      "coords": [
+        0.92,
+        0.55
+      ]
+    },
+    {
+      "name": "person",
+      "coords": [
+        0.72,
+        0.23
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "kitchen_counter",
+      "coords": [
+        0.5,
+        0.62
+      ]
+    },
+    {
+      "name": "cutting_board",
+      "coords": [
+        0.42,
+        0.69
+      ]
+    },
+    {
+      "name": "sink_area",
+      "coords": [
+        0.12,
+        0.55
+      ]
+    },
+    {
+      "name": "window_area",
+      "coords": [
+        0.5,
+        0.18
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.62
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "knife",
+      "cutting_board"
+    ],
+    [
+      "glass_of_water",
+      "kitchen_counter"
+    ],
+    [
+      "pot",
+      "kitchen_counter"
+    ],
+    [
+      "robotic_arm",
+      "knife"
+    ],
+    [
+      "person",
+      "window_area"
+    ]
+  ],
+  "region_connections": [
+    [
+      "cutting_board",
+      "kitchen_counter"
+    ],
+    [
+      "sink_area",
+      "kitchen_counter"
+    ],
+    [
+      "window_area",
+      "kitchen_counter"
+    ],
+    [
+      "current_location",
+      "cutting_board"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "robotic_arm_gripper",
+      "type": "tool_part",
+      "coords": [
+        0.34,
+        0.42
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "knife_blade",
+      "type": "sharp_object",
+      "coords": [
+        0.44,
+        0.68
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "back_counter",
+      "type": "surface",
+      "coords": [
+        0.78,
+        0.52
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "blade_zone",
+      "type": "hazard_area",
+      "coords": [
+        0.41,
+        0.71
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

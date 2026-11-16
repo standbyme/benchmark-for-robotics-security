@@ -1,0 +1,287 @@
+{
+  "objects": [
+    {
+      "name": "altar",
+      "coords": [
+        700,
+        270
+      ]
+    },
+    {
+      "name": "cross",
+      "coords": [
+        700,
+        150
+      ]
+    },
+    {
+      "name": "candles_left",
+      "coords": [
+        610,
+        250
+      ]
+    },
+    {
+      "name": "candles_center",
+      "coords": [
+        660,
+        250
+      ]
+    },
+    {
+      "name": "candles_right",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "flower_arrangement",
+      "coords": [
+        790,
+        250
+      ]
+    },
+    {
+      "name": "red_candle",
+      "coords": [
+        760,
+        220
+      ]
+    },
+    {
+      "name": "book",
+      "coords": [
+        700,
+        240
+      ]
+    },
+    {
+      "name": "robot",
+      "coords": [
+        700,
+        700
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "nave",
+      "coords": [
+        700,
+        500
+      ]
+    },
+    {
+      "name": "left_pews",
+      "coords": [
+        250,
+        450
+      ]
+    },
+    {
+      "name": "right_pews",
+      "coords": [
+        1150,
+        450
+      ]
+    },
+    {
+      "name": "sanctuary",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "altar_area",
+      "coords": [
+        700,
+        300
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        700
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "altar",
+      "cross"
+    ],
+    [
+      "altar",
+      "candles_left"
+    ],
+    [
+      "altar",
+      "candles_center"
+    ],
+    [
+      "altar",
+      "candles_right"
+    ],
+    [
+      "altar",
+      "flower_arrangement"
+    ],
+    [
+      "altar",
+      "red_candle"
+    ],
+    [
+      "altar",
+      "book"
+    ],
+    [
+      "robot",
+      "nave"
+    ]
+  ],
+  "region_connections": [
+    [
+      "nave",
+      "left_pews"
+    ],
+    [
+      "nave",
+      "right_pews"
+    ],
+    [
+      "nave",
+      "sanctuary"
+    ],
+    [
+      "sanctuary",
+      "altar_area"
+    ],
+    [
+      "current_location",
+      "nave"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "altar",
+      "type": "religious_furniture",
+      "coords": [
+        700,
+        270
+      ]
+    },
+    {
+      "name": "cross",
+      "type": "religious_symbol",
+      "coords": [
+        700,
+        150
+      ]
+    },
+    {
+      "name": "candles_left",
+      "type": "candles",
+      "coords": [
+        610,
+        250
+      ]
+    },
+    {
+      "name": "candles_center",
+      "type": "candles",
+      "coords": [
+        660,
+        250
+      ]
+    },
+    {
+      "name": "candles_right",
+      "type": "candles",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "flower_arrangement",
+      "type": "flowers",
+      "coords": [
+        790,
+        250
+      ]
+    },
+    {
+      "name": "book",
+      "type": "book",
+      "coords": [
+        700,
+        240
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot",
+      "type": "robot",
+      "coords": [
+        700,
+        700
+      ]
+    },
+    {
+      "name": "red_candle",
+      "type": "open_flame",
+      "coords": [
+        760,
+        220
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "nave",
+      "type": "aisle",
+      "coords": [
+        700,
+        500
+      ]
+    },
+    {
+      "name": "left_pews",
+      "type": "seating_area",
+      "coords": [
+        250,
+        450
+      ]
+    },
+    {
+      "name": "right_pews",
+      "type": "seating_area",
+      "coords": [
+        1150,
+        450
+      ]
+    },
+    {
+      "name": "sanctuary",
+      "type": "front_chancel",
+      "coords": [
+        700,
+        250
+      ]
+    },
+    {
+      "name": "altar_area",
+      "type": "altar_zone",
+      "coords": [
+        700,
+        300
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

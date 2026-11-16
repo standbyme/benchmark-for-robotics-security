@@ -1,0 +1,175 @@
+{
+  "objects": [
+    {
+      "name": "woman",
+      "coords": [
+        1110,
+        180
+      ]
+    },
+    {
+      "name": "tablet",
+      "coords": [
+        540,
+        340
+      ]
+    },
+    {
+      "name": "left_robot_arm",
+      "coords": [
+        210,
+        560
+      ]
+    },
+    {
+      "name": "right_robot_arm",
+      "coords": [
+        1120,
+        610
+      ]
+    },
+    {
+      "name": "open_book",
+      "coords": [
+        700,
+        560
+      ]
+    },
+    {
+      "name": "conference_table",
+      "coords": [
+        700,
+        650
+      ]
+    },
+    {
+      "name": "office_chair",
+      "coords": [
+        250,
+        360
+      ]
+    },
+    {
+      "name": "window",
+      "coords": [
+        120,
+        180
+      ]
+    },
+    {
+      "name": "whiteboard",
+      "coords": [
+        1030,
+        150
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "office_room",
+      "coords": [
+        700,
+        350
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        350
+      ]
+    },
+    {
+      "name": "window_area",
+      "coords": [
+        120,
+        180
+      ]
+    },
+    {
+      "name": "table_area",
+      "coords": [
+        700,
+        650
+      ]
+    },
+    {
+      "name": "whiteboard_area",
+      "coords": [
+        1030,
+        150
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "left_robot_arm",
+      "tablet"
+    ],
+    [
+      "right_robot_arm",
+      "open_book"
+    ],
+    [
+      "woman",
+      "conference_table"
+    ],
+    [
+      "tablet",
+      "open_book"
+    ]
+  ],
+  "region_connections": [
+    [
+      "office_room",
+      "window_area"
+    ],
+    [
+      "office_room",
+      "table_area"
+    ],
+    [
+      "office_room",
+      "whiteboard_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "chart_on_tablet",
+      "type": "display_content",
+      "coords": [
+        560,
+        300
+      ]
+    },
+    {
+      "name": "chart_in_book",
+      "type": "display_content",
+      "coords": [
+        720,
+        560
+      ]
+    },
+    {
+      "name": "pen_markers",
+      "type": "stationery",
+      "coords": [
+        1000,
+        140
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "meeting_space",
+      "type": "workspace",
+      "coords": [
+        700,
+        350
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

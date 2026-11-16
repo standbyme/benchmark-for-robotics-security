@@ -1,0 +1,26 @@
+{
+  "DROID": {
+    "rows": 100,
+    "changed_images": 100
+  },
+  "ROBOVQA": {
+    "rows": 100,
+    "changed_images": 100
+  },
+  "RH20T": {
+    "rows": 100,
+    "changed_images": 100
+  },
+  "robo2vlm": {
+    "rows": 100,
+    "changed_images": 100
+  },
+  "car": {
+    "rows": 100,
+    "changed_images": 100
+  },
+  "RJB-Instructions-5": {
+    "rows": 90,
+    "changed_images": 90
+  }
+}

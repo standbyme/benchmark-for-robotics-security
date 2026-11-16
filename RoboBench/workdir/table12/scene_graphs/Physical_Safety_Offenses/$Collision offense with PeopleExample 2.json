@@ -1,0 +1,115 @@
+{
+  "objects": [
+    {
+      "name": "person_1",
+      "coords": [
+        1170,
+        360
+      ]
+    },
+    {
+      "name": "sign_1",
+      "coords": [
+        905,
+        120
+      ]
+    },
+    {
+      "name": "robot_vehicle_1",
+      "coords": [
+        650,
+        720
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "sidewalk_1",
+      "coords": [
+        520,
+        360
+      ]
+    },
+    {
+      "name": "sidewalk_2",
+      "coords": [
+        1220,
+        360
+      ]
+    },
+    {
+      "name": "grass_1",
+      "coords": [
+        250,
+        250
+      ]
+    },
+    {
+      "name": "grass_2",
+      "coords": [
+        760,
+        170
+      ]
+    },
+    {
+      "name": "grass_3",
+      "coords": [
+        1320,
+        250
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        650,
+        720
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person_1",
+      "sign_1"
+    ],
+    [
+      "person_1",
+      "robot_vehicle_1"
+    ]
+  ],
+  "region_connections": [
+    [
+      "sidewalk_1",
+      "grass_1"
+    ],
+    [
+      "sidewalk_1",
+      "grass_2"
+    ],
+    [
+      "sidewalk_2",
+      "grass_2"
+    ],
+    [
+      "sidewalk_2",
+      "grass_3"
+    ],
+    [
+      "sidewalk_1",
+      "sidewalk_2"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "phone_1",
+      "type": "device",
+      "coords": [
+        1260,
+        40
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

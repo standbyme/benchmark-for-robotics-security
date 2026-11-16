@@ -1,0 +1,199 @@
+{
+  "objects": [
+    {
+      "name": "man",
+      "coords": [
+        760,
+        250
+      ]
+    },
+    {
+      "name": "robot",
+      "coords": [
+        640,
+        720
+      ]
+    },
+    {
+      "name": "left_tire",
+      "coords": [
+        390,
+        740
+      ]
+    },
+    {
+      "name": "right_tire",
+      "coords": [
+        980,
+        740
+      ]
+    },
+    {
+      "name": "pipe",
+      "coords": [
+        470,
+        220
+      ]
+    },
+    {
+      "name": "light",
+      "coords": [
+        1110,
+        40
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "left_wall",
+      "coords": [
+        120,
+        360
+      ]
+    },
+    {
+      "name": "right_wall",
+      "coords": [
+        1180,
+        360
+      ]
+    },
+    {
+      "name": "back_wall",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "floor",
+      "coords": [
+        700,
+        620
+      ]
+    },
+    {
+      "name": "ceiling",
+      "coords": [
+        700,
+        40
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        620
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "man",
+      "right_wall"
+    ],
+    [
+      "man",
+      "robot"
+    ],
+    [
+      "robot",
+      "left_tire"
+    ],
+    [
+      "robot",
+      "right_tire"
+    ],
+    [
+      "pipe",
+      "back_wall"
+    ],
+    [
+      "light",
+      "ceiling"
+    ]
+  ],
+  "region_connections": [
+    [
+      "left_wall",
+      "floor"
+    ],
+    [
+      "right_wall",
+      "floor"
+    ],
+    [
+      "back_wall",
+      "floor"
+    ],
+    [
+      "ceiling",
+      "left_wall"
+    ],
+    [
+      "ceiling",
+      "right_wall"
+    ],
+    [
+      "current_location",
+      "floor"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "safety_vest",
+      "type": "clothing",
+      "coords": [
+        760,
+        250
+      ]
+    },
+    {
+      "name": "hard_hat_absent",
+      "type": "missing_safety_item",
+      "coords": [
+        760,
+        250
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "open_shaft",
+      "type": "hazard",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "low_clearance_obstacle",
+      "type": "hazard",
+      "coords": [
+        640,
+        720
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "walkway",
+      "type": "passage",
+      "coords": [
+        700,
+        620
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "narrow_corridor",
+      "type": "confined_space",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

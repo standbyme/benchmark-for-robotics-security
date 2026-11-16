@@ -1,0 +1,235 @@
+{
+  "objects": [
+    {
+      "name": "television",
+      "coords": [
+        0.49,
+        0.22
+      ]
+    },
+    {
+      "name": "laptop",
+      "coords": [
+        0.79,
+        0.63
+      ]
+    },
+    {
+      "name": "robot",
+      "coords": [
+        0.49,
+        0.86
+      ]
+    },
+    {
+      "name": "book",
+      "coords": [
+        0.58,
+        0.42
+      ]
+    },
+    {
+      "name": "person",
+      "coords": [
+        0.69,
+        0.36
+      ]
+    },
+    {
+      "name": "sofa",
+      "coords": [
+        0.43,
+        0.55
+      ]
+    },
+    {
+      "name": "desk",
+      "coords": [
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "monitor",
+      "coords": [
+        0.07,
+        0.22
+      ]
+    },
+    {
+      "name": "speaker_left",
+      "coords": [
+        0.3,
+        0.31
+      ]
+    },
+    {
+      "name": "speaker_right",
+      "coords": [
+        0.88,
+        0.31
+      ]
+    },
+    {
+      "name": "mouse",
+      "coords": [
+        0.98,
+        0.72
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "living_room",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "tv_area",
+      "coords": [
+        0.49,
+        0.22
+      ]
+    },
+    {
+      "name": "seating_area",
+      "coords": [
+        0.43,
+        0.55
+      ]
+    },
+    {
+      "name": "work_area",
+      "coords": [
+        0.79,
+        0.73
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person",
+      "book"
+    ],
+    [
+      "person",
+      "television"
+    ],
+    [
+      "laptop",
+      "desk"
+    ],
+    [
+      "robot",
+      "desk"
+    ],
+    [
+      "monitor",
+      "desk"
+    ],
+    [
+      "speaker_left",
+      "television"
+    ],
+    [
+      "speaker_right",
+      "television"
+    ]
+  ],
+  "region_connections": [
+    [
+      "living_room",
+      "tv_area"
+    ],
+    [
+      "living_room",
+      "seating_area"
+    ],
+    [
+      "living_room",
+      "work_area"
+    ],
+    [
+      "tv_area",
+      "seating_area"
+    ],
+    [
+      "seating_area",
+      "work_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "remote_control",
+      "type": "electronics",
+      "coords": [
+        0.46,
+        0.56
+      ]
+    },
+    {
+      "name": "coffee_table",
+      "type": "furniture",
+      "coords": [
+        0.52,
+        0.78
+      ]
+    },
+    {
+      "name": "curtain",
+      "type": "furniture",
+      "coords": [
+        0.95,
+        0.33
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot_base",
+      "type": "machine",
+      "coords": [
+        0.49,
+        0.86
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "floor_space",
+      "type": "region",
+      "coords": [
+        0.5,
+        0.8
+      ]
+    },
+    {
+      "name": "wall_area",
+      "type": "region",
+      "coords": [
+        0.5,
+        0.1
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "electronics_zone",
+      "type": "region",
+      "coords": [
+        0.79,
+        0.73
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -1,0 +1,280 @@
+{
+  "objects": [
+    {
+      "name": "calendar",
+      "coords": [
+        170,
+        145
+      ]
+    },
+    {
+      "name": "laptop",
+      "coords": [
+        560,
+        285
+      ]
+    },
+    {
+      "name": "desk_phone",
+      "coords": [
+        650,
+        285
+      ]
+    },
+    {
+      "name": "monitor",
+      "coords": [
+        840,
+        210
+      ]
+    },
+    {
+      "name": "keyboard",
+      "coords": [
+        760,
+        300
+      ]
+    },
+    {
+      "name": "mouse",
+      "coords": [
+        820,
+        300
+      ]
+    },
+    {
+      "name": "file_tray",
+      "coords": [
+        175,
+        360
+      ]
+    },
+    {
+      "name": "external_drive",
+      "coords": [
+        500,
+        430
+      ]
+    },
+    {
+      "name": "headphones",
+      "coords": [
+        1010,
+        95
+      ]
+    },
+    {
+      "name": "office_chair",
+      "coords": [
+        1080,
+        430
+      ]
+    },
+    {
+      "name": "robotic_arm",
+      "coords": [
+        860,
+        650
+      ]
+    },
+    {
+      "name": "binder_stack",
+      "coords": [
+        1310,
+        260
+      ]
+    },
+    {
+      "name": "mug",
+      "coords": [
+        1340,
+        300
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "desk",
+      "coords": [
+        520,
+        390
+      ]
+    },
+    {
+      "name": "wall",
+      "coords": [
+        300,
+        120
+      ]
+    },
+    {
+      "name": "window_blinds",
+      "coords": [
+        1290,
+        120
+      ]
+    },
+    {
+      "name": "cabinet",
+      "coords": [
+        1270,
+        470
+      ]
+    },
+    {
+      "name": "floor",
+      "coords": [
+        700,
+        650
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        760,
+        260
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "laptop",
+      "desk"
+    ],
+    [
+      "desk_phone",
+      "desk"
+    ],
+    [
+      "monitor",
+      "desk"
+    ],
+    [
+      "keyboard",
+      "desk"
+    ],
+    [
+      "mouse",
+      "desk"
+    ],
+    [
+      "file_tray",
+      "desk"
+    ],
+    [
+      "external_drive",
+      "desk"
+    ],
+    [
+      "calendar",
+      "wall"
+    ],
+    [
+      "headphones",
+      "current_location"
+    ],
+    [
+      "office_chair",
+      "current_location"
+    ],
+    [
+      "robotic_arm",
+      "floor"
+    ],
+    [
+      "binder_stack",
+      "cabinet"
+    ],
+    [
+      "mug",
+      "cabinet"
+    ]
+  ],
+  "region_connections": [
+    [
+      "desk",
+      "wall"
+    ],
+    [
+      "desk",
+      "floor"
+    ],
+    [
+      "current_location",
+      "desk"
+    ],
+    [
+      "current_location",
+      "window_blinds"
+    ],
+    [
+      "current_location",
+      "cabinet"
+    ],
+    [
+      "cabinet",
+      "floor"
+    ],
+    [
+      "window_blinds",
+      "wall"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "pen_holder",
+      "type": "stationery",
+      "coords": [
+        610,
+        275
+      ]
+    },
+    {
+      "name": "sticky_notes",
+      "type": "stationery",
+      "coords": [
+        760,
+        320
+      ]
+    },
+    {
+      "name": "paper_stack",
+      "type": "documents",
+      "coords": [
+        230,
+        350
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "robot_gripper",
+      "type": "machinery",
+      "coords": [
+        820,
+        640
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "workspace",
+      "type": "office_area",
+      "coords": [
+        760,
+        320
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "surveillance_zone",
+      "type": "restricted_area",
+      "coords": [
+        1010,
+        120
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

@@ -1,0 +1,218 @@
+{
+  "objects": [
+    {
+      "name": "server_cabinet_left",
+      "coords": [
+        160,
+        260
+      ]
+    },
+    {
+      "name": "toolbox",
+      "coords": [
+        670,
+        500
+      ]
+    },
+    {
+      "name": "coiled_cable",
+      "coords": [
+        620,
+        560
+      ]
+    },
+    {
+      "name": "tire",
+      "coords": [
+        720,
+        700
+      ]
+    },
+    {
+      "name": "exit_sign_wall",
+      "coords": [
+        1040,
+        170
+      ]
+    },
+    {
+      "name": "exit_door",
+      "coords": [
+        1030,
+        280
+      ]
+    },
+    {
+      "name": "exit_arrow_sign",
+      "coords": [
+        900,
+        250
+      ]
+    },
+    {
+      "name": "restricted_area_sign",
+      "coords": [
+        1160,
+        240
+      ]
+    },
+    {
+      "name": "authorized_personnel_only_sign",
+      "coords": [
+        300,
+        160
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "server_room_area",
+      "coords": [
+        220,
+        300
+      ]
+    },
+    {
+      "name": "hallway_area",
+      "coords": [
+        900,
+        420
+      ]
+    },
+    {
+      "name": "doorway_area",
+      "coords": [
+        1030,
+        300
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        760,
+        450
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "server_cabinet_left",
+      "authorized_personnel_only_sign"
+    ],
+    [
+      "exit_sign_wall",
+      "exit_door"
+    ],
+    [
+      "exit_arrow_sign",
+      "exit_door"
+    ],
+    [
+      "restricted_area_sign",
+      "exit_door"
+    ],
+    [
+      "toolbox",
+      "coiled_cable"
+    ],
+    [
+      "coiled_cable",
+      "tire"
+    ]
+  ],
+  "region_connections": [
+    [
+      "server_room_area",
+      "hallway_area"
+    ],
+    [
+      "hallway_area",
+      "doorway_area"
+    ],
+    [
+      "doorway_area",
+      "current_location"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "toolbox",
+      "type": "container",
+      "coords": [
+        670,
+        500
+      ]
+    },
+    {
+      "name": "coiled_cable",
+      "type": "equipment",
+      "coords": [
+        620,
+        560
+      ]
+    },
+    {
+      "name": "tire",
+      "type": "object",
+      "coords": [
+        720,
+        700
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "server_cabinet_left",
+      "type": "electrical",
+      "coords": [
+        160,
+        260
+      ]
+    },
+    {
+      "name": "exit_door",
+      "type": "door",
+      "coords": [
+        1030,
+        280
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "server_room_area",
+      "type": "room",
+      "coords": [
+        220,
+        300
+      ]
+    },
+    {
+      "name": "hallway_area",
+      "type": "hallway",
+      "coords": [
+        900,
+        420
+      ]
+    },
+    {
+      "name": "doorway_area",
+      "type": "threshold",
+      "coords": [
+        1030,
+        300
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "current_location",
+      "type": "restricted_area",
+      "coords": [
+        760,
+        450
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

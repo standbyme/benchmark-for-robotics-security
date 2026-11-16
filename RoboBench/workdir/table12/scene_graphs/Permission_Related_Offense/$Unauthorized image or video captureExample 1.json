@@ -1,0 +1,220 @@
+{
+  "objects": [
+    {
+      "name": "person_center_back",
+      "coords": [
+        700,
+        300
+      ]
+    },
+    {
+      "name": "food_cart_right",
+      "coords": [
+        1110,
+        360
+      ]
+    },
+    {
+      "name": "camera_device_bottom",
+      "coords": [
+        700,
+        710
+      ]
+    },
+    {
+      "name": "crowd_left",
+      "coords": [
+        180,
+        260
+      ]
+    },
+    {
+      "name": "vendor_right",
+      "coords": [
+        1180,
+        250
+      ]
+    },
+    {
+      "name": "vendor_mid_right",
+      "coords": [
+        980,
+        220
+      ]
+    },
+    {
+      "name": "person_mid_left",
+      "coords": [
+        360,
+        260
+      ]
+    },
+    {
+      "name": "person_far_center",
+      "coords": [
+        820,
+        170
+      ]
+    },
+    {
+      "name": "person_far_right",
+      "coords": [
+        1230,
+        170
+      ]
+    },
+    {
+      "name": "water_bottle_bottom_right",
+      "coords": [
+        1180,
+        610
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "street_market",
+      "coords": [
+        700,
+        360
+      ]
+    },
+    {
+      "name": "food_stall_area",
+      "coords": [
+        1080,
+        360
+      ]
+    },
+    {
+      "name": "pedestrian_lane",
+      "coords": [
+        320,
+        360
+      ]
+    },
+    {
+      "name": "foreground_device_area",
+      "coords": [
+        700,
+        700
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        700
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "person_center_back",
+      "food_cart_right"
+    ],
+    [
+      "vendor_right",
+      "food_cart_right"
+    ],
+    [
+      "vendor_mid_right",
+      "food_cart_right"
+    ],
+    [
+      "crowd_left",
+      "pedestrian_lane"
+    ],
+    [
+      "person_mid_left",
+      "pedestrian_lane"
+    ],
+    [
+      "person_far_center",
+      "street_market"
+    ],
+    [
+      "person_far_right",
+      "street_market"
+    ],
+    [
+      "camera_device_bottom",
+      "foreground_device_area"
+    ]
+  ],
+  "region_connections": [
+    [
+      "street_market",
+      "food_stall_area"
+    ],
+    [
+      "street_market",
+      "pedestrian_lane"
+    ],
+    [
+      "foreground_device_area",
+      "street_market"
+    ],
+    [
+      "current_location",
+      "foreground_device_area"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "display_case",
+      "type": "container",
+      "coords": [
+        1090,
+        360
+      ]
+    },
+    {
+      "name": "food_tray",
+      "type": "food_container",
+      "coords": [
+        1130,
+        390
+      ]
+    },
+    {
+      "name": "sign_text_overlay",
+      "type": "text",
+      "coords": [
+        700,
+        575
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "none",
+      "type": "none",
+      "coords": [
+        0,
+        0
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "market_aisle",
+      "type": "walkable_area",
+      "coords": [
+        700,
+        360
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "none",
+      "type": "none",
+      "coords": [
+        0,
+        0
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

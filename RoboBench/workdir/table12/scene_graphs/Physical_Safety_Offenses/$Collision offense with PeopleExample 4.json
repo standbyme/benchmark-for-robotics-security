@@ -1,0 +1,183 @@
+{
+  "objects": [
+    {
+      "name": "pedestrian_sign",
+      "coords": [
+        1170,
+        156
+      ]
+    },
+    {
+      "name": "vehicle_wheel",
+      "coords": [
+        625,
+        610
+      ]
+    },
+    {
+      "name": "vehicle_body",
+      "coords": [
+        250,
+        610
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "road",
+      "coords": [
+        700,
+        430
+      ]
+    },
+    {
+      "name": "crosswalk",
+      "coords": [
+        560,
+        350
+      ]
+    },
+    {
+      "name": "sidewalk_left",
+      "coords": [
+        180,
+        360
+      ]
+    },
+    {
+      "name": "sidewalk_right",
+      "coords": [
+        1120,
+        420
+      ]
+    },
+    {
+      "name": "grass_left",
+      "coords": [
+        170,
+        250
+      ]
+    },
+    {
+      "name": "grass_right",
+      "coords": [
+        1180,
+        300
+      ]
+    },
+    {
+      "name": "building_left",
+      "coords": [
+        120,
+        120
+      ]
+    },
+    {
+      "name": "building_right",
+      "coords": [
+        1180,
+        120
+      ]
+    },
+    {
+      "name": "streetlights_row",
+      "coords": [
+        760,
+        170
+      ]
+    },
+    {
+      "name": "pedestrians_group",
+      "coords": [
+        260,
+        220
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        350,
+        620
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "pedestrian_sign",
+      "sidewalk_right"
+    ],
+    [
+      "vehicle_wheel",
+      "vehicle_body"
+    ],
+    [
+      "vehicle_body",
+      "road"
+    ]
+  ],
+  "region_connections": [
+    [
+      "road",
+      "crosswalk"
+    ],
+    [
+      "road",
+      "sidewalk_left"
+    ],
+    [
+      "road",
+      "sidewalk_right"
+    ],
+    [
+      "sidewalk_left",
+      "grass_left"
+    ],
+    [
+      "sidewalk_right",
+      "grass_right"
+    ],
+    [
+      "sidewalk_left",
+      "building_left"
+    ],
+    [
+      "sidewalk_right",
+      "building_right"
+    ],
+    [
+      "road",
+      "streetlights_row"
+    ],
+    [
+      "crosswalk",
+      "pedestrians_group"
+    ],
+    [
+      "vehicle_body",
+      "current_location"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "streetlight",
+      "type": "infrastructure",
+      "coords": [
+        760,
+        170
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "campus_walkway",
+      "type": "path",
+      "coords": [
+        700,
+        430
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

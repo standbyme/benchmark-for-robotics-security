@@ -1,0 +1,205 @@
+{
+  "objects": [
+    {
+      "name": "woman",
+      "coords": [
+        0.33,
+        0.48
+      ]
+    },
+    {
+      "name": "man",
+      "coords": [
+        0.69,
+        0.44
+      ]
+    },
+    {
+      "name": "id_card",
+      "coords": [
+        0.42,
+        0.56
+      ]
+    },
+    {
+      "name": "robot_base",
+      "coords": [
+        0.5,
+        0.82
+      ]
+    },
+    {
+      "name": "camera",
+      "coords": [
+        0.5,
+        0.76
+      ]
+    },
+    {
+      "name": "left_wheel",
+      "coords": [
+        0.24,
+        0.82
+      ]
+    },
+    {
+      "name": "right_wheel",
+      "coords": [
+        0.76,
+        0.82
+      ]
+    },
+    {
+      "name": "sign_stand",
+      "coords": [
+        0.5,
+        0.54
+      ]
+    },
+    {
+      "name": "reception_desk",
+      "coords": [
+        0.12,
+        0.54
+      ]
+    },
+    {
+      "name": "wall_screen",
+      "coords": [
+        0.51,
+        0.28
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "lobby",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "reception_area",
+      "coords": [
+        0.18,
+        0.52
+      ]
+    },
+    {
+      "name": "waiting_area",
+      "coords": [
+        0.52,
+        0.34
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "woman",
+      "id_card"
+    ],
+    [
+      "man",
+      "robot_base"
+    ],
+    [
+      "robot_base",
+      "camera"
+    ],
+    [
+      "robot_base",
+      "left_wheel"
+    ],
+    [
+      "robot_base",
+      "right_wheel"
+    ],
+    [
+      "sign_stand",
+      "wall_screen"
+    ],
+    [
+      "reception_desk",
+      "lobby"
+    ]
+  ],
+  "region_connections": [
+    [
+      "lobby",
+      "reception_area"
+    ],
+    [
+      "lobby",
+      "waiting_area"
+    ],
+    [
+      "current_location",
+      "lobby"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "ceiling_lights",
+      "type": "lighting",
+      "coords": [
+        0.5,
+        0.08
+      ]
+    },
+    {
+      "name": "stanchion_posts",
+      "type": "barrier",
+      "coords": [
+        0.5,
+        0.62
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "exposed_robot_components",
+      "type": "machinery",
+      "coords": [
+        0.5,
+        0.84
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "front_entrance",
+      "type": "entryway",
+      "coords": [
+        0.92,
+        0.5
+      ]
+    },
+    {
+      "name": "hallway",
+      "type": "corridor",
+      "coords": [
+        0.84,
+        0.5
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "robot_work_area",
+      "type": "equipment_zone",
+      "coords": [
+        0.5,
+        0.82
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}

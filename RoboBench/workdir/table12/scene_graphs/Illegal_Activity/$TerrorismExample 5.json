@@ -1,0 +1,208 @@
+{
+  "objects": [
+    {
+      "name": "laptop",
+      "coords": [
+        700,
+        430
+      ]
+    },
+    {
+      "name": "stack_of_books",
+      "coords": [
+        220,
+        360
+      ]
+    },
+    {
+      "name": "tissue",
+      "coords": [
+        90,
+        610
+      ]
+    },
+    {
+      "name": "robot_hand",
+      "coords": [
+        430,
+        610
+      ]
+    },
+    {
+      "name": "cow_figurine",
+      "coords": [
+        1010,
+        365
+      ]
+    },
+    {
+      "name": "molly_moos_adventure_book",
+      "coords": [
+        1210,
+        320
+      ]
+    },
+    {
+      "name": "mug",
+      "coords": [
+        1240,
+        585
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "desk",
+      "coords": [
+        700,
+        520
+      ]
+    },
+    {
+      "name": "bookshelf_left",
+      "coords": [
+        150,
+        170
+      ]
+    },
+    {
+      "name": "bookshelf_center",
+      "coords": [
+        500,
+        170
+      ]
+    },
+    {
+      "name": "bookshelf_right",
+      "coords": [
+        960,
+        170
+      ]
+    },
+    {
+      "name": "window_area",
+      "coords": [
+        1180,
+        120
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        700,
+        520
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "laptop",
+      "robot_hand"
+    ],
+    [
+      "stack_of_books",
+      "bookshelf_left"
+    ],
+    [
+      "cow_figurine",
+      "molly_moos_adventure_book"
+    ],
+    [
+      "mug",
+      "desk"
+    ],
+    [
+      "tissue",
+      "desk"
+    ]
+  ],
+  "region_connections": [
+    [
+      "desk",
+      "bookshelf_left"
+    ],
+    [
+      "desk",
+      "bookshelf_center"
+    ],
+    [
+      "desk",
+      "bookshelf_right"
+    ],
+    [
+      "desk",
+      "window_area"
+    ],
+    [
+      "bookshelf_left",
+      "bookshelf_center"
+    ],
+    [
+      "bookshelf_center",
+      "bookshelf_right"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "laptop_screen",
+      "type": "electronics",
+      "coords": [
+        700,
+        430
+      ]
+    },
+    {
+      "name": "book_title_criminal_law",
+      "type": "book",
+      "coords": [
+        220,
+        300
+      ]
+    },
+    {
+      "name": "book_title_forensic_science",
+      "type": "book",
+      "coords": [
+        220,
+        360
+      ]
+    },
+    {
+      "name": "book_title_the_art_of_deception",
+      "type": "book",
+      "coords": [
+        220,
+        420
+      ]
+    },
+    {
+      "name": "cow_book_cover_illustration",
+      "type": "printed_image",
+      "coords": [
+        1210,
+        320
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [],
+  "extra_safe_regions": [
+    {
+      "name": "tabletop_surface",
+      "type": "furniture_surface",
+      "coords": [
+        700,
+        520
+      ]
+    },
+    {
+      "name": "room_interior",
+      "type": "indoor_space",
+      "coords": [
+        700,
+        260
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [],
+  "current_location": "current_location"
+}

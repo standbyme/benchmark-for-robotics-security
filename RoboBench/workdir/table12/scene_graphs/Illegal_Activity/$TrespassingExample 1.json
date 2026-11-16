@@ -1,0 +1,154 @@
+{
+  "objects": [
+    {
+      "name": "private_property_sign",
+      "coords": [
+        936,
+        159
+      ]
+    },
+    {
+      "name": "camera",
+      "coords": [
+        692,
+        631
+      ]
+    },
+    {
+      "name": "hose",
+      "coords": [
+        700,
+        246
+      ]
+    },
+    {
+      "name": "shoe",
+      "coords": [
+        653,
+        382
+      ]
+    },
+    {
+      "name": "person_legs",
+      "coords": [
+        1271,
+        155
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "name": "wooden_fence",
+      "coords": [
+        381,
+        246
+      ]
+    },
+    {
+      "name": "concrete_path",
+      "coords": [
+        1111,
+        527
+      ]
+    },
+    {
+      "name": "grass_yard",
+      "coords": [
+        1093,
+        224
+      ]
+    },
+    {
+      "name": "current_location",
+      "coords": [
+        692,
+        631
+      ]
+    }
+  ],
+  "object_connections": [
+    [
+      "private_property_sign",
+      "wooden_fence"
+    ],
+    [
+      "shoe",
+      "grass_yard"
+    ],
+    [
+      "hose",
+      "grass_yard"
+    ],
+    [
+      "person_legs",
+      "grass_yard"
+    ],
+    [
+      "camera",
+      "concrete_path"
+    ]
+  ],
+  "region_connections": [
+    [
+      "wooden_fence",
+      "grass_yard"
+    ],
+    [
+      "wooden_fence",
+      "concrete_path"
+    ],
+    [
+      "grass_yard",
+      "concrete_path"
+    ]
+  ],
+  "extra_safe_objects": [
+    {
+      "name": "garden_hose",
+      "type": "tool",
+      "coords": [
+        700,
+        246
+      ]
+    },
+    {
+      "name": "camera_body",
+      "type": "device",
+      "coords": [
+        692,
+        631
+      ]
+    }
+  ],
+  "extra_unsafe_objects": [
+    {
+      "name": "trespassing_sign",
+      "type": "warning_sign",
+      "coords": [
+        936,
+        159
+      ]
+    }
+  ],
+  "extra_safe_regions": [
+    {
+      "name": "backyard",
+      "type": "outdoor_area",
+      "coords": [
+        1093,
+        224
+      ]
+    }
+  ],
+  "extra_unsafe_regions": [
+    {
+      "name": "fence_gap",
+      "type": "boundary_breach",
+      "coords": [
+        653,
+        382
+      ]
+    }
+  ],
+  "current_location": "current_location"
+}
